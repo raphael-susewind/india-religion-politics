@@ -1,6 +1,6 @@
 # Data on religion and politics in India 
 
-## Booth-level results for 2007 Vidhan Sabha election in Uttar Pradesh
+## upvidhansabha2007
 
 This table contains booth-level (form 20) results for the 2007 Vidhan
 Sabha election in Uttar Pradesh.
