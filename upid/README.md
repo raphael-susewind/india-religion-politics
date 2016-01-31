@@ -4,7 +4,7 @@
 
 This table contains the ID matching and integration table for Uttar Pradesh. Each row is the equivalent of a booth. 
 
-Fully integrated entries would have a booth_id_07, booth_id_09, booth_id_12 etc for this booth - this means I am convinced anything with these ID codes relates to the same actual entity. 
+Fully integrated entries would have a booth_id_07, booth_id_09, booth_id_12 etc for this booth - this means I am convinced anything with these ID codes relates to the same actual entity.  But it might also be that an entry has only one or two associated IDs, because I could not safely say how it integrates over time (or because it disappeared / was first instituted at some point). Last but not least, it can also be that an entry with, say, a booth_id_07 has no corresponding booth_id_09, but a station_id_09, or at least an ac_id_09 - in these cases, I am confident that it falls into these wider entities, but cannot say for sure what the new micro equivalent is. All this will basically mean that you will be facing missing values when integrating across various years and related ID codes - its a complicated issue to get your head around, but that's how it is...
 
 ## Variables
 
