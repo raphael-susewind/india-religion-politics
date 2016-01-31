@@ -128,7 +128,9 @@ foreach my $line (sort {$a <=> $b} (keys(%out))) {
 
 my $dbh = DBI->connect("dbi:SQLite:dbname=:memory:","","",{sqlite_unicode => 1});
 
-$dbh->do ("CREATE TABLE upvidhansabha2007 (id INTEGER PRIMARY KEY AUTOINCREMENT)");
+$dbh->do ("CREATE TABLE upvidhansabha2007 (id INTEGER PRIMARY KEY)");
+
+$dbh->do ("CREATE TABLE upid (id INTEGER PRIMARY KEY)");
 
 print "Adding 2007 Assembly results\n";
 
@@ -142,16 +144,16 @@ $csv->parse($header);
 my @header=$csv->fields();
 my @realheader=();
 
+$dbh->do ("ALTER TABLE upid ADD COLUMN ac_id_07 INTEGER");
+$dbh->do ("ALTER TABLE upid ADD COLUMN ac_name_07 CHAR");
+$dbh->do ("ALTER TABLE upid ADD COLUMN ac_reserved_07 CHAR");
+$dbh->do ("ALTER TABLE upid ADD COLUMN booth_id_07 CHAR");
+$dbh->do ("ALTER TABLE upid ADD COLUMN station_name_07 CHAR");
+
 $dbh->do ("ALTER TABLE upvidhansabha2007 ADD COLUMN ac_id_07 INTEGER");
 push(@realheader,'ac_id_07');
-$dbh->do ("ALTER TABLE upvidhansabha2007 ADD COLUMN ac_name_07 CHAR");
-push(@realheader,'ac_name_07');
-$dbh->do ("ALTER TABLE upvidhansabha2007 ADD COLUMN ac_reserved_07 CHAR");
-push(@realheader,'ac_reserved_07');
 $dbh->do ("ALTER TABLE upvidhansabha2007 ADD COLUMN booth_id_07 CHAR");
 push(@realheader,'booth_id_07');
-$dbh->do ("ALTER TABLE upvidhansabha2007 ADD COLUMN station_name_07 CHAR");
-push(@realheader,'station_name_07');
 $dbh->do ("ALTER TABLE upvidhansabha2007 ADD COLUMN electors_07 INTEGER");
 push(@realheader,'electors_07');
 $dbh->do ("ALTER TABLE upvidhansabha2007 ADD COLUMN turnout_07 INTEGER");
@@ -222,7 +224,6 @@ foreach my $line (@tempcsv) {
     $station_name =~ s/^izkikB\'kkyk/izk ik/gs;
     $station_name =~ s/^izk\s*ikB\'kkyk/izk ik/gs;
     $station_name =~ s/^izk\s*fo\|ky\;/izk ik/gs;
-
   
     my $temp = distance($oldstationname,$station_name);
     if ($temp <= 1 || $temp < length($station_name)/7.5) {$station_name = $oldstationname} else {$oldstationname = $station_name}
@@ -266,7 +267,10 @@ foreach my $line (@tempcsv) {
 	$dbh->do ($updateline,undef,@updates);
     }
 
-    if ($found != 1) {$dbh->do ("INSERT INTO upvidhansabha2007 (".join(',',@realheader).") VALUES (".join(',',('?') x scalar(@realheader)).")",undef, $constituency_id, $constituency_name, $constituency_reserved, $booth_id, $station_name, $electors, $turnout, $turnout_percent, $male_voters, $female_voters, $female_voters_percent, @add);}
+    if ($found != 1) {$dbh->do ("INSERT INTO upvidhansabha2007 (".join(',',@realheader).") VALUES (".join(',',('?') x scalar(@realheader)).")",undef, $constituency_id, $booth_id, $electors, $turnout, $turnout_percent, $male_voters, $female_voters, $female_voters_percent, @add);}
+    
+    if ($found != 1) {$dbh->do ("INSERT INTO upid (ac_id_07, ac_name_07, ac_reserved_07, booth_id_07, station_name_07) VALUES (?,?,?,?,?)",undef, $constituency_id, $constituency_name, $constituency_reserved, $booth_id, $station_name);}
+
 }
 
 $dbh->commit;
@@ -275,18 +279,18 @@ $dbh->commit;
 # Add station_id and station_name
 #
 
-$dbh->do ("ALTER TABLE upvidhansabha2007 ADD COLUMN station_id_07 INTEGER");
+$dbh->do ("ALTER TABLE upid ADD COLUMN station_id_07 INTEGER");
 
-$dbh->do ("CREATE INDEX ac_id_07 ON upvidhansabha2007 (ac_id_07)");
-$dbh->do ("CREATE INDEX booth_id_07 ON upvidhansabha2007 (booth_id_07)");
+$dbh->do ("CREATE INDEX ac_id_07 ON upid (ac_id_07)");
+$dbh->do ("CREATE INDEX booth_id_07 ON upid (booth_id_07)");
 
-my $sth = $dbh->prepare("SELECT ac_id_07 FROM upvidhansabha2007 WHERE ac_id_07 IS NOT NULL GROUP BY ac_id_07");
+my $sth = $dbh->prepare("SELECT ac_id_07 FROM upid WHERE ac_id_07 IS NOT NULL GROUP BY ac_id_07");
 $sth->execute();
 my $count=0;
 my %result;
 while (my $row=$sth->fetchrow_hashref) {
     my $tempold='';
-    my $sth2 = $dbh->prepare("SELECT station_name_07 FROM upvidhansabha2007 WHERE ac_id_07 = ?");
+    my $sth2 = $dbh->prepare("SELECT station_name_07 FROM upid WHERE ac_id_07 = ?");
     $sth2->execute($row->{ac_id_07});
     while (my $row2=$sth2->fetchrow_hashref) {
 	my $temp=$row2->{station_name_07};
@@ -301,24 +305,36 @@ $sth->finish ();
 
 $dbh->begin_work;
 
-my $sth = $dbh->prepare("SELECT * FROM upvidhansabha2007 WHERE ac_id_07 IS NOT NULL");
+my $sth = $dbh->prepare("SELECT * FROM upid WHERE ac_id_07 IS NOT NULL");
 $sth->execute();
 while (my $row=$sth->fetchrow_hashref) {
     my $temp=$row->{station_name_07};
     $temp=~s/\d//gs;
-    $dbh->do ("UPDATE upvidhansabha2007 SET station_id_07 = ? WHERE ac_id_07 = ? AND booth_id_07 = ?", undef, $result{$row->{ac_id_07}.$temp}, $row->{ac_id_07}, $row->{booth_id_07});
+    $dbh->do ("UPDATE upid SET station_id_07 = ? WHERE ac_id_07 = ? AND booth_id_07 = ?", undef, $result{$row->{ac_id_07}.$temp}, $row->{ac_id_07}, $row->{booth_id_07});
 }
 $sth->finish ();
 
 $dbh->commit;
 
-$dbh->do ("CREATE INDEX station_id_07 ON upvidhansabha2007 (station_id_07)");
+$dbh->do ("CREATE INDEX station_id_07 ON upid (station_id_07)");
 
 #
 # Finally create sqlite dump 
 #
 
 $dbh->sqlite_backup_to_file("temp.sqlite");
-system("sqlite3 temp.sqlite '.dump' > ../upvidhansabha2007.sql");
-system("sqlite3 -headers -csv temp.sqlite 'SELECT * FROM upvidhansabha2007;' > ../upvidhansabha2007.csv");
+
+system("sqlite3 temp.sqlite '.dump upvidhansabha2007' > upvidhansabha2007-a.sql");
+
+open (FILE, ">>upvidhansabha2007-a.sql");
+
+print FILE ".mode csv\n";
+print FILE ".headers on\n";
+print FILE ".once upvidhansabha2007.csv\n";
+print FILE "SELECT * FROM upvidhansabha2007;\n";
+
+close (FILE);
+
+system("sqlite3 temp.sqlite '.dump upid' > upvidhansabha2007-b.sql");
+
 system("rm -f temp.sqlite");
