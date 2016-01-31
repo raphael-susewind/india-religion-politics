@@ -1,0 +1,29 @@
+# Data on religion and politics in India 
+
+## General troubleshooting notes
+
+There are numerous potential problems with a dataset of this magnitude and I provide all data without any guarantee. I urge you to a) look at raw data closely and b) run your own plausibility checks before using this data. Also, if you use this dataset and discover errors or implausible values, please let me know! Let me highlight four main areas of (potential) trouble:
+
+## Problems in raw data quality
+
+I can't do anything if raw data is inaccurate or incomplete. Inaccuracies are more likely in election result data, since the Election Commission uses a number of different and mutually incompatible report sheets for Form 20 reports, at times manipulated further by ROs - and since I cannot guarantee that I integrated all those error-free, even if they themselves should be correct, there is a certain degree of potential trouble in that area. The issue of incomplete data, in turn, is likely more of a problem with the GIS variables, since the latitude/longitude database of the Election Commission is still in draft form and roughly one fifth of their coordinates had to be discarded as implausible (see my comments below).
+
+Also note that polling booth and station names and other text fields are given in different forms and languages in raw sources: latin script, devanagari unicode, and devanagari Kruti Dev. I did not unify these.
+
+## Problems in namematching accuracy
+
+A specific subset of raw data quality issues concerns the booth-level data on religious demography (as well as the religious categorization of candidate and MLA names) derived from my name-matching algorithm. First of all, this algorithm is - by design and by necessity - probabilistic and thus never 100% accurate. Secondly, it is hard to establish the accuracy irrespective of context. I myself used the algorithm largely to distinguish Muslim from non-Muslim names in UP, Delhi, Gujarat, and other North Indian states, and it works fairly well for this purpose. On first look, percentages of smaller religious minorities (Parsi, Buddhist especially) don't look reasonable to me, though - the n-gram part of the algorithm in particular might lead to an overestimation of these. If you want to use any other religious categories than Muslim/non-Muslim and/or data outside the core Hindu belt, you **need** to do your own accuracy testing, **and** read my Field Methods paper as well as the various blog posts on the matter.
+
+This problem is particularly prominent in the case of candidate and MLA categorizations, since wrong decisions by the algorithm here cannot be balanced out through aggregation. Take extra care when using these variables! Finally: should you have access to an additional test corpus of names with known religious affiliation, please contact me - any additional robustness test is more than welcome!
+
+## Problematic integration across years
+
+The dataset uses data from various years and sources; not all of them can smoothly be integrated with each other. The Election Commission changes polling booth IDs and names once in a while and we had a delimitation exercise in 2008 with even starker impact (2007 is thus almost not integrated at all with the other years). Four main sets of ID codes stick out: 2007, 2009, 2011-13, 2014-16. As long as you only look at data within one of these four groups, you are fairly safe - but data across years had to be integrated with a fuzzy matching algorithm (thats how the id table was generated). This algorithm attempts to find the equivalent of a 2007 polling booth in a 2012 dataset based on that booth's constituency, name, number of electors, etc. Since names are sometimes given in devanagari and sometimes in latin script, and since number of electors vary as do constituencies before and after delimitation, all three indicators come with a certain degree of fuzziness: the same empirical entity might occur multiple times in the dataset (once with 2007 data and once with 2012 data) because the algorithm wasn't sure enough that both refer to the same thing - or the algorithm made a mistake and considered a polling booth in different years the same entity while it wasn't that. 
+
+I optimized the matching algorithm so that it integrates the three key data years to the maximum possible extent without producing sizeable errors (and programmed it to be cautious: rather integrate less than wrongly). The id table includes a number of control variables (merge_XY) which one could use as quality benchmarks; please contact me if you need to cross years and would be interested in using these benchmarks. Also, I did fine-tune this logic at the example of Lucknow only - and cannot guarantee similarly successful results for other parts of India. Please be extra careful when correlating variables across these three main years - the subset which overlaps might be too small and the matching be inaccurate. 
+
+The safest parts of the dataset with respect to this problem are variables with data years from 2011 onwards (i.e. the namematching variables and election results for 2012) and/or integrated through spatial matching (i.e. census data). 
+
+## Problems in spatial matching
+
+Spatial matching, finally, has one central problem: the latitude/longitude data used by the Election Commission is contains a number of inaccuracies, the extent of which tends to vary district by district (depending on which agency was used to outsource the task to, it seems). Consequently, some booths might  have been matched to the wrong taluqa and/or district polygon (which mostly affects Census data). While hard-and-fast cleaning removed the most outrageous ones, I cannot guarantee the accuracy of these data. For Lucknow and most parts of UP, they seem fine - but one never knows. You most likely need local knowledge to judge the extent of this problem.
