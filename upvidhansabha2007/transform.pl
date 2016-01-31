@@ -130,7 +130,7 @@ my $dbh = DBI->connect("dbi:SQLite:dbname=:memory:","","",{sqlite_unicode => 1})
 
 $dbh->do ("CREATE TABLE upvidhansabha2007 (id INTEGER PRIMARY KEY)");
 
-$dbh->do ("CREATE TABLE upid (id INTEGER PRIMARY KEY)");
+$dbh->do ("CREATE TABLE upid (ac_id_07)");
 
 print "Adding 2007 Assembly results\n";
 
@@ -144,7 +144,7 @@ $csv->parse($header);
 my @header=$csv->fields();
 my @realheader=();
 
-$dbh->do ("ALTER TABLE upid ADD COLUMN ac_id_07 INTEGER");
+# $dbh->do ("ALTER TABLE upid ADD COLUMN ac_id_07 INTEGER");
 $dbh->do ("ALTER TABLE upid ADD COLUMN ac_name_07 CHAR");
 $dbh->do ("ALTER TABLE upid ADD COLUMN ac_reserved_07 CHAR");
 $dbh->do ("ALTER TABLE upid ADD COLUMN booth_id_07 CHAR");

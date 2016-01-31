@@ -10,7 +10,6 @@ Fully integrated entries would have a booth_id_07, booth_id_09, booth_id_12 etc 
 
 name | description
 --- | ---
-id | unique code for each row, in case one ever needs it
 ac_id_07 | ID code of the assembly segment that booth falls in, as assigned by the Election Commission in 2007 (pre-delimitation)
 ac_name_07 | Name of that assembly segment, as assigned by the Election Commission in 2007 (pre-delimitation)
 ac_reserved_07 | Reservation status of that assembly segment, as assigned by the Election Commission in 2007 (pre-delimitation)
