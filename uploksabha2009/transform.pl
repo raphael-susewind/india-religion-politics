@@ -168,7 +168,7 @@ $dbh->do ("ALTER TABLE uploksabha2009 ADD COLUMN female_votes_percent_09 FLOAT")
 push(@realheader,'female_votes_percent_09');
 
 foreach my $header (@header) {
-    if ($header eq 'constituency_id' or $header eq 'constituency_name' or $header eq 'constituency_reserved' or $header eq 'booth_id' or $header eq 'booth_name' or $header eq 'electors' or $header eq 'turnout_male' or $header eq 'turnout_female') {next}
+    if ($header eq 'constituency_id' or $header eq 'constituency_name' or $header eq 'constituency_reserved' or $header eq 'booth_id' or $header eq 'booth_name' or $header eq 'electors' or $header eq 'turnout_male' or $header eq 'turnout_female' or $header =~ /[^A-Za-z0\-]/) {next}
     $header=~s/-/_/gs;
     my $statement="ALTER TABLE uploksabha2009 ADD COLUMN votes_".$header."_09 INTEGER";
     $dbh->do ($statement);
@@ -333,16 +333,31 @@ open (FILE, ">>uploksabha2009-a.sql");
 
 print FILE ".mode csv\n";
 print FILE ".headers on\n";
-print FILE ".once uploksabha2009.csv\n";
-print FILE "SELECT * FROM uploksabha2009;\n";
+print FILE ".once uploksabha2009-a.csv\n";
+print FILE "SELECT * FROM uploksabha2009 LIMIT 50000;\n";
+print FILE ".once uploksabha2009-b.csv\n";
+print FILE "SELECT * FROM uploksabha2009 LIMIT 50000 OFFSET 50000;\n";
+print FILE ".once uploksabha2009-c.csv\n";
+print FILE "SELECT * FROM uploksabha2009 LIMIT -1 OFFSET 100000;\n";
 
 close (FILE);
 
-open (FILE, "uploksabha2009-b.sql");
+system("split -l 40000 uploksabha2009-a.sql");
+system("mv xaa uploksabha2009-a.sql");
+system("echo 'COMMIT;' >> uploksabha2009-a.sql");
+system("echo 'BEGIN TRANSACTION;' > uploksabha2009-b.sql");
+system("cat xab >> uploksabha2009-b.sql");
+system("echo 'COMMIT;' >> uploksabha2009-b.sql");
+system("rm xab");
+system("echo 'BEGIN TRANSACTION;' > uploksabha2009-c.sql");
+system("cat xac >> uploksabha2009-c.sql");
+system("rm xac");
+
+open (FILE, "uploksabha2009-d.sql");
 my @file = <FILE>;
 close (FILE);
 
-open (FILE, ">uploksabha2009-b.sql");
+open (FILE, ">uploksabha2009-d.sql");
 
 print FILE "ALTER TABLE upid ADD COLUMN ac_id_09 INTEGER;\n";
 print FILE "ALTER TABLE upid ADD COLUMN ac_name_09 CHAR;\n";

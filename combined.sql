@@ -2,4 +2,11 @@
 .read upvidhansabha2007/upvidhansabha2007-b.sql
 .read uploksabha2009/uploksabha2009-a.sql
 .read uploksabha2009/uploksabha2009-b.sql
+.read uploksabha2009/uploksabha2009-c.sql
+.read uploksabha2009/uploksabha2009-d.sql
+.read upvidhansabha2012/upvidhansabha2012-a.sql
+.read upvidhansabha2012/upvidhansabha2012-b.sql
+.read upvidhansabha2012/upvidhansabha2012-c.sql
+.read upvidhansabha2012/upvidhansabha2012-d.sql
+.read upvidhansabha2012/upvidhansabha2012-e.sql
 .read upid/upid.sql
