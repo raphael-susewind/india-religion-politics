@@ -16,10 +16,10 @@ From 2013 to 2016, the whole dataset was located on my [personal website](https:
 
 table | description
 --- | ---
-upid | ID matching and integration table for Uttar Pradesh (see below)
-upvidhansabha2007 | Booth-level (form 20) results for the 2007 Vidhan Sabha election in Uttar Pradesh
-uploksabha2009 | Booth-level (form 20) results for the 2009 Lok Sabha election from Uttar Pradesh
-upvidhansabha2012 | Booth-level (form 20) results for the 2012 Vidhan Sabha election in Uttar Pradesh
+[upid](https://github.com/raphael-susewind/india-religion-politics/tree/master/upid) | ID matching and integration table for Uttar Pradesh (see below)
+[upvidhansabha2007](https://github.com/raphael-susewind/india-religion-politics/tree/master/upvidhansabha2007) | Booth-level (form 20) results for the 2007 Vidhan Sabha election in Uttar Pradesh
+[uploksabha2009](https://github.com/raphael-susewind/india-religion-politics/tree/master/uploksabha2009) | Booth-level (form 20) results for the 2009 Lok Sabha election from Uttar Pradesh
+[upvidhansabha2012](https://github.com/raphael-susewind/india-religion-politics/tree/master/upvidhansabha2012) | Booth-level (form 20) results for the 2012 Vidhan Sabha election in Uttar Pradesh
 
 If you wish to **recreate the whole database**, the easiest way would be to clone this repository in its entirety, and then run the equivalent of `cat combined.sql | sqlite3 combined.sqlite` on your system. This will automatically create a new combined.sqlite file by running all table.sql files in the correct order. You can then extract your data from one or multiple tables for further processing. 
 
