@@ -10,6 +10,7 @@ For the first official release of this dataset, I aim to import and double-check
 * Add Add candidate name, party and religion  for 2007, 2009, 2012 and 2014 in separate candidate tables
 * Add namematching data from electoral rolls for 2011, 2012, 2013, 2014 and - if available by then - 2015 and/or 2016
 * Add booth details from first page of electoral rolls (pincode, postoffice, administrative units etc)
+* Add psname2partname mapping - which "parts" (sections of electoral rolls) are covered by any given booth? Helps to identify the place better...
 * Add PC IDs and names
 * Integrate the upid rows using old code updated to cover 2014 as well
 * Add polling booth locality data for 2009, 2012 and 2014 into upid and use this for further integration
@@ -31,3 +32,4 @@ As a more distant goal - and only if I find time before the UP 2017 elections co
 * Match 2014 booth IDs to Census 2001 and Census 2011 village / ward IDs
 * Merge with the whole administrative hierarchy up to district level
 * If copyright permits, match in MOSPI data as well as village-level Census data and/or PCAs on higher administrative units
+* Add namematched BPL data (which is tied in with admin boundaries)
