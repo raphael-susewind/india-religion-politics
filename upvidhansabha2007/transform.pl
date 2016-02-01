@@ -330,7 +330,7 @@ open (FILE, ">>upvidhansabha2007-a.sql");
 
 print FILE ".mode csv\n";
 print FILE ".headers on\n";
-print FILE ".once upvidhansabha2007.csv\n";
+print FILE ".once upvidhansabha2007/upvidhansabha2007.csv\n";
 print FILE "SELECT * FROM upvidhansabha2007;\n";
 
 close (FILE);

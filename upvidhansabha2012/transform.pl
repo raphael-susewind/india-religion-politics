@@ -590,11 +590,11 @@ open (FILE, ">>upvidhansabha2012-a.sql");
 
 print FILE ".mode csv\n";
 print FILE ".headers on\n";
-print FILE ".once upvidhansabha2012-a.csv\n";
+print FILE ".once upvidhansabha2012/upvidhansabha2012-a.csv\n";
 print FILE "SELECT * FROM upvidhansabha2012 LIMIT 40000;\n";
-print FILE ".once upvidhansabha2012-b.csv\n";
+print FILE ".once upvidhansabha2012/upvidhansabha2012-b.csv\n";
 print FILE "SELECT * FROM upvidhansabha2012 LIMIT 40000 OFFSET 40000;\n";
-print FILE ".once upvidhansabha2012-c.csv\n";
+print FILE ".once upvidhansabha2012/upvidhansabha2012-c.csv\n";
 print FILE "SELECT * FROM upvidhansabha2012 LIMIT -1 OFFSET 80000;\n";
 
 close (FILE);

@@ -333,11 +333,11 @@ open (FILE, ">>uploksabha2009-a.sql");
 
 print FILE ".mode csv\n";
 print FILE ".headers on\n";
-print FILE ".once uploksabha2009-a.csv\n";
+print FILE ".once uploksabha2009/uploksabha2009-a.csv\n";
 print FILE "SELECT * FROM uploksabha2009 LIMIT 50000;\n";
-print FILE ".once uploksabha2009-b.csv\n";
+print FILE ".once uploksabha2009/uploksabha2009-b.csv\n";
 print FILE "SELECT * FROM uploksabha2009 LIMIT 50000 OFFSET 50000;\n";
-print FILE ".once uploksabha2009-c.csv\n";
+print FILE ".once uploksabha2009/uploksabha2009-c.csv\n";
 print FILE "SELECT * FROM uploksabha2009 LIMIT -1 OFFSET 100000;\n";
 
 close (FILE);

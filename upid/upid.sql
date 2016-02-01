@@ -1,4 +1,4 @@
 .mode csv
 .headers on
-.once upid.csv
+.once upid/upid.csv
 SELECT * FROM upid;
