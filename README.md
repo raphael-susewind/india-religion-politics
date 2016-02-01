@@ -35,9 +35,7 @@ Another useful source that complements this data are the **GIS shapefiles** for 
 
 > Susewind, R. (2014). [GIS shapefiles for India's parliamentary and assembly constituencies including polling booth localities](http://dx.doi.org/10.4119/unibi/2674065). Published under a CC-BY-NC-SA 4.0 license.
 
-The dataset in its entirety is **licensed** under an [ODC Open Database license](http://www.opendatacommons.org/licenses/odbl/). This allows you to download, copy, use and redistribute it, as long as you attribute correctly, abstrain from technical methods of copy protection, and most importantely make any additions and modifications publicly available on equal terms (preferably on this very repository). A number of tables in this dataset come with their own legal baggage, which is mentioned and explained further in their respective README.md and LICENSE.md files. Also, any code used for crawling and compilation is subject to a [CC-BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) license. 
-
-In an academic context, I suggest you attribute using this reference:
+The dataset in its entirety is **licensed** under an [ODC Open Database license](http://www.opendatacommons.org/licenses/odbl/). This allows you to download, copy, use and redistribute it, as long as you attribute correctly, abstrain from technical methods of copy protection, and most importantely make any additions and modifications publicly available on equal terms (preferably on this very repository). A number of tables in this dataset come with their own legal baggage, which is mentioned and explained further in their respective README.md and LICENSE.md files. Code used for crawling and compilation is subject to a [CC-BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) license. In an academic context, I suggest you attribute using this reference:
 
 > Susewind, R. (2016). Data on religion and politics in India. Published under an ODbL 1.0 license. https://data.raphael-susewind.de.
 
