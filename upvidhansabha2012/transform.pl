@@ -388,7 +388,7 @@ my $dbh = DBI->connect("dbi:SQLite:dbname=:memory:","","",{sqlite_unicode => 1})
 
 $dbh->do ("CREATE TABLE upvidhansabha2012 (id INTEGER PRIMARY KEY)");
 
-$dbh->do ("CREATE TABLE upid (ac_id_12 INTEGER)");
+$dbh->do ("CREATE TABLE upid (ac_id_09 INTEGER)");
 
 print "Adding 2012 Assembly results\n";
 
@@ -402,14 +402,14 @@ $csv->parse($header);
 my @header=$csv->fields();
 my @realheader=();
 
-# $dbh->do ("ALTER TABLE upid ADD COLUMN ac_id_12 INTEGER");
+# $dbh->do ("ALTER TABLE upid ADD COLUMN ac_id_09 INTEGER");
 $dbh->do ("ALTER TABLE upid ADD COLUMN ac_name_12 CHAR");
 $dbh->do ("ALTER TABLE upid ADD COLUMN ac_reserved_12 CHAR");
 $dbh->do ("ALTER TABLE upid ADD COLUMN booth_id_12 CHAR");
 $dbh->do ("ALTER TABLE upid ADD COLUMN station_name_12 CHAR");
 
-$dbh->do ("ALTER TABLE upvidhansabha2012 ADD COLUMN ac_id_12 INTEGER");
-push(@realheader,'ac_id_12');
+$dbh->do ("ALTER TABLE upvidhansabha2012 ADD COLUMN ac_id_09 INTEGER");
+push(@realheader,'ac_id_09');
 $dbh->do ("ALTER TABLE upvidhansabha2012 ADD COLUMN booth_id_12 CHAR");
 push(@realheader,'booth_id_12');
 $dbh->do ("ALTER TABLE upvidhansabha2012 ADD COLUMN electors_12 INTEGER");
@@ -442,7 +442,7 @@ $dbh->commit;
 # Fill table with 2012 results
 #
 
-$dbh->do ("CREATE INDEX ac_booth_id_12 ON upvidhansabha2012 (ac_id_12, booth_id_12)");
+$dbh->do ("CREATE INDEX ac_booth_id_12 ON upvidhansabha2012 (ac_id_09, booth_id_12)");
 
 $dbh->begin_work;
 
@@ -501,7 +501,7 @@ foreach my $line (@tempcsv) {
    }
     
     $booth_id=~s/\D//gs; # this is to integrate polling booths spread across several rolls (110 and 110v etc)
-    my $sth = $dbh->prepare("SELECT * FROM upvidhansabha2012 WHERE ac_id_12 = ? AND booth_id_12 = ?");
+    my $sth = $dbh->prepare("SELECT * FROM upvidhansabha2012 WHERE ac_id_09 = ? AND booth_id_12 = ?");
     $sth->execute($constituency_id, $booth_id);
     my $found=undef;
     while (my $row=$sth->fetchrow_hashref) {
@@ -509,7 +509,7 @@ foreach my $line (@tempcsv) {
 	my $i=0;
 	my $updateline = 'UPDATE upvidhansabha2012 SET '; my @updates = ();
 	foreach my $header (@realheader) {
-	    if ($header eq 'ac_id_12' or $header eq 'ac_name_12' or $header eq 'ac_reserved_12' or $header eq 'booth_id_12' or $header eq 'station_name_12') {next}
+	    if ($header eq 'ac_id_09' or $header eq 'ac_name_12' or $header eq 'ac_reserved_12' or $header eq 'booth_id_12' or $header eq 'station_name_12') {next}
 	    elsif ($header eq 'electors_12') {$updateline .=  " electors_12 = ?"; push(@updates, $electors + $row->{electors_12});next}
 	    elsif ($header eq 'turnout_12') {$updateline .=  " , turnout_12 = ?"; push(@updates, $turnout + $row->{turnout_12});next}
 	    elsif ($header eq 'turnout_percent_12' && ($row->{electors_12} > 0 || $electors > 0)) {$updateline .=  " , turnout_percent_12 = ?"; push(@updates, int(($turnout + $row->{turnout_12})/($electors + $row->{electors_12})*10000)/100);next}
@@ -520,14 +520,14 @@ foreach my $line (@tempcsv) {
 	    elsif (($row->{turnout_12} > 0 || $turnout > 0) and ($add[$i] + $row->{$header}) > 0) {$updateline .= " , $header = ?"; push(@updates, int(($add[$i]*$turnout/100 + $row->{$header}*$row->{turnout_12}/100)/($turnout + $row->{turnout_12})*10000)/100);}
 	    $i++;
 	}
-	$updateline .= ' WHERE ac_id_12 = ? AND booth_id_12 = ?';
-	push (@updates, $row->{ac_id_12}); push(@updates, $row->{booth_id_12});
+	$updateline .= ' WHERE ac_id_09 = ? AND booth_id_12 = ?';
+	push (@updates, $row->{ac_id_09}); push(@updates, $row->{booth_id_12});
 	$dbh->do ($updateline,undef,@updates);
     }
 
     if ($found != 1) {$dbh->do ("INSERT INTO upvidhansabha2012 (".join(',',@realheader).") VALUES (".join(',',('?') x scalar(@realheader)).")",undef, $constituency_id, $booth_id, $electors, $turnout, $turnout_percent, $male_voters, $female_voters, $female_voters_percent, @add);}
     
-    if ($found != 1) {$dbh->do ("INSERT INTO upid (ac_id_12, ac_name_12, ac_reserved_12, booth_id_12, station_name_12) VALUES (?,?,?,?,?)",undef, $constituency_id, $constituency_name, $constituency_reserved, $booth_id, $station_name);}
+    if ($found != 1) {$dbh->do ("INSERT INTO upid (ac_id_09, ac_name_12, ac_reserved_12, booth_id_12, station_name_12) VALUES (?,?,?,?,?)",undef, $constituency_id, $constituency_name, $constituency_reserved, $booth_id, $station_name);}
 
 }
 
@@ -539,23 +539,23 @@ $dbh->commit;
 
 $dbh->do ("ALTER TABLE upid ADD COLUMN station_id_12 INTEGER");
 
-$dbh->do ("CREATE INDEX ac_id_12 ON upid (ac_id_12)");
+$dbh->do ("CREATE INDEX ac_id_09 ON upid (ac_id_09)");
 $dbh->do ("CREATE INDEX booth_id_12 ON upid (booth_id_12)");
 
-my $sth = $dbh->prepare("SELECT ac_id_12 FROM upid WHERE ac_id_12 IS NOT NULL GROUP BY ac_id_12");
+my $sth = $dbh->prepare("SELECT ac_id_09 FROM upid WHERE ac_id_09 IS NOT NULL GROUP BY ac_id_09");
 $sth->execute();
 my $count=0;
 my %result;
 while (my $row=$sth->fetchrow_hashref) {
     my $tempold='';
-    my $sth2 = $dbh->prepare("SELECT station_name_12 FROM upid WHERE ac_id_12 = ?");
-    $sth2->execute($row->{ac_id_12});
+    my $sth2 = $dbh->prepare("SELECT station_name_12 FROM upid WHERE ac_id_09 = ?");
+    $sth2->execute($row->{ac_id_09});
     while (my $row2=$sth2->fetchrow_hashref) {
 	my $temp=$row2->{station_name_12};
 	$temp=~s/\d//gs;
 	next if ($temp eq $tempold);
 	$tempold = $temp;
-	$result{$row->{ac_id_12}.$temp}=$count;
+	$result{$row->{ac_id_09}.$temp}=$count;
 	$count++;
     }
 }
@@ -563,12 +563,12 @@ $sth->finish ();
 
 $dbh->begin_work;
 
-my $sth = $dbh->prepare("SELECT * FROM upid WHERE ac_id_12 IS NOT NULL");
+my $sth = $dbh->prepare("SELECT * FROM upid WHERE ac_id_09 IS NOT NULL");
 $sth->execute();
 while (my $row=$sth->fetchrow_hashref) {
     my $temp=$row->{station_name_12};
     $temp=~s/\d//gs;
-    $dbh->do ("UPDATE upid SET station_id_12 = ? WHERE ac_id_12 = ? AND booth_id_12 = ?", undef, $result{$row->{ac_id_12}.$temp}, $row->{ac_id_12}, $row->{booth_id_12});
+    $dbh->do ("UPDATE upid SET station_id_12 = ? WHERE ac_id_09 = ? AND booth_id_12 = ?", undef, $result{$row->{ac_id_09}.$temp}, $row->{ac_id_09}, $row->{booth_id_12});
 }
 $sth->finish ();
 
@@ -622,7 +622,7 @@ close (FILE);
 
 open (FILE, ">upvidhansabha2012-e.sql");
 
-print FILE "ALTER TABLE upid ADD COLUMN ac_id_12 INTEGER;\n";
+# print FILE "ALTER TABLE upid ADD COLUMN ac_id_09 INTEGER;\n";
 print FILE "ALTER TABLE upid ADD COLUMN ac_name_12 CHAR;\n";
 print FILE "ALTER TABLE upid ADD COLUMN ac_reserved_12 CHAR;\n";
 print FILE "ALTER TABLE upid ADD COLUMN booth_id_12 CHAR;\n";

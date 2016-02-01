@@ -1,6 +1,6 @@
 # Data on religion and politics in India
 
-This repository provides highly localized statistics on religion and politics in India under an open license, focussing largely on North Indian states, and especially on Uttar Pradesh. 
+This repository provides highly localized statistics on religion and politics in India under an open license, focussing largely on North Indian states. I aim to cover Uttar Pradesh as comprehensively as possible, and the rest of India during (select) general elections (see [roadmap](https://github.com/raphael-susewind/india-religion-politics/tree/master/ROADMAP.md)).
 
 Fortunately, recent transparency initiatives by the Election Commission of India in general and the Chief Electoral Officer of UP in particular now allow researchers to shift the central unit of quantitative political analyses from the constituency level to that of polling booths, stations, and villages (earlier, such data had to be interpolated or estimated). Often, this data is not very user-friendly, though (think garbled, scanned PDFs). The purpose of this repository is to curate this data in a more accessible format and to share the scraping and cleanup code for reference. This official data is then supplemented with estimates of religious demography based on the religious connotations of electors' names in the voter lists (see below).
  
@@ -29,7 +29,7 @@ One particularly important set of tables are the various "id" ones - they map th
 
 The estimates of **religious demography** use an algorith which is also on [GitHub](https://github.com/raphael-susewind/name2community/tree/ngram) and described more fully in the following article of mine (upscaling was generously sponsored by the [Oxford Advanced Research Computing unit](http://arc.ox.ac.uk)):
 
-> Susewind, Raphael (2015). [What's in a name? Probabilistic inference of religious community from South Asian names](http://dx.doi.org/10.1177/1525822X14564275). Field Methods 27(4), 319-332. 
+> Susewind, R. (2015). [What's in a name? Probabilistic inference of religious community from South Asian names](http://dx.doi.org/10.1177/1525822X14564275). Field Methods 27(4), 319-332. 
 
 Another useful source that complements this data are the **GIS shapefiles** for polling booths, stations, assembly segments and parliamentary constituencies which I published here (and which use the same ID codes):
 

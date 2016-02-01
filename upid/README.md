@@ -16,13 +16,12 @@ ac_reserved_07 | Reservation status of that assembly segment, as assigned by the
 booth_id_07 | ID code of the polling booth, as assigned by the Election Commission in 2007 (pre-delimitation)
 station_id_07 | ID code of the polling station, i.e. the physical unit housing this polling booth (note that this is a concept not used by the Election Commission, but introduced by me - basically all polling booths with subsequent ID codes and roughly similar names are considered to fall within one station)
 station_name_07 | Name of the polling station, i.e. the physical unit housing this polling booth (cleaned up to be the same across all booths within this station)
-ac_id_09 | ID code of the assembly segment that booth falls in, as assigned by the Election Commission in 2009
+ac_id_09 | ID code of the assembly segment that booth falls in, as assigned by the Election Commission in 2009 (post-delimitation) - this ID code stays the same for subsequent elections, even though the assembly segments' names might vary
 ac_name_09 | Name of that assembly segment, as assigned by the Election Commission in 2009
 ac_reserved_09 | Reservation status of that assembly segment, as assigned by the Election Commission in 2009
 booth_id_09 | ID code of the polling booth, as assigned by the Election Commission in 2009
 station_id_09 | ID code of the polling station, i.e. the physical unit housing this polling booth (note that this is a concept not used by the Election Commission, but introduced by me - basically all polling booths with subsequent ID codes and roughly similar names are considered to fall within one station)
 station_name_09 | Name of the polling station, i.e. the physical unit housing this polling booth (cleaned up to be the same across all booths within this station)
-ac_id_12 | ID code of the assembly segment that booth falls in, as assigned by the Election Commission in 2012
 ac_name_12 | Name of that assembly segment, as assigned by the Election Commission in 2012
 ac_reserved_12 | Reservation status of that assembly segment, as assigned by the Election Commission in 2012
 booth_id_12 | ID code of the polling booth, as assigned by the Election Commission in 2012
