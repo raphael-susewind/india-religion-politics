@@ -9,7 +9,7 @@ This table contains booth-level (form 20) results for the 2012 Vidhan Sabha elec
 name | description
 --- | ---
 id | unique code for each row, in case one ever needs it
-ac_id_12 | ID code of the assembly segment assigned by the Election Commission
+ac_id_09 | ID code of the assembly segment assigned by the Election Commission (identical with all other post-delimitation codes, hence the _09)
 booth_id_12 | ID code of the polling booth assigned by the Election Commission (together with ac_id_12, this should suffice for matching with other tables)
 electors_12 | Number of registered electors
 turnout_12 | Number of actual voters
@@ -28,6 +28,6 @@ The data came in excel files, which I manually copy-and-pasted into results.csv 
 
 ## License
 
-While the database in its entirety is subject to an [ODC Open Database License](http://opendatacommons.org/licenses/odbl/), as explained in the main [https://github.com/raphael-susewind/india-religion-politics/blob/master/README.md](README) and [https://github.com/raphael-susewind/india-religion-politics/blob/master/LICENSE.md](LICENSE) files, the content of this specific table is factual data, and as such only subject to a simple [ODC Database Contents License](http://opendatacommons.org/licenses/dbcl/).
+While the database in its entirety is subject to an [ODC Open Database License](http://opendatacommons.org/licenses/odbl/), as explained in the main [README](https://github.com/raphael-susewind/india-religion-politics/blob/master/README.md) and [LICENSE](https://github.com/raphael-susewind/india-religion-politics/blob/master/LICENSE.md) files, the content of this specific table is factual data, and as such only subject to a simple [ODC Database Contents License](http://opendatacommons.org/licenses/dbcl/).
 
 Code used for crawling and compilation is subject to a [CC-BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) license.
