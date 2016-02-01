@@ -28,3 +28,8 @@ The data came in excel files, which I manually copy-and-pasted into results.csv 
 
 Also, assembly segment 170 (part of Lucknow) was manually adjusted so as to reflect 2012 polling booth names - the original was in English, which was not very helpful since all other assembly segments were in Hindi...
 
+## License
+
+While the database in its entirety is subject to an [ODC Open Database License](http://opendatacommons.org/licenses/odbl/), as explained in the main [https://github.com/raphael-susewind/india-religion-politics/blob/master/README.md](README) and [https://github.com/raphael-susewind/india-religion-politics/blob/master/LICENSE.md](LICENSE) files, the content of this specific table is factual data, and as such only subject to a simple [ODC Database Contents License](http://opendatacommons.org/licenses/dbcl/).
+
+Code used for crawling and compilation is subject to a [CC-BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) license.

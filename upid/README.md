@@ -32,3 +32,11 @@ station_name_12 | Name of the polling station, i.e. the physical unit housing th
 ## Processing
 
 This table is generated using calculate.pl on an otherwise complete dataset SQLite file - the output of this script is then used to alter the original (and not very useful, because not integrated) upid table in that very dataset. In other words: whenever any changes or additions happen to the dataset that concerns ID matching and integration, this script has to be run afterwards, and its output upid.sql incorporated into the table. If you are just downloading the whole dataset, though, this comes with the current version of upid.sql, which is automatically run at the right place by combined.sql. So you should be fine...
+
+## License
+
+While the database in its entirety is subject to an [ODC Open Database License](http://opendatacommons.org/licenses/odbl/), as explained in the main [https://github.com/raphael-susewind/india-religion-politics/blob/master/README.md](README) and [https://github.com/raphael-susewind/india-religion-politics/blob/master/LICENSE.md](LICENSE) files, the content of this specific table is factual data, and as such only subject to a simple [ODC Database Contents License](http://opendatacommons.org/licenses/dbcl/).
+
+What this means in the case of ID tables such as this one is basically: the names of electoral precincts and the like can be used without restrictions, but if you rely on the cross-year and cross-ID matching that this table is meant to facilitate, you are bound by the ODbL attribution and share alike provisions.
+
+Code used for crawling and compilation is subject to a [CC-BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) license.

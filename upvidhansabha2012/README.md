@@ -25,3 +25,9 @@ votes_*_percent_12 | votes_*_12 divided by turnout_12
 Originally, this data was crawled using download.pl on April 26, 2013 from http://ceouttarpradesh.nic.in/Form20.aspx.
 
 The data came in excel files, which I manually copy-and-pasted into results.csv since the format differed too much for any automated solution. This file was then cleaned up and an SQL dump prepared through transform.pl for integration into the main database
+
+## License
+
+While the database in its entirety is subject to an [ODC Open Database License](http://opendatacommons.org/licenses/odbl/), as explained in the main [https://github.com/raphael-susewind/india-religion-politics/blob/master/README.md](README) and [https://github.com/raphael-susewind/india-religion-politics/blob/master/LICENSE.md](LICENSE) files, the content of this specific table is factual data, and as such only subject to a simple [ODC Database Contents License](http://opendatacommons.org/licenses/dbcl/).
+
+Code used for crawling and compilation is subject to a [CC-BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) license.
