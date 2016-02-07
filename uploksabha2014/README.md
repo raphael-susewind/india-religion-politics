@@ -6,13 +6,11 @@ This table contains booth-level (form 20) results for the 2014 Lok Sabha electio
 
 ## Variables
 
-The main table
-
 name | description
 --- | ---
 id | unique code for each row, in case one ever needs it
 ac_id_09 | ID code of the assembly segment assigned by the Election Commission (identical with all other post-delimitation codes, hence the _09)
-booth_id_14 | ID code of the polling booth assigned by the Election Commission (together with ac_id_14, this should suffice for matching with other tables)
+booth_id_14 | ID code of the polling booth assigned by the Election Commission (together with ac_id_09, this should suffice for matching with other tables)
 electors_14 | Number of registered electors
 turnout_14 | Number of valid votes
 turnout_percent_14 | turnout_14 divided by electors_14
