@@ -727,12 +727,8 @@ open (FILE, ">>uploksabha2014-a.sql");
 
 print FILE ".mode csv\n";
 print FILE ".headers on\n";
-print FILE ".once uploksabha2014/uploksabha2014-a.csv\n";
-print FILE "SELECT * FROM uploksabha2014 LIMIT 50000;\n";
-print FILE ".once uploksabha2014/uploksabha2014-b.csv\n";
-print FILE "SELECT * FROM uploksabha2014 LIMIT 50000 OFFSET 50000;\n";
-print FILE ".once uploksabha2014/uploksabha2014-c.csv\n";
-print FILE "SELECT * FROM uploksabha2014 LIMIT -1 OFFSET 100000;\n";
+print FILE ".once uploksabha2014/uploksabha2014.csv\n";
+print FILE "SELECT * FROM uploksabha2014;\n";
 
 close (FILE);
 
