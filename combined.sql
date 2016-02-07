@@ -9,4 +9,8 @@
 .read upvidhansabha2012/upvidhansabha2012-c.sql
 .read upvidhansabha2012/upvidhansabha2012-d.sql
 .read upvidhansabha2012/upvidhansabha2012-e.sql
+.read uploksabha2014/uploksabha2014-a.sql
+.read uploksabha2014/uploksabha2014-b.sql
+.read uploksabha2014/uploksabha2014-c.sql
+.read uploksabha2014/uploksabha2014-d.sql
 .read upid/upid.sql

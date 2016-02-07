@@ -539,7 +539,7 @@ $dbh->commit;
 
 $dbh->do ("ALTER TABLE upid ADD COLUMN station_id_12 INTEGER");
 
-$dbh->do ("CREATE INDEX ac_id_09 ON upid (ac_id_09)");
+# $dbh->do ("CREATE INDEX ac_id_09 ON upid (ac_id_09)");
 $dbh->do ("CREATE INDEX booth_id_12 ON upid (booth_id_12)");
 
 my $sth = $dbh->prepare("SELECT ac_id_09 FROM upid WHERE ac_id_09 IS NOT NULL GROUP BY ac_id_09");
@@ -584,7 +584,6 @@ $dbh->sqlite_backup_to_file("temp.sqlite");
 
 system("sqlite3 temp.sqlite '.dump upvidhansabha2012' > upvidhansabha2012-a.sql");
 
-system("rm -f temp.sqlite");
 
 open (FILE, ">>upvidhansabha2012-a.sql");
 
@@ -637,3 +636,5 @@ foreach my $line (@file) {
 }
 
 close (FILE);
+
+system("rm -f temp.sqlite");

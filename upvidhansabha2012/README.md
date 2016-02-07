@@ -10,7 +10,7 @@ name | description
 --- | ---
 id | unique code for each row, in case one ever needs it
 ac_id_09 | ID code of the assembly segment assigned by the Election Commission (identical with all other post-delimitation codes, hence the _09)
-booth_id_12 | ID code of the polling booth assigned by the Election Commission (together with ac_id_12, this should suffice for matching with other tables)
+booth_id_12 | ID code of the polling booth assigned by the Election Commission (together with ac_id_09, this should suffice for matching with other tables)
 electors_12 | Number of registered electors
 turnout_12 | Number of actual voters
 turnout_percent_12 | turnout_12 divided by electors_12
