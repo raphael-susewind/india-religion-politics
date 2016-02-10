@@ -16,6 +16,8 @@ ac_reserved_07 | Reservation status of that assembly segment, as assigned by the
 booth_id_07 | ID code of the polling booth, as assigned by the Election Commission in 2007 (pre-delimitation)
 station_id_07 | ID code of the polling station, i.e. the physical unit housing this polling booth (note that this is a concept not used by the Election Commission, but introduced by me - basically all polling booths with subsequent ID codes and roughly similar names are considered to fall within one station)
 station_name_07 | Name of the polling station, i.e. the physical unit housing this polling booth (cleaned up to be the same across all booths within this station)
+pc_id_09 | ID code of the parliamentary constituency that booth falls in, as assigned by the Election Commission in 2009 (post-delimitation) - this ID code stays the same for subsequent elections, even though the assembly segments' names might vary
+pc_name_09 | Name of that parliamentary constituency, as assigned by the Election Commission in 2009
 ac_id_09 | ID code of the assembly segment that booth falls in, as assigned by the Election Commission in 2009 (post-delimitation) - this ID code stays the same for subsequent elections, even though the assembly segments' names might vary
 ac_name_09 | Name of that assembly segment, as assigned by the Election Commission in 2009
 ac_reserved_09 | Reservation status of that assembly segment, as assigned by the Election Commission in 2009
@@ -46,7 +48,11 @@ pincode_11 | Pincode of this booth as identically listed on the cover sheet of t
 
 ## Processing
 
-The original entries for this table stem from the various processing scripts of other tables. They are then compressed using calculate.pl on an otherwise complete dataset SQLite file. In other words: whenever any changes or additions happen to the dataset that concerns ID matching and integration, this script has to be run afterwards, and its output upid.sql incorporated into the table. If you are just downloading the whole dataset, though, this comes with the current version of upid.sql, which is automatically run at the right place by combined.sql. So you should be fine...
+The original entries for this table stem mostly from the various processing scripts of other tables. They are then compressed using calculate.pl on an otherwise complete dataset SQLite file. In other words: whenever any changes or additions happen to the dataset that concerns ID matching and integration, this script has to be run afterwards, and its output upid.sql incorporated into the table. If you are just downloading the whole dataset, though, this comes with the current version of upid.sql, which is automatically run at the right place by combined.sql. So you should be fine...
+
+A few things were added directly in here, though. These are:
+
+* [actopc](https://github.com/raphael-susewind/india-religion-politics/tree/master/upid/actopc), used to map assembly segments to parliamentary constituencies, derived from http://eci.nic.in/eci_main/archiveofge2009/Stats/VOLIII/VolIII_DetailsOfAssemblySegmentsOfPC.pdf (original download on May 14, 2014) - this gave us pc_id_09 and pc_name_09
 
 ## License
 
