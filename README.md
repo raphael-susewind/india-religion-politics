@@ -14,6 +14,10 @@ table | description
 [uploksabha2009](https://github.com/raphael-susewind/india-religion-politics/tree/master/uploksabha2009) | Booth-level (form 20) results for the 2009 Lok Sabha election from Uttar Pradesh
 [upvidhansabha2012](https://github.com/raphael-susewind/india-religion-politics/tree/master/upvidhansabha2012) | Booth-level (form 20) results for the 2012 Vidhan Sabha election in Uttar Pradesh
 [uploksabha2014](https://github.com/raphael-susewind/india-religion-politics/tree/master/uploksabha2014) | Booth-level (form 20) results for the 2014 Lok Sabha election from Uttar Pradesh
+[uprolls2011](https://github.com/raphael-susewind/india-religion-politics/tree/master/uprolls2011) | Booth-level estimates of religious demography based on the connotations of electors' names in the electoral rolls of 2011 from Uttar Pradesh
+[uprolls2012](https://github.com/raphael-susewind/india-religion-politics/tree/master/uprolls2012) | Booth-level estimates of religious demography based on the connotations of electors' names in the electoral rolls of 2012 from Uttar Pradesh
+[uprolls2013](https://github.com/raphael-susewind/india-religion-politics/tree/master/uprolls2013) | Booth-level estimates of religious demography based on the connotations of electors' names in the electoral rolls of 2013 from Uttar Pradesh
+[uprolls2014](https://github.com/raphael-susewind/india-religion-politics/tree/master/uprolls2014) | Booth-level estimates of religious demography based on the connotations of electors' names in the electoral rolls of 2014 from Uttar Pradesh
 
 
 If you wish to **recreate the whole database**, the easiest way would be to clone this repository in its entirety, and then run the equivalent of `cat combined.sql | sqlite3 combined.sqlite` on your system. This will automatically create a new combined.sqlite file by running all table.sql files in the correct order. You can then extract your data from one or multiple tables for further processing using standard SQL commands. 
