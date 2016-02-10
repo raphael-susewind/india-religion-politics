@@ -6,9 +6,8 @@ This roadmap is a reminder to myself what I aim to achieve over the next couple 
 
 For the first official release of this dataset, I aim to import and double-check all Uttar Pradesh data that was formerly hosted on my personal website. Specifically, these tasks are still open:
 
-* Add candidate name, party and religion for 2007, 2009, 2012 and 2014 in separate candidate tables
-* Add namematching data from electoral rolls for 2011, 2012, 2013, 2014 and - if available by then - 2015 and/or 2016 into separate tables
-* Add booth details from first page of electoral rolls (pincode, postoffice, administrative units etc) for 2011-13 and 2014 (if the latter has run properly) into upid
+* Add actual data from rolls in 2012 and 2013 and double check lastupdate for both
+* Add frontpage stuff from rolls in 2014 (which might be slightly different from 2011-13)
 * Add psname2partname mapping for 2014 into upid
 * Add polling booth locality data for 2009, 2012 and 2014 into upid
 * Add MODIS 500m rural/urban classification for booth localities to upid
@@ -21,6 +20,7 @@ Once UP is dealt with properly, I will expand to all-India level for the 2014 ge
 
 * Add 2014 Lok Sabha booth level results for more states (to the extent that it is halfway easily accessible)
 * Add namematching data from electoral rolls for 2014 across more states (about half of them done already)
+* Add candidate name, party and likely religion for 2014 in separate candidate tables
 * Add polling booth locality data for 2014 across India (from my GIS dataset, practically done)
 * Add MODIS 500m rural/urban classification for booth localities 
 

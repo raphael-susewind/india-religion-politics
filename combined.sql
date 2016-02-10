@@ -13,4 +13,10 @@
 .read uploksabha2014/uploksabha2014-b.sql
 .read uploksabha2014/uploksabha2014-c.sql
 .read uploksabha2014/uploksabha2014-d.sql
+.read uprolls2011/uprolls2011-a.sql
+.read uprolls2011/uprolls2011-b.sql
+.read uprolls2012/uprolls2012.sql
+.read uprolls2013/uprolls2013.sql
+.read uprolls2014/uprolls2014-a.sql
+.read uprolls2014/uprolls2014-b.sql
 .read upid/upid.sql
