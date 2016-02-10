@@ -7,7 +7,6 @@ This roadmap is a reminder to myself what I aim to achieve over the next couple 
 For the first official release of this dataset, I aim to import and double-check all Uttar Pradesh data that was formerly hosted on my personal website. Specifically, these tasks are still open:
 
 * Add actual data from rolls in 2012 and 2013 and double check lastupdate for both
-* Add MODIS 500m rural/urban classification for booth localities to upgis
 * Add candidate name, party and likely religion for 2007, 2012 and 2014 in separate candidate tables
 * Add psname2partname mapping for 2014 into upid
 * Add PC IDs and names to upid
