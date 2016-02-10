@@ -6,10 +6,8 @@ This roadmap is a reminder to myself what I aim to achieve over the next couple 
 
 For the first official release of this dataset, I aim to import and double-check all Uttar Pradesh data that was formerly hosted on my personal website. Specifically, these tasks are still open:
 
-* Add actual data from rolls in 2012 and 2013 and double check lastupdate for both
 * Add candidate name, party and likely religion for 2007, 2012 and 2014 in separate candidate tables
-* Add psname2partname mapping for 2014 into upid
-* Add PC IDs and names to upid
+* Add actual data from rolls in 2012 and 2013 and double check lastupdate for both
 * Add frontpage stuff from rolls in 2014 (which might be slightly different from 2011-13) into upid
 * Integrate the upid rows using old code updated to cover 2014 as well, and preferably taking into account booth details from first pages, psname2partname as well as spatial data - well actually, just rewrite the whole integration script if I am honest...
 

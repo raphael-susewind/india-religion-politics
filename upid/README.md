@@ -34,6 +34,8 @@ ac_reserved_14 | Reservation status of that assembly segment, as assigned by the
 booth_id_14 | ID code of the polling booth, as assigned by the Election Commission in 2014
 station_id_14 | ID code of the polling station, i.e. the physical unit housing this polling booth (note that this is a concept not used by the Election Commission, but introduced by me - basically all polling booths with subsequent ID codes and roughly similar names are considered to fall within one station)
 station_name_14 | Name of the polling station, i.e. the physical unit housing this polling booth (cleaned up to be the same across all booths within this station)
+booth_parts_14 | List of the constituent 'parts' (in ECI parlance) for this polling booth in 2014 - usually the streets, mohallas or villages served
+booth_name_14 | Name of the polling booth as listed in the psname2partname database (this might be different from station_name_14)
 district_11 | District into which this booth falls as identically listed on the cover sheet of the electoral rolls of 2011, 2012 and 2013
 tehsil_11 | Tehsil into which this booth falls as identically listed on the cover sheet of the electoral rolls of 2011, 2012 and 2013
 village_11 | Village into which this booth falls as identically listed on the cover sheet of the electoral rolls of 2011, 2012 and 2013 (only rural booths)
@@ -52,7 +54,8 @@ The original entries for this table stem mostly from the various processing scri
 
 A few things were added directly in here, though. These are:
 
-* [actopc](https://github.com/raphael-susewind/india-religion-politics/tree/master/upid/actopc), used to map assembly segments to parliamentary constituencies, derived from http://eci.nic.in/eci_main/archiveofge2009/Stats/VOLIII/VolIII_DetailsOfAssemblySegmentsOfPC.pdf (original download on May 14, 2014) - this gave us pc_id_09 and pc_name_09
+* actopc.pl was used to map assembly segments to parliamentary constituencies, derived from http://eci.nic.in/eci_main/archiveofge2009/Stats/VOLIII/VolIII_DetailsOfAssemblySegmentsOfPC.pdf (original download on May 14, 2014) - this gave us pc_id_09, pc_name_09 and pc_reserved_09
+* psname2partname.pl was used to map each polling station to its component 'parts', scraped from http://164.100.180.82/blosearch/bloSearching.aspx (a CEO Uttar Pradesh website; original download on April 19, 2014) - this gave us booth_parts_14 and booth_name_14
 
 ## License
 
