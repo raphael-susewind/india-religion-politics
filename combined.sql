@@ -19,5 +19,9 @@
 .read uprolls2013/uprolls2013.sql
 .read uprolls2014/uprolls2014-a.sql
 .read uprolls2014/uprolls2014-b.sql
+.read upcandidates2007/upcandidates2007.sql
+.read upcandidates2009/upcandidates2009.sql
+.read upcandidates2012/upcandidates2012.sql
+.read upcandidates2014/upcandidates2014.sql
 .read upgis/upgis.sql
 .read upid/upid.sql

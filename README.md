@@ -15,6 +15,10 @@ table | description
 [uploksabha2009](https://github.com/raphael-susewind/india-religion-politics/tree/master/uploksabha2009) | Booth-level (form 20) results for the 2009 Lok Sabha election from Uttar Pradesh
 [upvidhansabha2012](https://github.com/raphael-susewind/india-religion-politics/tree/master/upvidhansabha2012) | Booth-level (form 20) results for the 2012 Vidhan Sabha election in Uttar Pradesh
 [uploksabha2014](https://github.com/raphael-susewind/india-religion-politics/tree/master/uploksabha2014) | Booth-level (form 20) results for the 2014 Lok Sabha election from Uttar Pradesh
+[upcandidates2007](https://github.com/raphael-susewind/india-religion-politics/tree/master/upcandidates2007) | Candidates and their likely religion for the 2007 Vidhan Sabha election in Uttar Pradesh
+[upcandidates2009](https://github.com/raphael-susewind/india-religion-politics/tree/master/upcandidates2009) | Candidates and their likely religion for the 2009 Lok Sabha election from Uttar Pradesh
+[upcandidates2012](https://github.com/raphael-susewind/india-religion-politics/tree/master/upcandidates2012) | Candidates and their likely religion for the 2012 Vidhan Sabha election in Uttar Pradesh
+[upcandidates2014](https://github.com/raphael-susewind/india-religion-politics/tree/master/upcandidates2014) | Candidates and their likely religion for the 2014 Lok Sabha election from Uttar Pradesh
 [uprolls2011](https://github.com/raphael-susewind/india-religion-politics/tree/master/uprolls2011) | Booth-level estimates of religious demography for 2011 across Uttar Pradesh
 [uprolls2012](https://github.com/raphael-susewind/india-religion-politics/tree/master/uprolls2012) | Booth-level estimates of religious demography for 2012 across Uttar Pradesh
 [uprolls2013](https://github.com/raphael-susewind/india-religion-politics/tree/master/uprolls2013) | Booth-level estimates of religious demography for 2013 across Uttar Pradesh
@@ -36,8 +40,8 @@ One particularly important set of tables are the various "id" ones - they map th
 The estimates of **religious demography** use an algorith which is also on [GitHub](https://github.com/raphael-susewind/name2community/tree/ngram) and described more fully in the following article of mine (upscaling was generously sponsored by the [Oxford Advanced Research Computing unit](http://arc.ox.ac.uk)):
 
 > Susewind, R. (2015). [What's in a name? Probabilistic inference of religious community from South Asian names](http://dx.doi.org/10.1177/1525822X14564275). Field Methods 27(4), 319-332. 
-
-Another useful source that complements this data are the **GIS shapefiles** for polling booths, stations, assembly segments and parliamentary constituencies which I published here (and which use the same ID codes):
+ 
+Another useful source that complements this data are the **GIS shapefiles** for assembly segments and parliamentary constituencies which are included in the following dataset; the ID codes used therein are compatible to the *loksabha2014 tables (note that the polling booth localities as such are also directly embedded in the *gis tables, so you only need the shapefiles to map higher levels of aggregation):
 
 > Susewind, R. (2014). [GIS shapefiles for India's parliamentary and assembly constituencies including polling booth localities](http://dx.doi.org/10.4119/unibi/2674065). Published under a CC-BY-NC-SA 4.0 license.
 
