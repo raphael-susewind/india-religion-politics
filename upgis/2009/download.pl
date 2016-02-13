@@ -87,7 +87,7 @@ for ($i=1;$i<=71;$i++) { # TODO
 	    if (defined($corlong{$statidold})) {$fields[1]=$corlong{$statid}}
 #	    $fields[4]=~s/\d//gs;
 	    $fields[4]=~s/,/ /gs;
-	    $dbh->do ("INSERT INTO booths VALUES (?, ?, ?, ?, ?, ?, ?, ?)", undef, $i, $district, $fields[3], $finalname{$fields[3]}, $fields[2] , $fields[4], $fields[0], $fields[1]);
+	    $dbh->do ("INSERT INTO booths VALUES (?, ?, ?, ?, ?, ?, ?, ?)", undef, $i, $district, $fields[3], $finalname{$fields[3]}, $fields[4] , $fields[2], $fields[0], $fields[1]);
     
 	}
 #	system("rm $u");
