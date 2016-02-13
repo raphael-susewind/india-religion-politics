@@ -50,7 +50,7 @@ pincode_11 | Pincode of this booth as identically listed on the cover sheet of t
 
 ## Processing
 
-The original entries for this table stem mostly from the various processing scripts of other tables. They are then compressed using calculate.pl on an otherwise complete dataset SQLite file. In other words: whenever any changes or additions happen to the dataset that concerns ID matching and integration, this script has to be run afterwards, and its output upid.sql incorporated into the table. If you are just downloading the whole dataset, though, this comes with the current version of upid.sql, which is automatically run at the right place by combined.sql. So you should be fine...
+The original entries for this table stem mostly from the various processing scripts of other tables. They are then compressed using compress.pl on an otherwise complete dataset SQLite file. In other words: whenever any changes or additions happen to the dataset that concerns ID matching and integration, this script has to be run afterwards, and its output upid.sql incorporated into the table. If you are just downloading the whole dataset, though, this comes with the current version of upid.sql, which is automatically run at the right place by combined.sql. So you should be fine...
 
 A few things were added directly in here, though. These are:
 
