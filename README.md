@@ -25,7 +25,7 @@ table | description
 [uprolls2014](https://github.com/raphael-susewind/india-religion-politics/tree/master/uprolls2014) | Booth-level estimates of religious demography for 2014 across Uttar Pradesh
 
 
-If you wish to **recreate the whole database**, the easiest way would be to clone this repository in its entirety, and then run the equivalent of `cat combined.sql | sqlite3 combined.sqlite` on your system. This will automatically create a new combined.sqlite file by running all table.sql files in the correct order. You can then extract your data from one or multiple tables for further processing using standard SQL commands. 
+If you wish to **recreate the whole database**, the easiest way would be to clone this repository in its entirety, and then run the equivalent of `cat combined-a.sql | sqlite3 combined.sqlite` and `cat combined-b.sql | sqlite3 combined.sqlite` on your system. This will automatically create a new combined.sqlite file by running all table.sql files in the correct order. You can then extract your data from one or multiple tables for further processing using standard SQL commands. 
 
 If you wish to **add or correct stuff** in the dataset, you can either send me an informal email (see below) or, if sufficiently technically minded, create a pull request against this repository. If making corrections or merely adding more variables to an existing table, please update the respective README.md with an explanation, update table.sql with the necessary SQL code, and create a new table.csv dump (code for which should already be included in the table.sql). If adding entirely new tables, please follow this **folder structure** that applies to all tables:
 
@@ -43,11 +43,11 @@ The estimates of **religious demography** use an algorith which is also on [GitH
  
 Another useful source that complements this data are the **GIS shapefiles** for assembly segments and parliamentary constituencies which are included in the following dataset; the ID codes used therein are compatible to the *loksabha2014 tables (note that the polling booth localities as such are also directly embedded in the *gis tables, so you only need the shapefiles to map higher levels of aggregation):
 
-> Susewind, R. (2014). [GIS shapefiles for India's parliamentary and assembly constituencies including polling booth localities](http://dx.doi.org/10.4119/unibi/2674065). Published under a CC-BY-NC-SA 4.0 license.
+> Susewind, R. (2014). [GIS shapefiles for India's parliamentary and assembly constituencies including polling booth localities](http://dx.doi.org/10.4119/unibi/2674065). Published under a CC-BY-NC-SA 4.0 license. Available from http://dx.doi.org/10.4119/unibi/2674065.
 
 The dataset in its entirety is **licensed** under an [ODC Open Database license](http://www.opendatacommons.org/licenses/odbl/). This allows you to download, copy, use and redistribute it, as long as you attribute correctly, abstrain from technical methods of copy protection, and most importantely make any additions and modifications publicly available on equal terms (preferably on this very repository). A number of tables in this dataset come with their own legal baggage, which is mentioned and explained further in their respective README.md and LICENSE.md files. Code used for crawling and compilation is subject to a [CC-BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) license. In an academic context, I suggest you attribute using this reference:
 
-> Susewind, R. (2016). Data on religion and politics in India. Published under an ODbL 1.0 license. https://data.raphael-susewind.de.
+> Susewind, R. (2016). Data on religion and politics in India. Published under an ODbL 1.0 license. Available from https://github.com/raphael-susewind/india-religion-politics.
 
 So I invite all to download and use this dataset for more localized quantitative analyses of political, religious and demographic dynamics in India in the spirit of Open Data sharing. Please let me know if you find the dataset useful and alert me to errors and mistakes. I provide this dataset without any guarantee - see [troubleshooting notes](https://github.com/raphael-susewind/india-religion-politics/blob/master/TROUBLESHOOTING.md) for **known general problems** with this data, alongside the various table READMEs.
 

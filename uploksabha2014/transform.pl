@@ -8,7 +8,7 @@ use utf8;
 
 $dbh = DBI->connect("DBI:SQLite:dbname=:memory:", "","", {sqlite_unicode=>1});
 $dbh->sqlite_backup_from_file('actopc.sqlite');
-$dbh->do ("CREATE TABLE results (pc INTEGER, ac INTEGER, booth INTEGER, candidate CHAR, votes CHAR)");
+$dbh->do ("CREATE TABLE results (pc INTEGER, ac INTEGER, booth INTEGER, candidate CHAR, votes INTEGER)");
 $dbh->do ("CREATE TABLE candidates (id INTEGER PRIMARY KEY AUTOINCREMENT, pc INTEGER, rank INTEGER, name CHAR, party CHAR, shortparty CHAR)");
 
 # first read candidate list prepared by Dilip Damle
@@ -299,7 +299,7 @@ push(@idselect,'actopc.ac_name');
 $dbh->do ("ALTER TABLE upid ADD COLUMN ac_reserved_14 CHAR");
 push(@idheader,'ac_reserved_14');
 push(@idselect,'actopc.ac_reserved');
-$dbh->do ("ALTER TABLE upid ADD COLUMN booth_id_14 CHAR");
+$dbh->do ("ALTER TABLE upid ADD COLUMN booth_id_14 INTEGER");
 push(@idheader,'booth_id_14');
 push(@idselect,'results.booth');
 $dbh->do ("ALTER TABLE upid ADD COLUMN station_name_14 CHAR");
@@ -320,7 +320,7 @@ my @realselect;
 $dbh->do ("ALTER TABLE uploksabha2014 ADD COLUMN ac_id_09 INTEGER");
 push(@realheader,'ac_id_09');
 push(@realselect,'results.ac');
-$dbh->do ("ALTER TABLE uploksabha2014 ADD COLUMN booth_id_14 CHAR");
+$dbh->do ("ALTER TABLE uploksabha2014 ADD COLUMN booth_id_14 INTEGER");
 push(@realheader,'booth_id_14');
 push(@realselect,'results.booth');
 $dbh->do ("ALTER TABLE uploksabha2014 ADD COLUMN electors_14 INTEGER");
@@ -663,9 +663,9 @@ $dbh->begin_work;
 $dbh->do($realsql);
 $dbh->commit;
 
-$dbh->do ("ALTER TABLE uploksabha2014 ADD COLUMN turnout_percent_14 INTEGER");
+$dbh->do ("ALTER TABLE uploksabha2014 ADD COLUMN turnout_percent_14 FLOAT");
 $dbh->do ("UPDATE uploksabha2014 SET turnout_percent_14 = turnout_14 / electors_14");
-$dbh->do ("ALTER TABLE uploksabha2014 ADD COLUMN female_votes_percent_14 INTEGER");
+$dbh->do ("ALTER TABLE uploksabha2014 ADD COLUMN female_votes_percent_14 FLOAT");
 $dbh->do ("UPDATE uploksabha2014 SET female_votes_percent_14 = female_votes_14 / turnout_14");
 
 #
@@ -757,7 +757,7 @@ open (FILE, ">uploksabha2014-d.sql");
 
 print FILE "ALTER TABLE upid ADD COLUMN ac_name_14 CHAR;\n";
 print FILE "ALTER TABLE upid ADD COLUMN ac_reserved_14 CHAR;\n";
-print FILE "ALTER TABLE upid ADD COLUMN booth_id_14 CHAR;\n";
+print FILE "ALTER TABLE upid ADD COLUMN booth_id_14 INTEGER;\n";
 print FILE "ALTER TABLE upid ADD COLUMN station_name_14 CHAR;\n";
 print FILE "ALTER TABLE upid ADD COLUMN station_id_14 INTEGER;\n";
 

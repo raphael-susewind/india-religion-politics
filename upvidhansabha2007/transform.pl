@@ -130,7 +130,7 @@ my $dbh = DBI->connect("dbi:SQLite:dbname=:memory:","","",{sqlite_unicode => 1})
 
 $dbh->do ("CREATE TABLE upvidhansabha2007 (id INTEGER PRIMARY KEY)");
 
-$dbh->do ("CREATE TABLE upid (ac_id_07)");
+$dbh->do ("CREATE TABLE upid (ac_id_07 INTEGER)");
 
 print "Adding 2007 Assembly results\n";
 
@@ -147,12 +147,12 @@ my @realheader=();
 # $dbh->do ("ALTER TABLE upid ADD COLUMN ac_id_07 INTEGER");
 $dbh->do ("ALTER TABLE upid ADD COLUMN ac_name_07 CHAR");
 $dbh->do ("ALTER TABLE upid ADD COLUMN ac_reserved_07 CHAR");
-$dbh->do ("ALTER TABLE upid ADD COLUMN booth_id_07 CHAR");
+$dbh->do ("ALTER TABLE upid ADD COLUMN booth_id_07 INTEGER");
 $dbh->do ("ALTER TABLE upid ADD COLUMN station_name_07 CHAR");
 
 $dbh->do ("ALTER TABLE upvidhansabha2007 ADD COLUMN ac_id_07 INTEGER");
 push(@realheader,'ac_id_07');
-$dbh->do ("ALTER TABLE upvidhansabha2007 ADD COLUMN booth_id_07 CHAR");
+$dbh->do ("ALTER TABLE upvidhansabha2007 ADD COLUMN booth_id_07 INTEGER");
 push(@realheader,'booth_id_07');
 $dbh->do ("ALTER TABLE upvidhansabha2007 ADD COLUMN electors_07 INTEGER");
 push(@realheader,'electors_07');

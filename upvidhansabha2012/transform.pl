@@ -405,12 +405,12 @@ my @realheader=();
 # $dbh->do ("ALTER TABLE upid ADD COLUMN ac_id_09 INTEGER");
 $dbh->do ("ALTER TABLE upid ADD COLUMN ac_name_12 CHAR");
 $dbh->do ("ALTER TABLE upid ADD COLUMN ac_reserved_12 CHAR");
-$dbh->do ("ALTER TABLE upid ADD COLUMN booth_id_12 CHAR");
+$dbh->do ("ALTER TABLE upid ADD COLUMN booth_id_12 INTEGER");
 $dbh->do ("ALTER TABLE upid ADD COLUMN station_name_12 CHAR");
 
 $dbh->do ("ALTER TABLE upvidhansabha2012 ADD COLUMN ac_id_09 INTEGER");
 push(@realheader,'ac_id_09');
-$dbh->do ("ALTER TABLE upvidhansabha2012 ADD COLUMN booth_id_12 CHAR");
+$dbh->do ("ALTER TABLE upvidhansabha2012 ADD COLUMN booth_id_12 INTEGER");
 push(@realheader,'booth_id_12');
 $dbh->do ("ALTER TABLE upvidhansabha2012 ADD COLUMN electors_12 INTEGER");
 push(@realheader,'electors_12');
@@ -624,7 +624,7 @@ open (FILE, ">upvidhansabha2012-e.sql");
 # print FILE "ALTER TABLE upid ADD COLUMN ac_id_09 INTEGER;\n";
 print FILE "ALTER TABLE upid ADD COLUMN ac_name_12 CHAR;\n";
 print FILE "ALTER TABLE upid ADD COLUMN ac_reserved_12 CHAR;\n";
-print FILE "ALTER TABLE upid ADD COLUMN booth_id_12 CHAR;\n";
+print FILE "ALTER TABLE upid ADD COLUMN booth_id_12 INTEGER;\n";
 print FILE "ALTER TABLE upid ADD COLUMN station_name_12 CHAR;\n";
 print FILE "ALTER TABLE upid ADD COLUMN station_id_12 INTEGER;\n";
 
