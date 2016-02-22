@@ -1,18 +1,14 @@
 # Data on religion and politics in India
 
-This roadmap is a reminder to myself what I aim to achieve over the next couple of months (I am not giving firm dates here, out of experience...). I put it online just in case anyone stumbles across it and is willing / able to contribute (I particularly think of form20 results, which tend to be a major hassle to scrape)
+This roadmap is a reminder to myself what I aim to achieve for future releases (no firm timeline, though). I put it online just in case anyone stumbles across it and is willing / able to contribute (I particularly think of form20 results, which tend to be a major hassle to scrape and cleanup)
 
 ## First proper release:
 
-For the first official release of this dataset, I aim to import and double-check all Uttar Pradesh data that was formerly hosted on my personal website. Specifically, these tasks are still open:
-
-* Add actual data from rolls in 2012 and 2013 and double check lastupdate for both
-* Add frontpage stuff from rolls in 2014 into upid
-* Wait for a few weeks to see whether any bugs crop up, then make the formal release
+For the first official release of this dataset, covering Uttar Pradesh from 2007 to 2014, all data is now incorporated - I just wait for a couple of weeks before making a formal release, to see whether any conspicuous bugs crop up...
 
 ## Second proper release:
 
-Once UP is dealt with properly, I will expand to all-India level for the 2014 general elections. Namematching might not cover all states because it eats tons of resources - lets see. Anyway, this would be desirable:
+Once UP is dealt with properly, I intend to expand to all-India level for the 2014 general elections. Namematching might not cover all states because it eats tons of resources - lets see. Anyway, this would be desirable:
 
 * Add 2014 Lok Sabha booth level results for more states (to the extent that it is halfway easily accessible)
 * Add namematching data from electoral rolls for 2014 across more states (about half of them done already)
