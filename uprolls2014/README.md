@@ -25,9 +25,9 @@ female_percent_14 | Percentage of female electors among all electors
 age_*_avg_14 | Average age of electors estimated to be * (Hindu / Muslim / Christian / Sikh / Jain / Buddhist)
 age_*_stddev_14 | Standard deviation of the age distribution of electors  estimated to be * (Hindu / Muslim / Christian / Sikh / Jain / Buddhist)
 female_*_percent_14 | Percentage of female electors among electors estimated to be * (Hindu / Muslim / Christian / Sikh / Jain / Buddhist)
-revision_percent_new_14 | Percentage of electors added to this booth's rolls in 2013, against the baseline of 2012
-revision_percent_deleted_14 | Percentage of electors deleted from this booth's rolls in 2013, against the baseline of 2012
-revision_percent_modified_14 | Percentage of electors modified in this booth's rolls in 2013, against the baseline of 2012
+revision_percent_new_14 | Percentage of electors added to this booth's rolls in 2014, against the baseline of 2013
+revision_percent_deleted_14 | Percentage of electors deleted from this booth's rolls in 2014, against the baseline of 2013
+revision_percent_modified_14 | Percentage of electors modified in this booth's rolls in 2014, against the baseline of 2013
 
 ## Raw data
 
