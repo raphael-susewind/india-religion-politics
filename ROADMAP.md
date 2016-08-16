@@ -7,7 +7,7 @@ This roadmap is a reminder to myself what I aim to achieve for future releases (
 Once UP is dealt with properly, I intend to expand to all-India level for the 2014 general elections. Namematching might not cover all states because it eats tons of resources - lets see. Anyway, this would be desirable:
 
 * Add 2014 Lok Sabha booth level results for more states (to the extent that it is halfway easily accessible)
-* Add namematching data from electoral rolls for 2014 across more states (about half of them done already)
+* Add namematching data from electoral rolls for 2014 across more states (most of them done already)
 * Add polling booth locality data for 2014 across India (from my GIS dataset, practically done)
 * Add MODIS 500m rural/urban classification for booth localities (rather than current 1km ones) 
 * Add examples folder with SQL / R scripts for papers in which this data has been used
