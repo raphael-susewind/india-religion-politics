@@ -101,7 +101,7 @@ close (FILE);
 ## Note: Integration from 2011 onwards is best done using voter IDs in the electoral rolls - ie via uprolls* tables (2011-2013 IDs did not change, 2013-2014, this was first implemented)
 ## Note: So the real question is how to get from pre to post delim, and how to get from 2009 to 2011-> for this, I use this crappy old code from years back. Its a dirty hack. It works. I have not changed it since.
 
-## Since this code is terribly inefficient and takes ours to run: run only if upid-a.sql does not yet exist...
+## Since this code is terribly inefficient and takes ours to run: run only if upid-a.sqlite does not yet exist...
 
 if (!-e "upid-a.sqlite") {
 
