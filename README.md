@@ -57,4 +57,4 @@ The dataset in its entirety is **licensed** under an [ODC Open Database license]
 
 So I invite all to download and use this dataset for more localized quantitative analyses of political, religious and demographic dynamics in India in the spirit of Open Data sharing. Please let me know if you find the dataset useful and alert me to errors and mistakes. I provide this dataset without any guarantee - see [troubleshooting notes](https://github.com/raphael-susewind/india-religion-politics/blob/master/TROUBLESHOOTING.md) for **known general problems** with this data, alongside the various table READMEs.
 
-Raphael Susewind, mail@raphael-susewind.de, GPG key 10AEE42F
+Raphael Susewind, mail@raphael-susewind.de, GPG key [10AEE42F](https://keybase.io/raphaelsusewind)
