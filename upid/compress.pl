@@ -945,20 +945,28 @@ $dbh = DBI->connect("DBI:SQLite:dbname=:memory:", "","", {sqlite_unicode=>1});
 $dbh->sqlite_backup_from_file('upid-a.sqlite');
 
 open (FILE, ">upid-a.sql");
+
+print FILE "CREATE INDEX ac_booth_id_07 ON upid (ac_id_07, booth_id_07);\n";
+print FILE "CREATE INDEX ac_booth_id_09 ON upid (ac_id_09, booth_id_09);\n";
+print FILE "CREATE INDEX ac_booth_id_12 ON upid (ac_id_09, booth_id_12);\n";
+print FILE "CREATE INDEX ac_station_id_07 ON upid (ac_id_07, station_id_07);\n";
+print FILE "CREATE INDEX ac_station_id_09 ON upid (ac_id_09, station_id_09);\n";
+print FILE "CREATE INDEX ac_station_id_12 ON upid (ac_id_09, station_id_12);\n";
+
 print FILE "BEGIN TRANSACTION;\n";
 
 my $sth = $dbh->prepare("SELECT * FROM booths");
 $sth->execute();
 while (my $row=$sth->fetchrow_hashref) {
-    my $done=0;
-    if ($row->{booth_id_07} ne '' && $row->{booth_id_09} ne '') {print FILE "UPDATE upid SET booth_id_09 = ".$row->{booth_id_09}." WHERE ac_id_07 = ".$row->{ac_id_07}." AND booth_id_07 = ".$row->{booth_id_07}.";\n"; $done=1}
-    if ($row->{booth_id_07} ne '' && $row->{booth_id_12} ne '') {print FILE "UPDATE upid SET booth_id_12 = ".$row->{booth_id_12}." WHERE ac_id_07 = ".$row->{ac_id_07}." AND booth_id_07 = ".$row->{booth_id_07}.";\n"; $done=1}
-    if ($row->{booth_id_09} ne '' && $row->{booth_id_12} ne '') {print FILE "UPDATE upid SET booth_id_12 = ".$row->{booth_id_12}." WHERE ac_id_09 = ".$row->{ac_id_09}." AND booth_id_09 = ".$row->{booth_id_09}.";\n"; $done=1}
-    next if $done==1;
     my $stationname09 = $row->{station_name_09};
     my $stationname12 = $row->{station_name_12};
     $stationname09 =~ s/'//gs;
     $stationname12 =~ s/'//gs;
+    my $done=0;
+    if ($row->{booth_id_07} ne '' && $row->{booth_id_09} ne '') {print FILE "UPDATE upid SET booth_id_09 = ".$row->{booth_id_09}.", ac_id_09 = ".$row->{ac_id_09}.", ac_name_09 = '".$row->{ac_name_09}."',  ac_reserved_09 = '".$row->{ac_reserved_09}."', station_id_09 = ".$row->{station_id_09}.",  station_name_09 = '".$stationname09."' WHERE ac_id_07 = ".$row->{ac_id_07}." AND booth_id_07 = ".$row->{booth_id_07}.";\n"; $done=1}
+    if ($row->{booth_id_07} ne '' && $row->{booth_id_12} ne '') {print FILE "UPDATE upid SET booth_id_12 = ".$row->{booth_id_12}.", ac_id_09 = ".$row->{ac_id_12}.", ac_name_12 = '".$row->{ac_name_12}."',  ac_reserved_12 = '".$row->{ac_reserved_12}."', station_id_12 = ".$row->{station_id_12}.",  station_name_12 = '".$stationname12."' WHERE ac_id_07 = ".$row->{ac_id_07}." AND booth_id_07 = ".$row->{booth_id_07}.";\n"; $done=1}
+    if ($row->{booth_id_09} ne '' && $row->{booth_id_12} ne '') {print FILE "UPDATE upid SET booth_id_12 = ".$row->{booth_id_12}.", ac_id_09 = ".$row->{ac_id_12}.", ac_name_12 = '".$row->{ac_name_12}."',  ac_reserved_12 = '".$row->{ac_reserved_12}."', station_id_12 = ".$row->{station_id_12}.",  station_name_12 = '".$stationname12."' WHERE ac_id_09 = ".$row->{ac_id_09}." AND booth_id_09 = ".$row->{booth_id_09}.";\n"; $done=1}
+    next if $done==1;
     if ($row->{station_id_07} ne '' && $row->{station_id_09} ne '') {print FILE "UPDATE upid SET ac_id_09 = ".$row->{ac_id_09}.", ac_name_09 = '".$row->{ac_name_09}."',  ac_reserved_09 = '".$row->{ac_reserved_09}."', station_id_09 = ".$row->{station_id_09}.",  station_name_09 = '".$stationname09."' WHERE ac_id_07 = ".$row->{ac_id_07}." AND station_id_07 = ".$row->{station_id_07}.";\n"}
     if ($row->{station_id_07} ne '' && $row->{station_id_12} ne '') {print FILE "UPDATE upid SET ac_id_09 = ".$row->{ac_id_12}.", ac_name_12 = '".$row->{ac_name_12}."',  ac_reserved_12 = '".$row->{ac_reserved_12}."', station_id_12 = ".$row->{station_id_12}.",  station_name_12 = '".$stationname12."' WHERE ac_id_07 = ".$row->{ac_id_07}." AND station_id_07 = ".$row->{station_id_07}.";\n"}
     if ($row->{station_id_09} ne '' && $row->{station_id_12} ne '') {print FILE "UPDATE upid SET ac_id_09 = ".$row->{ac_id_12}.", ac_name_12 = '".$row->{ac_name_12}."',  ac_reserved_12 = '".$row->{ac_reserved_12}."', station_id_12 = ".$row->{station_id_12}.",  station_name_12 = '".$stationname12."' WHERE ac_id_09 = ".$row->{ac_id_09}." AND station_id_09 = ".$row->{station_id_09}.";\n"}
