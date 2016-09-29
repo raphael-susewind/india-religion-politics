@@ -1,6 +1,6 @@
 # Data on religion and politics in India
 
-This repository provides highly localized statistics on religion and politics in India under an open license. I aim to cover Uttar Pradesh as comprehensively as possible, and the rest of India during general elections (see [roadmap](https://github.com/raphael-susewind/india-religion-politics/tree/master/ROADMAP.md)) and/or if other people contribute. An (incomplete) list of academic usecases for this data is on [Google Scholar](https://scholar.google.com/scholar?oi=bibs&hl=de&cites=11938760322875868825).
+This repository provides highly localized statistics on religion and politics in India under an open license. I aim to cover Uttar Pradesh as comprehensively as possible, and the rest of India during general elections (see [roadmap](https://github.com/raphael-susewind/india-religion-politics/tree/master/ROADMAP.md)) and/or if other people contribute. A (potentially incomplete) list of academic usecases for this data is on [Google Scholar](https://scholar.google.com/scholar?oi=bibs&hl=de&cites=11938760322875868825); there is also a separate folder with [examples](https://github.com/raphael-susewind/india-religion-politics/tree/master/examples) to replicate. 
 
 Fortunately, recent transparency initiatives by the Election Commission of India in general and the Chief Electoral Officer of UP in particular now allow researchers to shift the central unit of quantitative political analyses from the constituency level to that of polling booths, stations, and villages (earlier, such data had to be interpolated or estimated). Often, this data is not very user-friendly, though (think garbled, scanned PDFs). The purpose of this repository is to curate this data in a more accessible format and to share the scraping and cleanup code for reference. This official data is then supplemented with estimates of religious demography based on the religious connotations of electors' names in the voter lists (see below).
  
@@ -9,6 +9,12 @@ From 2013 to 2015, the whole dataset was located on my [personal website](https:
 
 table | description
 --- | ---
+[examples](https://github.com/raphael-susewind/india-religion-politics/tree/master/examples) | Example queries that would replicate published papers based on this data
+[gujid](https://github.com/raphael-susewind/india-religion-politics/tree/master/gujid) | ID matching and integration table for Gujarat (see below)
+[gujgis](https://github.com/raphael-susewind/india-religion-politics/tree/master/gujgis) | GIS coordinates and other spatial characteristics of polling booths in Gujarat
+[gujloksabha2014](https://github.com/raphael-susewind/india-religion-politics/tree/master/gujloksabha2014) | Booth-level (form 20) results for the 2014 Lok Sabha election from Gujarat
+[gujcandidates2014](https://github.com/raphael-susewind/india-religion-politics/tree/master/gujcandidates2014) | Candidates and their likely religion for the 2014 Lok Sabha election from Gujarat
+[gujrolls2014](https://github.com/raphael-susewind/india-religion-politics/tree/master/gujrolls2014) | Booth-level estimates of religious demography for 2014 across Gujarat
 [upid](https://github.com/raphael-susewind/india-religion-politics/tree/master/upid) | ID matching and integration table for Uttar Pradesh (see below)
 [upgis](https://github.com/raphael-susewind/india-religion-politics/tree/master/upgis) | GIS coordinates and other spatial characteristics of polling booths in Uttar Pradesh
 [upvidhansabha2007](https://github.com/raphael-susewind/india-religion-politics/tree/master/upvidhansabha2007) | Booth-level (form 20) results for the 2007 Vidhan Sabha election in Uttar Pradesh

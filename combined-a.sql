@@ -24,3 +24,8 @@
 .read upcandidates2012/upcandidates2012.sql
 .read upcandidates2014/upcandidates2014.sql
 .read upgis/upgis.sql
+.read gujloksabha2014/gujloksabha2014-a.sql
+.read gujloksabha2014/gujloksabha2014-b.sql
+.read gujcandidates2014/gujcandidates2014.sql
+.read gujrolls2014/gujrolls2014.sql
+.read gujgis/gujgis.sql
