@@ -1,0 +1,18 @@
+This is basically a generic example of how to create maps of religious
+demography. In the SAMAJ article, we used this as the base layer for
+the map of 'Muslim Lucknow', then added the river line from
+OpenStreetMap, cut the city area out using the MODIS polygon and added
+haj pilgrims from my private data collection.
+
+I leave these refinements to the reader to figure out, but to get the
+baselayer of Muslim demography out of this dataset, it takes 4 steps:
+
+a) run samaj2015.sql against the main SQLite database to create
+samaj2015.csv (adjust the SELECT statement for diff. cities etc)
+
+b) run ogr2ogr samaj2015.shp samaj2015.vrt to create point shapefile
+
+c) use QGIS (or more precisely their voronoi plugin) to transform said
+point shapefile into an area representation 
+
+d) make a cloropleth of that area shapefile (with QGIS, Tilemill, etc)

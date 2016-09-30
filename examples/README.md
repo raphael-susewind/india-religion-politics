@@ -2,7 +2,7 @@
 
 ## examples
 
-This folder contains example SQL queries, R scripts and other processing tools that can be used to replicate some of the papers that have used this dataset. The papers themselves are referenced below; to create the replication data, one has to run the respective sql file against the main database, and then continue with either a statistical script or by using the respective vrt file to produce maps with appropriate GIS software (e.g. QGIS plus TileMill).
+This folder contains example SQL queries, R scripts and other processing tools that can be used to replicate some of the papers that have used this dataset. The papers themselves are referenced below; to create the replication data, one has to run the respective sql file against the main database, and then continue with either a statistical script or by using the respective vrt file to produce maps with appropriate GIS software (e.g. QGIS plus TileMill). Short explanations can usually be found in the respective *.txt files.
 
 ## Files
 

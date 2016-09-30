@@ -1,0 +1,9 @@
+<OGRVRTDataSource>
+<OGRVRTLayer name="samaj2015">
+  <SrcDataSource>samaj2015.csv</SrcDataSource>
+  <GeometryType>wkbPoint</GeometryType>
+  <LayerSRS>+proj=latlong +datum=WGS84</LayerSRS>
+  <GeometryField encoding="PointFromColumns" x="Longitude" y="Latitude"/>
+  <Field name="muslim_percent" type="Real" width=3 precision=2/>
+</OGRVRTLayer>
+</OGRVRTDataSource>
