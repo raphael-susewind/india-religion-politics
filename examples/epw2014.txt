@@ -1,0 +1,13 @@
+This exemplifies a more complex query, used to extract the raw data
+for my 2014 EPW piece (with Raheel Dhattiwala) on Muslim votebanks in
+UP and Gujarat. Note that the authoritative replication data for this
+paper is at https://dx.doi.org/10.4119/unibi/2694082 (we wrote it
+before I consolidated everything here on GitHub). 
+
+In the authoritative replication data, some of the variables will
+vary, namely the station_ids. Also,  the R script with our model and
+data on riots are only included there there. So do not expect to be
+able to re-generate the exact same base data from here.
+
+The essence of this data can be extracted from here, though, using
+epw2014.sql - see it as an example in complex SQL queries...
