@@ -8,7 +8,7 @@ use utf8;
 
 $dbh = DBI->connect("DBI:SQLite:dbname=:memory:", "","", {sqlite_unicode=>1});
 $dbh->sqlite_backup_from_file('actopc.sqlite');
-$dbh->do ("CREATE TABLE results (pc INTEGER, ac INTEGER, booth INTEGER, candidate CHAR, votes INTEGER)");
+$dbh->do ("CREATE TABLE results (pc INTEGER, ac INTEGER, booth INTEGER, candidate CHAR, votes CHAR)");
 $dbh->do ("CREATE TABLE candidates (id INTEGER PRIMARY KEY AUTOINCREMENT, pc INTEGER, rank INTEGER, name CHAR, party CHAR, shortparty CHAR)");
 
 # first read candidate list prepared by Dilip Damle
@@ -304,7 +304,7 @@ push(@idheader,'booth_id_14');
 push(@idselect,'results.booth');
 $dbh->do ("ALTER TABLE upid ADD COLUMN station_name_14 CHAR");
 push(@idheader,'station_name_14');
-push(@idselect,'case when results.candidate = "station" then results.votes end');
+push(@idselect,'group_concat(case when results.candidate = "station" then results.votes end)');
 
 my $idsql = 'INSERT INTO upid ('.join(",",@idheader).') SELECT '.join(",",@idselect).' FROM results LEFT JOIN actopc ON results.ac = actopc.ac GROUP BY results.ac,results.booth';
 
@@ -340,7 +340,7 @@ push(@realheader,'male_votes_14');
 push(@realselect,'sum(case when results.candidate = "male" then results.votes end)');
 $dbh->do ("ALTER TABLE uploksabha2014 ADD COLUMN female_votes_14 INTEGER");
 push(@realheader,'female_votes_14');
-push(@realselect,'sum(case when results.candidate = "female" then results.votes end)');
+push(@realselect,'sum(case when results.candidate = "female" or results.candidate="Female" then results.votes end)');
 
 my $ref = $dbh->selectcol_arrayref("SELECT party FROM candidates WHERE name IS NOT NULL GROUP BY party");
 
