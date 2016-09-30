@@ -27,6 +27,10 @@ $dbh = DBI->connect("DBI:SQLite:dbname=:memory:", "","", {sqlite_unicode=>1});
 $dbh->sqlite_backup_from_file('actopc.sqlite');
 
 for ($ac=1;$ac<=182;$ac++) {
+    my $ref = $dbh->selectcol_arrayref("SELECT ac_name FROM actopc WHERE ac = ?",undef,$ac);
+    print FILE "UPDATE gujid SET ac_name_14 = '".@$ref[0]."' WHERE ac_id_09 = $ac;\n";
+    my $ref = $dbh->selectcol_arrayref("SELECT ac_reserved FROM actopc WHERE ac = ?",undef,$ac);
+    print FILE "UPDATE gujid SET ac_reserved_14 = '".@$ref[0]."' WHERE ac_id_09 = $ac;\n";
     my $ref = $dbh->selectcol_arrayref("SELECT pc FROM actopc WHERE ac = ?",undef,$ac);
     foreach my $pc (@$ref) {
 	print FILE "UPDATE gujid SET pc_id_09 = $pc WHERE ac_id_09 = $ac;\n";
