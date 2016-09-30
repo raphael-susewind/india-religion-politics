@@ -1001,9 +1001,9 @@ foreach my $header (@headers) {
     $header =~ s/^\s+//gs;
     my ($name,$type) = split(/\s+/,$header);
     next if $name eq 'CREATE';
-    if ($type eq 'INTEGER') {push(@concatsql, "max($name) '$name'")}
-    elsif ($type eq 'FLOAT') {push(@concatsql, "max($name) '$name'")}
-    else {push(@concatsql, "group_concat(DISTINCT $name) '$name'")}
+    if ($type eq 'INTEGER') {push(@concatsql, "cast(max($name) as integer) '$name'")}
+    elsif ($type eq 'FLOAT') {push(@concatsql, "cast(max($name) as float) '$name'")}
+    else {push(@concatsql, "cast(group_concat(DISTINCT $name) as char) '$name'")}
 }
 
 open (FILE, ">>upid-b.sql");
