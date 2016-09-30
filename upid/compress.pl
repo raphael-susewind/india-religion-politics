@@ -990,11 +990,12 @@ $sql=~s/^CREATE TABLE upid \(//gs;
 $sql=~s/\)$//gs;
 my @headers=split(/,/,$sql);
 
-push (@headers, 'booth_parts_14 CHAR');
-push (@headers, 'booth_name_14 CHAR');
+# CAREFUL: THIS NEEDS TO BE IN THE RIGHT SEQUENCE! (ie the sequence that is used in this script)
 push (@headers, 'pc_id_09 INTEGER');
 push (@headers, 'pc_name_09 CHAR');
 push (@headers, 'pc_reserved_09 CHAR');
+push (@headers, 'booth_parts_14 CHAR');
+push (@headers, 'booth_name_14 CHAR');
 
 my @concatsql;
 foreach my $header (@headers) {
