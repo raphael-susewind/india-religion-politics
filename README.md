@@ -10,11 +10,38 @@ From 2013 to 2015, the whole dataset was located on my [personal website](https:
 table | description
 --- | ---
 [examples](https://github.com/raphael-susewind/india-religion-politics/tree/master/examples) | Example queries that would replicate published papers based on this data
+[andhraid](https://github.com/raphael-susewind/india-religion-politics/tree/master/andhraid) | ID matching and integration table for Andhra Pradesh (see below)
+[andhragis](https://github.com/raphael-susewind/india-religion-politics/tree/master/andhragis) | GIS coordinates and other spatial characteristics of polling booths in Andhra Pradesh
+[andhrarolls2014](https://github.com/raphael-susewind/india-religion-politics/tree/master/andhrarolls2014) | Booth-level estimates of religious demography for 2014 across Andhra Pradesh
+[delhiid](https://github.com/raphael-susewind/india-religion-politics/tree/master/delhiid) | ID matching and integration table for Delhi (see below)
+[delhigis](https://github.com/raphael-susewind/india-religion-politics/tree/master/delhigis) | GIS coordinates and other spatial characteristics of polling booths in Delhi
+[delhirolls2014](https://github.com/raphael-susewind/india-religion-politics/tree/master/delhirolls2014) | Booth-level estimates of religious demography for 2014 across Delhi
 [gujid](https://github.com/raphael-susewind/india-religion-politics/tree/master/gujid) | ID matching and integration table for Gujarat (see below)
 [gujgis](https://github.com/raphael-susewind/india-religion-politics/tree/master/gujgis) | GIS coordinates and other spatial characteristics of polling booths in Gujarat
 [gujloksabha2014](https://github.com/raphael-susewind/india-religion-politics/tree/master/gujloksabha2014) | Booth-level (form 20) results for the 2014 Lok Sabha election from Gujarat
 [gujcandidates2014](https://github.com/raphael-susewind/india-religion-politics/tree/master/gujcandidates2014) | Candidates and their likely religion for the 2014 Lok Sabha election from Gujarat
 [gujrolls2014](https://github.com/raphael-susewind/india-religion-politics/tree/master/gujrolls2014) | Booth-level estimates of religious demography for 2014 across Gujarat
+[harid](https://github.com/raphael-susewind/india-religion-politics/tree/master/harid) | ID matching and integration table for Haryana (see below)
+[hargis](https://github.com/raphael-susewind/india-religion-politics/tree/master/hargis) | GIS coordinates and other spatial characteristics of polling booths in Haryana
+[harrolls2014](https://github.com/raphael-susewind/india-religion-politics/tree/master/harrolls2014) | Booth-level estimates of religious demography for 2014 across Haryana
+[karid](https://github.com/raphael-susewind/india-religion-politics/tree/master/karid) | ID matching and integration table for Karnataka (see below)
+[kargis](https://github.com/raphael-susewind/india-religion-politics/tree/master/kargis) | GIS coordinates and other spatial characteristics of polling booths in Karnataka
+[karrolls2014](https://github.com/raphael-susewind/india-religion-politics/tree/master/karrolls2014) | Booth-level estimates of religious demography for 2014 across Karnataka
+[kerid](https://github.com/raphael-susewind/india-religion-politics/tree/master/kerid) | ID matching and integration table for Kerala (see below)
+[kergis](https://github.com/raphael-susewind/india-religion-politics/tree/master/kergis) | GIS coordinates and other spatial characteristics of polling booths in Kerala
+[kerrolls2014](https://github.com/raphael-susewind/india-religion-politics/tree/master/kerrolls2014) | Booth-level estimates of religious demography for 2014 across Kerala
+[mpid](https://github.com/raphael-susewind/india-religion-politics/tree/master/mpid) | ID matching and integration table for Madhya Pradesh (see below)
+[mpgis](https://github.com/raphael-susewind/india-religion-politics/tree/master/mpgis) | GIS coordinates and other spatial characteristics of polling booths in Madhya Pradesh
+[mprolls2014](https://github.com/raphael-susewind/india-religion-politics/tree/master/mprolls2014) | Booth-level estimates of religious demography for 2014 across Madhya Pradesh
+[mahaid](https://github.com/raphael-susewind/india-religion-politics/tree/master/mahaid) | ID matching and integration table for Maharashtra (see below)
+[mahagis](https://github.com/raphael-susewind/india-religion-politics/tree/master/mahagis) | GIS coordinates and other spatial characteristics of polling booths in Maharashtra
+[maharolls2014](https://github.com/raphael-susewind/india-religion-politics/tree/master/maharolls2014) | Booth-level estimates of religious demography for 2014 across Maharashtra
+[orid](https://github.com/raphael-susewind/india-religion-politics/tree/master/orid) | ID matching and integration table for Orissa (see below)
+[orgis](https://github.com/raphael-susewind/india-religion-politics/tree/master/orgis) | GIS coordinates and other spatial characteristics of polling booths in Orissa
+[orrolls2014](https://github.com/raphael-susewind/india-religion-politics/tree/master/orrolls2014) | Booth-level estimates of religious demography for 2014 across Orissa
+[rajid](https://github.com/raphael-susewind/india-religion-politics/tree/master/rajid) | ID matching and integration table for Rajasthan (see below)
+[rajgis](https://github.com/raphael-susewind/india-religion-politics/tree/master/rajgis) | GIS coordinates and other spatial characteristics of polling booths in Rajasthan
+[rajrolls2014](https://github.com/raphael-susewind/india-religion-politics/tree/master/rajrolls2014) | Booth-level estimates of religious demography for 2014 across Rajasthan
 [upid](https://github.com/raphael-susewind/india-religion-politics/tree/master/upid) | ID matching and integration table for Uttar Pradesh (see below)
 [upgis](https://github.com/raphael-susewind/india-religion-politics/tree/master/upgis) | GIS coordinates and other spatial characteristics of polling booths in Uttar Pradesh
 [upvidhansabha2007](https://github.com/raphael-susewind/india-religion-politics/tree/master/upvidhansabha2007) | Booth-level (form 20) results for the 2007 Vidhan Sabha election in Uttar Pradesh
