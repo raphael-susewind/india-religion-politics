@@ -56,6 +56,8 @@ table | description
 [uprolls2012](https://github.com/raphael-susewind/india-religion-politics/tree/master/uprolls2012) | Booth-level estimates of religious demography for 2012 across Uttar Pradesh
 [uprolls2013](https://github.com/raphael-susewind/india-religion-politics/tree/master/uprolls2013) | Booth-level estimates of religious demography for 2013 across Uttar Pradesh
 [uprolls2014](https://github.com/raphael-susewind/india-religion-politics/tree/master/uprolls2014) | Booth-level estimates of religious demography for 2014 across Uttar Pradesh
+[uprolls2015](https://github.com/raphael-susewind/india-religion-politics/tree/master/uprolls2015) | Booth-level estimates of religious demography for 2015 across Uttar Pradesh
+[uprolls2016](https://github.com/raphael-susewind/india-religion-politics/tree/master/uprolls2016) | Booth-level estimates of religious demography for 2016 across Uttar Pradesh
 
 
 If you wish to **recreate the whole database**, the easiest way would be to clone this repository in its entirety, and then run the equivalent of `cat combined-a.sql | sqlite3 combined.sqlite` and `cat combined-b.sql | sqlite3 combined.sqlite` on your system. This will automatically create a new combined.sqlite file by running all table.sql files in the correct order. You can then extract your data from one or multiple tables for further processing using standard SQL commands. 
