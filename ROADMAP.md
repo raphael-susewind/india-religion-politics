@@ -9,7 +9,6 @@ Sometime this spring, I hope to put UP data up-to-date as people might find it u
 * Add UP namematching data for 2017 (currently running on ARC servers)
 * Add UP form20 results for vidhan sabha 2017
 * Add UP candidate names and likely religion for vidhan sabha 2017
-* Add updated UP GIS coordinates for 2017 booth IDs
 
 ## Second proper release:
 
@@ -31,4 +30,3 @@ As a more distant goal - and only if I find time after the UP 2017 elections con
 * Use the latter weighted data for a beautifully tiled atlas
 * Add namematched BPL data (which is also tied in with admin boundaries)
 * Wait for a few weeks to see whether any bugs crop up, then make the formal release
-
