@@ -1,0 +1,13 @@
+<OGRVRTDataSource>
+<OGRVRTLayer name="booths-locality">
+  <SrcDataSource>booths-locality.csv</SrcDataSource>
+  <GeometryType>wkbPoint</GeometryType>
+  <LayerSRS>+proj=latlong +datum=WGS84</LayerSRS>
+  <GeometryField encoding="PointFromColumns" x="longitude" y="latitude"/>
+  <Field name="constituency" type="Integer"/>
+  <Field name="booth" type="Integer"/>
+  <Field name="district_name" type="String"/>
+  <Field name="latitude" type="String"/>
+  <Field name="longitude" type="String"/>
+</OGRVRTLayer>
+</OGRVRTDataSource>

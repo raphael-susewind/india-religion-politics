@@ -20,6 +20,8 @@ district_name_12 | Name of the district into which this polling booth is suppose
 booth_id_14 | ID code of the polling booth assigned by the Election Commission for 2014 booths (together with ac_id_09, this should suffice for matching with other tables)
 booth_name_14 | Name of the polling booth assigned by the Election Commission for 2014 booths
 district_name_14 | Name of the district into which this polling booth is supposed to fall in 2014 (could be used for cleaning the data)
+booth_id_17 | ID code of the polling booth assigned by the Election Commission for 2017 booths (together with ac_id_09, this should suffice for matching with other tables)
+district_name_17 | Name of the district into which this polling booth is supposed to fall in 2017 (could be used for cleaning the data)
 latitude | Geographical latitude
 longitude | Geographical longitude
 modis | Urban area or not? Derived from MODIS polygon (see below)
@@ -33,7 +35,9 @@ The 2012 data was originally scraped using the Firefox MozRepl plugin in conjunc
 
 The 2014 data was originally scraped using the Firefox MozRepl plugin in conjunction with 2014/download.pl and the custom proxy server at 2014/proxy.pl on May 5, 2014 from "http://www.eci-polldaymonitoring.nic.in/psleci; the same caveats regarding data quality apply, but now the ID codes are the same used for the 2014 Lok Sabha elections. This dataset is identical with the data included in my (more comprehensive) [GIS Shapefiles](http://dx.doi.org/10.4119/unibi/2674065).
 
-All three sets of point data were then dumped into CSVs, transformed into ESRI shapefiles using `ogr2ogr booths-locality.shp booths-locality.vrt` and matched manually against the MODIS polygon from [Naturalearth](http://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-urban-area/) using QGIS. The result was then exported back into booths-locality-modis.sqlite.
+The 2017 data was originally scraped using 2017/download.pl on January 11, 2017 from "http://gis.up.nic.in/srishti/election2017", including a "List of unavailable polling stations" linked on that page. The ID codes are the same used for the 2017 Vidhan Sabha elections.
+
+All four sets of point data were then dumped into CSVs, transformed into ESRI shapefiles using `ogr2ogr booths-locality.shp booths-locality.vrt` and matched manually against the MODIS polygon from [Naturalearth](http://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-urban-area/) using QGIS. The result was then exported back into booths-locality-modis.sqlite.
 
 The final table was put together using `cat transform.sql | sqlite3`.
 
