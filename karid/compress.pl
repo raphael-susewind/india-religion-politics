@@ -20,6 +20,8 @@ open (FILE, ">>karid-b.sql");
 print FILE "ALTER TABLE karid ADD COLUMN pc_id_09 INTEGER;\n";
 print FILE "ALTER TABLE karid ADD COLUMN pc_name_09 CHAR;\n";
 print FILE "ALTER TABLE karid ADD COLUMN pc_reserved_09 CHAR;\n";
+print FILE "ALTER TABLE karid ADD COLUMN ac_name_14 CHAR;\n";
+print FILE "ALTER TABLE karid ADD COLUMN ac_reserved_14 CHAR;\n";
 
 print FILE "BEGIN TRANSACTION;\n";
 

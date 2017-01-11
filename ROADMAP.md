@@ -6,8 +6,10 @@ This roadmap is a reminder to myself what I aim to achieve for future releases (
 
 Sometime this spring, I hope to put UP data up-to-date as people might find it useful. This means:
 
-* Add UP namematching data for 2015, 2016 and 2017 (almost done)
+* Add UP namematching data for 2017 (currently running on ARC servers)
 * Add UP form20 results for vidhan sabha 2017
+* Add UP candidate names and likely religion for vidhan sabha 2017
+* Add updated UP GIS coordinates for 2017 booth IDs
 
 ## Second proper release:
 

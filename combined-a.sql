@@ -1,3 +1,5 @@
+pragma temp_store = 1;
+pragma temp_store_directory = '.';
 .read upvidhansabha2007/upvidhansabha2007-a.sql
 .read upvidhansabha2007/upvidhansabha2007-b.sql
 .read uploksabha2009/uploksabha2009-a.sql
@@ -19,6 +21,8 @@
 .read uprolls2013/uprolls2013.sql
 .read uprolls2014/uprolls2014-a.sql
 .read uprolls2014/uprolls2014-b.sql
+.read uprolls2015/uprolls2015.sql
+.read uprolls2016/uprolls2016.sql
 .read upcandidates2007/upcandidates2007.sql
 .read upcandidates2009/upcandidates2009.sql
 .read upcandidates2012/upcandidates2012.sql
