@@ -1,0 +1,17 @@
+This describes the steps to reproduce the segregation analysis in my EPA restudy of Jaffrelot's and Gayer's "Muslims in Indian cities". 
+
+For license reason I cannot share the proprietary 'city' boundary layer, but the 'built' boundary can be reproduced (it is basically the 10m urban areas polygon from http://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-urban-area/). I am happy to provide access to the city layer on an individual (and academic-only) basis - just drop be an email.
+
+These are the steps to reproduce my analysis:
+
+1) run epa2017.sql against the main SQLite database to extract one CSV per city
+
+2) adjust epa2017.vrt for each city and run ogr2ogr to create point ESRI shapefiles (as described in the samaj2015 example)
+
+3) use QGIS to convert each point baselayer into an area representation using the voronoi plugin
+
+4) use QGIS to cut each baselayer with the relevant boundary shapefile (ie the naturalearth polygon mentioned above) and save the results in the respective city shapefile referenced below; also save the boundary polygon in combined-borders.shp
+
+5) finally run epa2017.sh, which basically sets up a GRASS environment and then runs epa2017.R which does the actual weightlifting
+
+The segregation indices will then be calculated and output into epa2017-results.csv.

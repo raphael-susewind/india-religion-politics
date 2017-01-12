@@ -1,0 +1,10 @@
+<OGRVRTDataSource>
+<OGRVRTLayer name="epa2017">
+  <SrcDataSource>epa2017.csv</SrcDataSource>
+  <GeometryType>wkbPoint</GeometryType>
+  <LayerSRS>+proj=latlong +datum=WGS84</LayerSRS>
+  <GeometryField encoding="PointFromColumns" x="Longitude" y="Latitude"/>
+  <Field name="muslim" type="Real" width=3 precision=2/>
+  <Field name="electors" type="Integer" width=4/>
+</OGRVRTLayer>
+</OGRVRTDataSource>
