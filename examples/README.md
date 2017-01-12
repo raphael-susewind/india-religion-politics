@@ -8,6 +8,7 @@ This folder contains example SQL queries, R scripts and other processing tools t
 
 name | reference
 --- | ---
+epa2017.* | Susewind, R. (forthcoming). Muslims in Indian cities: degrees of segregation and the elusive 'ghetto'. Environment and Planning A
 epw2014.* | Susewind, R., & Dhattiwala, R. (2014). [Spatial variation in the 'Muslim vote' in Gujarat and Uttar Pradesh, 2014](http://pub.uni-bielefeld.de/publication/2694099). Economic & Political Weekly, 49 (39), 99–110
 samaj2015.* | Susewind, R., & Taylor, C. (2015). [Islamicate Lucknow today: historical legacy and urban aspirations](http://dx.doi.org/10.4000/samaj.3911). South Asia Multidisciplinary Academic Journal, 11 , 1–42
 
