@@ -1,8 +1,10 @@
-This describes the steps to reproduce the segregation analysis in my EPA restudy of Jaffrelot's and Gayer's "Muslims in Indian cities". 
+This describes the steps to reproduce in principle the segregation analysis in my EPA restudy of Jaffrelot's and Gayer's "Muslims in Indian cities". 
 
-For license reason I cannot share the proprietary 'city' boundary layer, but the 'built' boundary can be reproduced (it is basically the 10m urban areas polygon from http://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-urban-area/). I am happy to provide access to the city layer on an individual (and academic-only) basis - just drop be an email.
+For license reason I cannot share the proprietary 'city' boundary layer, but the 'built' boundary can be reproduced (it is basically the 10m urban areas polygon from http://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-urban-area/). I am happy to provide access to the city layer on an individual (and academic-only) basis - just drop me an email.
 
-These are the steps to reproduce my analysis:
+Also, the paper calculates indices on station-by-station (rather than booth-by-booth) basis. This dataset does not contain the station classification for states other than UP and Gujarat, so I base this replication instruction on the booth level. It should result in very similar D(M), though, given that D(M) accounts for spatial proximity of units of measurement. So in that sense, too, this is more of a howto-guide than strictly speaking replication data. Again, I am happy to provide the actual replication data on an individual (and academic-only) basis, though - just drop me an email.
+
+In any case, these are the steps to reproduce my analysis:
 
 1) run epa2017.sql against the main SQLite database to extract one CSV per city
 
