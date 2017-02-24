@@ -52,6 +52,7 @@ table | description
 [upcandidates2009](https://github.com/raphael-susewind/india-religion-politics/tree/master/upcandidates2009) | Candidates and their likely religion for the 2009 Lok Sabha election from Uttar Pradesh
 [upcandidates2012](https://github.com/raphael-susewind/india-religion-politics/tree/master/upcandidates2012) | Candidates and their likely religion for the 2012 Vidhan Sabha election in Uttar Pradesh
 [upcandidates2014](https://github.com/raphael-susewind/india-religion-politics/tree/master/upcandidates2014) | Candidates and their likely religion for the 2014 Lok Sabha election from Uttar Pradesh
+[upcandidates2017](https://github.com/raphael-susewind/india-religion-politics/tree/master/upcandidates2017) | Candidates and their likely religion for the 2017 Vidhan Sabha election in Uttar Pradesh
 [uprolls2011](https://github.com/raphael-susewind/india-religion-politics/tree/master/uprolls2011) | Booth-level estimates of religious demography for 2011 across Uttar Pradesh
 [uprolls2012](https://github.com/raphael-susewind/india-religion-politics/tree/master/uprolls2012) | Booth-level estimates of religious demography for 2012 across Uttar Pradesh
 [uprolls2013](https://github.com/raphael-susewind/india-religion-politics/tree/master/uprolls2013) | Booth-level estimates of religious demography for 2013 across Uttar Pradesh
