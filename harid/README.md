@@ -15,10 +15,22 @@ ac_id_09 | ID code of the assembly segment that booth falls in, as assigned by t
 ac_name_14 | Name of that assembly segment, as assigned by the Election Commission in 2014
 ac_reserved_14 | Reservation status of that assembly segment, as assigned by the Election Commission in 2014
 booth_id_14 | ID code of the polling booth, as assigned by the Election Commission in 2014
+booth_name_14 | Name of the polling booth as listed on the cover sheet of the electoral rolls of 2014
+address_14 | Address of the polling booth as listed on the cover sheet of the electoral rolls of 2014
+district_14 | District into which this booth falls as listed on the cover sheet of the electoral rolls of 2014
+taluk_14 | Taluk into which this booth falls as listed on the cover sheet of the electoral rolls of 2014
+thana_14 | Police thana jurisdiction into which this booth falls as listed on the cover sheet of the electoral rolls of 2014
+revenue_14 | Revenue circle into which this booth falls as listed on the cover sheet of the electoral rolls of 2014
+court_14 | Court jurisdiction into which this booth falls as listed on the cover sheet of the electoral rolls of 2014
+ward_14 | Ward number (if urban) or Basti number (if rural) into which this booth falls as listed on the cover sheet of the electoral rolls of 2014
+village_14 | Village / main town (if urban) into which this booth falls as listed on the cover sheet of the electoral rolls of 2014
+parts_14 | 'Parts' (usually streets) covered by this booth as listed on the cover sheet of the electoral rolls of 2014
+pincode_14 | Pincode of this booth as listed on the cover sheet of the electoral rolls of 2014
+
 
 ## Processing
 
-The original entries for this table stem mostly from the various processing scripts of other tables. They are then compressed using compress.pl on an otherwise complete dataset SQLite file (this is the reason why combined.sql is split into combined-a.sql and combined-b.sql - so that compress.pl can be run in between if necessary). In other words: whenever any changes or additions happen to the dataset that concerns ID matching and integration, this script has to be re-run, and its output gujid.sql incorporated into the table. If you are just downloading the whole dataset, though, this comes with the current version of gujid.sql, which is automatically run at the right place by subsequently running combined-a.sql and combined-b.sql. So you should be fine...
+The original entries for this table stem mostly from the various processing scripts of other tables. They are then compressed using compress.pl on an otherwise complete dataset SQLite file (this is the reason why combined.sql is split into combined-a.sql and combined-b.sql - so that compress.pl can be run in between if necessary). In other words: whenever any changes or additions happen to the dataset that concerns ID matching and integration, this script has to be re-run, and its output harid.sql incorporated into the table. If you are just downloading the whole dataset, though, this comes with the current version of harid.sql, which is automatically run at the right place by subsequently running combined-a.sql and combined-b.sql. So you should be fine...
 
 One thing was added directly in here, though:
 

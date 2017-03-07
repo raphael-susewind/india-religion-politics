@@ -54,6 +54,50 @@ $dbh->disconnect;
 close (FILE);
 
 #
+# Add station_id
+#
+
+print "Add station_id_14\n";
+
+$dbh->do ("ALTER TABLE mahaid ADD COLUMN station_id_14 INTEGER");
+
+$dbh->do ("CREATE INDEX booth_id_14 ON mahaid (booth_id_14)");
+
+my $sth = $dbh->prepare("SELECT ac_id_09 FROM mahaid WHERE ac_id_09 IS NOT NULL GROUP BY ac_id_09");
+$sth->execute();
+my $count=0;
+my %result;
+while (my $row=$sth->fetchrow_hashref) {
+    my $tempold='';
+    my $sth2 = $dbh->prepare("SELECT booth_name_14 FROM mahaid WHERE ac_id_09 = ?");
+    $sth2->execute($row->{ac_id_09});
+    while (my $row2=$sth2->fetchrow_hashref) {
+	my $temp=$row2->{booth_name_14};
+	$temp=~s/\d//gs;
+	next if ($temp eq $tempold);
+	$tempold = $temp;
+	$result{$row->{ac_id_09}.$temp}=$count;
+	$count++;
+    }
+}
+$sth->finish ();
+
+$dbh->begin_work;
+
+my $sth = $dbh->prepare("SELECT * FROM mahaid WHERE ac_id_09 IS NOT NULL");
+$sth->execute();
+while (my $row=$sth->fetchrow_hashref) {
+    my $temp=$row->{booth_name_14};
+    $temp=~s/\d//gs;
+    $dbh->do ("UPDATE mahaid SET station_id_14 = ? WHERE ac_id_09 = ? AND booth_id_14 = ?", undef, $result{$row->{ac_id_09}.$temp}, $row->{ac_id_09}, $row->{booth_id_14});
+}
+$sth->finish ();
+
+$dbh->commit;
+
+$dbh->do ("CREATE INDEX station_id_14 ON mahaid (station_id_14)");
+
+#
 # Finally prepare sqlite dump 
 #
 

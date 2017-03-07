@@ -32,6 +32,7 @@ pragma temp_store_directory = '.';
 .read gujloksabha2014/gujloksabha2014-b.sql
 .read gujcandidates2014/gujcandidates2014.sql
 .read gujrolls2014/gujrolls2014.sql
+.read gujrolls2014/gujrolls2014-b.sql
 .read gujgis/gujgis.sql
 .read andhrarolls2014/andhrarolls2014-a.sql
 .read andhrarolls2014/andhrarolls2014-b.sql
