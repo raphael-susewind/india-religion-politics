@@ -1,6 +1,6 @@
 # Data on religion and politics in India 
 
-## andhraid
+## delhiid
 
 This table contains the ID matching and integration table for Delhi. Each row is the equivalent of a booth. Since the databse only contains data from one year for Delhi so far, this is rather straightforward - no actual cross-year matching is necessary.
 
@@ -15,6 +15,15 @@ ac_id_09 | ID code of the assembly segment that booth falls in, as assigned by t
 ac_name_14 | Name of that assembly segment, as assigned by the Election Commission in 2014
 ac_reserved_14 | Reservation status of that assembly segment, as assigned by the Election Commission in 2014
 booth_id_14 | ID code of the polling booth, as assigned by the Election Commission in 2014
+booth_name_14 | Name of the polling booth as listed on the cover sheet of the electoral rolls of 2014
+address_14 | Address of the polling booth as listed on the cover sheet of the electoral rolls of 2014
+district_14 | District into which this booth falls as listed on the cover sheet of the electoral rolls of 2014
+tehsil_14 | Tehsil into which this booth falls as listed on the cover sheet of the electoral rolls of 2014
+thana_14 | Police station into whose jurisdiction this booth falls as listed on the cover sheet of the electoral rolls of 2014
+ward_14 | Ward into which this booth falls as listed on the cover sheet of the electoral rolls of 2014
+town_14 | Main town into which this booth falls as listed on the cover sheet of the electoral rolls of 2014
+parts_14 | 'Parts' (usually streets) covered by this booth as listed on the cover sheet of the electoral rolls of 2014
+pincode_14 | Pincode of this booth as listed on the cover sheet of the electoral rolls of 2014
 
 ## Processing
 

@@ -28,4 +28,6 @@ foreach my $file (@files) {
 system("rm $i.sqlite");
 system("perl -CSDA -Mlocal::lib -I$HOME/perl5/lib/perl5 csv2stats.pl $i");
 
+system("perl -CSDA -Mlocal::lib -I$HOME/perl5/lib/perl5 frontpage.pl $i");
+
 system("rm -r __pycache__  *.pl *.py fifo names.sqlite");

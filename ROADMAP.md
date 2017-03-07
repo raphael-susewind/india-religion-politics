@@ -8,7 +8,6 @@ Sometime this spring, I hope to put UP data up-to-date as people might find it u
 
 * Add UP namematching data for 2017 (currently running on ARC servers)
 * Add UP form20 results for vidhan sabha 2017
-* Add UP candidate names and likely religion for vidhan sabha 2017
 
 ## Second proper release:
 
@@ -17,6 +16,7 @@ As a next step, I intend to expand to all-India level for the 2014 general elect
 * Add 2014 Lok Sabha booth level results for more states than just UP and Gujarat (to the extent that it is halfway easily accessible)
 * Add namematching data from electoral rolls for 2014 across the remaining states (calculation done already, just need to convert to SQL tables and document)
 * Add polling booth locality data for 2014 across India (from my GIS dataset, practically done, just need to convert to SQL tables and document)
+* Add frontapge information from electoral roll for all states that don't already have them 
 * Add MODIS 500m rural/urban classification for booth localities (rather than current 1km ones) 
 * Wait for a few weeks to see whether any bugs crop up, then make the formal release
 
