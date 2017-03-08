@@ -17,6 +17,17 @@ ac_reserved_14 | Reservation status of that assembly segment, as assigned by the
 booth_id_14 | ID code of the polling booth, as assigned by the Election Commission in 2014
 station_id_14 | ID code of the polling station, i.e. the physical unit housing this polling booth (note that this is a concept not used by the Election Commission, but introduced by me - basically all polling booths with subsequent ID codes and roughly similar names are considered to fall within one station)
 station_name_14 | Name of the polling station, i.e. the physical unit housing this polling booth (cleaned up to be the same across all booths within this station)
+booth_name_14 | Name of the polling booth as listed on the cover sheet of the electoral rolls of 2014 (this will be in Gujarati, while station_name_14 is in English - different raw source)
+address_14 | Address of the polling booth as listed on the cover sheet of the electoral rolls of 2014
+district_14 | District into which this booth falls as listed on the cover sheet of the electoral rolls of 2014
+taluk_14 | Taluk into which this booth falls as listed on the cover sheet of the electoral rolls of 2014
+thana_14 | Police that jurisdiction into which this booth falls as listed on the cover sheet of the electoral rolls of 2014
+revenue_14 | revenue circle into which this booth falls as listed on the cover sheet of the electoral rolls of 2014
+ward_14 | Ward (if urban) into which this booth falls as listed on the cover sheet of the electoral rolls of 2014
+village_14 | Village / main town (if urban) into which this booth falls as listed on the cover sheet of the electoral rolls of 2014
+parts_14 | 'Parts' (usually streets) covered by this booth as listed on the cover sheet of the electoral rolls of 2014
+pincode_14 | Pincode of this booth as listed on the cover sheet of the electoral rolls of 2014
+
 
 ## Processing
 
