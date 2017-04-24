@@ -1,6 +1,3 @@
-CREATE INDEX ac_booth_id_07 ON upid (ac_id_07, booth_id_07);
-CREATE INDEX ac_booth_id_09 ON upid (ac_id_09, booth_id_09);
-CREATE INDEX ac_booth_id_12 ON upid (ac_id_09, booth_id_12);
 CREATE INDEX ac_station_id_07 ON upid (ac_id_07, station_id_07);
 CREATE INDEX ac_station_id_09 ON upid (ac_id_09, station_id_09);
 CREATE INDEX ac_station_id_12 ON upid (ac_id_09, station_id_12);

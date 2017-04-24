@@ -23,10 +23,13 @@ pragma temp_store_directory = '.';
 .read uprolls2014/uprolls2014-b.sql
 .read uprolls2015/uprolls2015.sql
 .read uprolls2016/uprolls2016.sql
+.read uprolls2017/uprolls2017-a.sql
+.read uprolls2017/uprolls2017-b.sql
 .read upcandidates2007/upcandidates2007.sql
 .read upcandidates2009/upcandidates2009.sql
 .read upcandidates2012/upcandidates2012.sql
 .read upcandidates2014/upcandidates2014.sql
+.read upcandidates2017/upcandidates2017.sql
 .read upgis/upgis.sql
 .read gujloksabha2014/gujloksabha2014-a.sql
 .read gujloksabha2014/gujloksabha2014-b.sql

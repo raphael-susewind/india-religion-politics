@@ -44562,5 +44562,4 @@ INSERT INTO "gujid" VALUES(182,NULL,NULL,253,154430,'Patragadh Govada 1');
 INSERT INTO "gujid" VALUES(182,NULL,NULL,254,154430,'Patragadh Govada 2');
 INSERT INTO "gujid" VALUES(182,NULL,NULL,255,154430,'Patragadh Govada 3');
 INSERT INTO "gujid" VALUES(182,NULL,NULL,256,154431,'Kankaralipada Govada 4');
-CREATE INDEX booth_id_14 ON gujid (booth_id_14);
 COMMIT;
