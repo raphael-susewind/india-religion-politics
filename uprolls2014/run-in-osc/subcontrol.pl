@@ -85,6 +85,7 @@ foreach my $file (@files) {
 
 my @files = `ls rolls*sqlite`;
 
-# system("perl -CSDA -Mlocal::lib=perl5 -Iperl5/lib/perl5 csv2stats.pl $i");
+system("perl -CSDA -Mlocal::lib=perl5 -Iperl5/lib/perl5 csv2stats.pl $i");
+system("perl -CSDA -Mlocal::lib=perl5 -Iperl5/lib/perl5 frontpage.pl $i");
 
 system("rm -r __pycache__ perl5 *.pl *.py fifo names.sqlite pdftotext ngram core *.tif *.txt tesseract rolls.old.sqlite");

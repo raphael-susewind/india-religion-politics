@@ -57,7 +57,7 @@ close (FILE);
 
 open (FILE, ">>upid-b.sql");
 
-print FILE "ALTER TABLE upid ADD COLUMN booth_name_14 CHAR;\n";
+# print FILE "ALTER TABLE upid ADD COLUMN booth_name_14 CHAR;\n";
 print FILE "ALTER TABLE upid ADD COLUMN booth_parts_14 CHAR;\n";
 
 print FILE "CREATE INDEX upidpsname2partname ON upid (ac_id_09, booth_id_14);\n";
@@ -946,9 +946,9 @@ $dbh->sqlite_backup_from_file('upid-a.sqlite');
 
 open (FILE, ">upid-a.sql");
 
-print FILE "CREATE INDEX ac_booth_id_07 ON upid (ac_id_07, booth_id_07);\n";
-print FILE "CREATE INDEX ac_booth_id_09 ON upid (ac_id_09, booth_id_09);\n";
-print FILE "CREATE INDEX ac_booth_id_12 ON upid (ac_id_09, booth_id_12);\n";
+# print FILE "CREATE INDEX ac_booth_id_07 ON upid (ac_id_07, booth_id_07);\n";
+# print FILE "CREATE INDEX ac_booth_id_09 ON upid (ac_id_09, booth_id_09);\n";
+# print FILE "CREATE INDEX ac_booth_id_12 ON upid (ac_id_09, booth_id_12);\n";
 print FILE "CREATE INDEX ac_station_id_07 ON upid (ac_id_07, station_id_07);\n";
 print FILE "CREATE INDEX ac_station_id_09 ON upid (ac_id_09, station_id_09);\n";
 print FILE "CREATE INDEX ac_station_id_12 ON upid (ac_id_09, station_id_12);\n";
@@ -982,8 +982,7 @@ $dbh->disconnect;
 # Then add code to actually run the compression
 #
 
-$dbh = DBI->connect("DBI:SQLite:dbname=:memory:", "","", {sqlite_unicode=>1});
-$dbh->sqlite_backup_from_file('../combined.sqlite');
+$dbh = DBI->connect("DBI:SQLite:dbname=../combined.sqlite", "","", {sqlite_unicode=>1});
 
 my $sql = $dbh->selectrow_array("SELECT sql FROM sqlite_master WHERE tbl_name='upid'");
 $sql=~s/^CREATE TABLE upid \(//gs;
@@ -995,7 +994,7 @@ push (@headers, 'pc_id_09 INTEGER');
 push (@headers, 'pc_name_09 CHAR');
 push (@headers, 'pc_reserved_09 CHAR');
 push (@headers, 'booth_parts_14 CHAR');
-push (@headers, 'booth_name_14 CHAR');
+# push (@headers, 'booth_name_14 CHAR');
 
 my @concatsql;
 foreach my $header (@headers) {
@@ -1022,6 +1021,10 @@ print FILE "DROP TABLE upid;\n";
 print FILE "ALTER TABLE temp RENAME TO upid;\n";
 print FILE "CREATE TABLE temp AS SELECT ".join(", ",@concatsql)." FROM upid WHERE booth_id_14 IS NOT NULL GROUP BY ac_id_09,booth_id_14;\n";
 print FILE "INSERT INTO temp SELECT * FROM upid WHERE booth_id_14 IS NULL;\n";
+print FILE "DROP TABLE upid;\n";
+print FILE "ALTER TABLE temp RENAME TO upid;\n";
+print FILE "CREATE TABLE temp AS SELECT ".join(", ",@concatsql)." FROM upid WHERE booth_id_17 IS NOT NULL GROUP BY ac_id_09,booth_id_17;\n";
+print FILE "INSERT INTO temp SELECT * FROM upid WHERE booth_id_17 IS NULL;\n";
 print FILE "DROP TABLE upid;\n";
 print FILE "ALTER TABLE temp RENAME TO upid;\n";
 close (FILE);

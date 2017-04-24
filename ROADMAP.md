@@ -2,13 +2,6 @@
 
 This roadmap is a reminder to myself what I aim to achieve for future releases (no firm timeline, though). I put it online just in case anyone stumbles across it and is willing / able to contribute (I particularly think of form20 results, which tend to be a major hassle to scrape and cleanup)
 
-## UP special interim release:
-
-Sometime this spring, I hope to put UP data up-to-date as people might find it useful. This means:
-
-* Add UP namematching data for 2017 (currently running on ARC servers)
-* Add UP form20 results for vidhan sabha 2017
-
 ## Second proper release:
 
 As a next step, I intend to expand to all-India level for the 2014 general elections. This would be desirable:

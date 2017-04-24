@@ -29,13 +29,6 @@ ac_reserved_12 | Reservation status of that assembly segment, as assigned by the
 booth_id_12 | ID code of the polling booth, as assigned by the Election Commission in 2012
 station_id_12 | ID code of the polling station, i.e. the physical unit housing this polling booth (note that this is a concept not used by the Election Commission, but introduced by me - basically all polling booths with subsequent ID codes and roughly similar names are considered to fall within one station)
 station_name_12 | Name of the polling station, i.e. the physical unit housing this polling booth (cleaned up to be the same across all booths within this station
-ac_name_14 | Name of that assembly segment, as assigned by the Election Commission in 2014
-ac_reserved_14 | Reservation status of that assembly segment, as assigned by the Election Commission in 2014
-booth_id_14 | ID code of the polling booth, as assigned by the Election Commission in 2014
-station_id_14 | ID code of the polling station, i.e. the physical unit housing this polling booth (note that this is a concept not used by the Election Commission, but introduced by me - basically all polling booths with subsequent ID codes and roughly similar names are considered to fall within one station)
-station_name_14 | Name of the polling station, i.e. the physical unit housing this polling booth (cleaned up to be the same across all booths within this station)
-booth_parts_14 | List of the constituent 'parts' (in ECI parlance) for this polling booth in 2014 - usually the streets, mohallas or villages served
-booth_name_14 | Name of the polling booth as listed in the psname2partname database (this might be different from station_name_14)
 district_11 | District into which this booth falls as identically listed on the cover sheet of the electoral rolls of 2011, 2012 and 2013
 tehsil_11 | Tehsil into which this booth falls as identically listed on the cover sheet of the electoral rolls of 2011, 2012 and 2013
 village_11 | Village into which this booth falls as identically listed on the cover sheet of the electoral rolls of 2011, 2012 and 2013 (only rural booths)
@@ -47,6 +40,38 @@ station_name_11 |Station name of this booth as identically listed on the cover s
 station_address_11 | Address of the station into which this booth falls as identically listed on the cover sheet of the electoral rolls of 2011, 2012 and 2013
 areas_11 | Areas (aka 'parts') which this booth covers as identically listed on the cover sheet of the electoral rolls of 2011, 2012 and 2013
 pincode_11 | Pincode of this booth as identically listed on the cover sheet of the electoral rolls of 2011, 2012 and 2013
+ac_name_14 | Name of that assembly segment, as assigned by the Election Commission in 2014
+ac_reserved_14 | Reservation status of that assembly segment, as assigned by the Election Commission in 2014
+booth_id_14 | ID code of the polling booth, as assigned by the Election Commission in 2014
+station_id_14 | ID code of the polling station, i.e. the physical unit housing this polling booth (note that this is a concept not used by the Election Commission, but introduced by me - basically all polling booths with subsequent ID codes and roughly similar names are considered to fall within one station)
+station_name_14 | Name of the polling station, i.e. the physical unit housing this polling booth (cleaned up to be the same across all booths within this station)
+booth_parts_14 | List of the constituent 'parts' (in ECI parlance) for this polling booth in 2014 - usually the streets, mohallas or villages served
+booth_name_14 | Name of the polling booth as listed in the psname2partname database (this might be different from station_name_14)
+address_14 | Address of the station into which this booth falls as listed on the cover sheet of the electoral rolls of 2014
+parts_14 | Areas (aka 'parts') which this booth covers as listed on the cover sheet of the electoral rolls of 2014
+district_14 | District into which this booth falls as listed on the cover sheet of the electoral rolls of 2017
+tehsil_14 | Tehsil into which this booth falls as listed on the cover sheet of the electoral rolls of 2017
+block_14 | Development block into which this booth falls as listed on the cover sheet of the electoral rolls of 2017 (only urban booths)
+panchayat_14 | Panchayat into which this booth falls as listed on the cover sheet of the electoral rolls of 2017 (only urban booths)
+village_14 | Village into which this booth falls as listed on the cover sheet of the electoral rolls of 2017 (only rural booths)
+thana_14 | Police thana jurisdiction into which this booth falls as listed on the cover sheet of the electoral rolls of 2017
+postoffice_14 | Postoffice under which this booth falls as listed on the cover sheet of the electoral rolls of 2017
+pincode_14 | Pincode of this booth as listed on the cover sheet of the electoral rolls of 2017
+ac_name_17 | Name of that assembly segment, as assigned by the Election Commission in 2017
+ac_reserved_17 | Reservation status of that assembly segment, as assigned by the Election Commission in 2017
+booth_id_17 | ID code of the polling booth, as assigned by the Election Commission in 2017
+station_id_17 | ID code of the polling station, i.e. the physical unit housing this polling booth (note that this is a concept not used by the Election Commission, but introduced by me - basically all polling booths with subsequent ID codes and roughly similar names are considered to fall within one station)
+booth_name_17 | Name of the polling booth as listed on the cover sheet of the electoral rolls of 2017
+address_17 | Address of the station into which this booth falls as listed on the cover sheet of the electoral rolls of 2017
+parts_17 | Areas (aka 'parts') which this booth covers as listed on the cover sheet of the electoral rolls of 2017
+district_17 | District into which this booth falls as listed on the cover sheet of the electoral rolls of 2017
+tehsil_17 | Tehsil into which this booth falls as listed on the cover sheet of the electoral rolls of 2017
+block_17 | Development block into which this booth falls as listed on the cover sheet of the electoral rolls of 2017 (only urban booths)
+panchayat_17 | Panchayat into which this booth falls as listed on the cover sheet of the electoral rolls of 2017 (only urban booths)
+village_17 | Village into which this booth falls as listed on the cover sheet of the electoral rolls of 2017 (only rural booths)
+thana_17 | Police thana jurisdiction into which this booth falls as listed on the cover sheet of the electoral rolls of 2017
+postoffice_17 | Postoffice under which this booth falls as listed on the cover sheet of the electoral rolls of 2017
+pincode_17 | Pincode of this booth as listed on the cover sheet of the electoral rolls of 2017
 
 ## Processing
 

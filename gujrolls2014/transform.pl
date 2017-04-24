@@ -16,6 +16,7 @@ $dbh->do ("INSERT INTO gujrolls2014 (ac_id_09, booth_id_14, electors_14, missing
 
 open (FILE, ">gujrolls2014-b.sql");
 
+print FILE "CREATE INDEX ac_booth_14 ON gujid (ac_id_09, booth_id_14);\n";
 print FILE "ALTER TABLE gujid ADD COLUMN pincode_14 INTEGER;\n";
 print FILE "ALTER TABLE gujid ADD COLUMN booth_name_14 CHAR;\n";
 print FILE "ALTER TABLE gujid ADD COLUMN address_14 CHAR;\n";

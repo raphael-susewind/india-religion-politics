@@ -144,7 +144,7 @@ $csv->parse($header);
 my @header=$csv->fields();
 my @realheader=();
 
-# $dbh->do ("ALTER TABLE upid ADD COLUMN ac_id_09 INTEGER");
+$dbh->do ("ALTER TABLE upid ADD COLUMN ac_id_09 INTEGER");
 $dbh->do ("ALTER TABLE upid ADD COLUMN ac_name_09 CHAR");
 $dbh->do ("ALTER TABLE upid ADD COLUMN ac_reserved_09 CHAR");
 $dbh->do ("ALTER TABLE upid ADD COLUMN booth_id_09 INTEGER");
@@ -369,6 +369,7 @@ print FILE "ALTER TABLE upid ADD COLUMN station_id_09 INTEGER;\n";
 my $insert;
 foreach my $line (@file) {
     if ($line =~ /^CREATE TABLE upid (.*?);/) {$insert=$1;$insert=~s/ CHAR//gs; $insert=~s/ INTEGER//gs; next}
+    if ($line =~ /^ALTER TABLE upid/) {next}
     if ($line =~ /^INSERT INTO \"upid\"/) {$line =~ s/^INSERT INTO \"upid\"/INSERT INTO \"upid\" $insert/}
     print FILE $line;
 }
