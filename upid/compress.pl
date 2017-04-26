@@ -1040,8 +1040,10 @@ open (FILE, ">>upid-b.sql");
 
 print FILE ".mode csv\n";
 print FILE ".headers on\n";
-print FILE ".once upid/upid.csv\n";
-print FILE "SELECT * FROM upid;\n";
+print FILE ".once upid/upid-a.csv\n";
+print FILE "SELECT * FROM upid LIMIT 90000;\n";
+print FILE ".once upid/upid-b.csv\n";
+print FILE "SELECT * FROM upid LIMIT -1 OFFSET 90000;\n";
 print FILE "VACUUM;";
 
 close (FILE);
