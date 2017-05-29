@@ -70,3 +70,6 @@ pragma temp_store_directory = '.';
 .read rajrolls2014/rajrolls2014-a.sql
 .read rajrolls2014/rajrolls2014-b.sql
 .read rajgis/rajgis.sql
+.read wbrolls2014/wbrolls2014-a.sql
+.read wbrolls2014/wbrolls2014-b.sql
+.read wbgis/wbgis.sql

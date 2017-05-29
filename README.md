@@ -61,6 +61,9 @@ table | description
 [uprolls2015](https://github.com/raphael-susewind/india-religion-politics/tree/master/uprolls2015) | Booth-level estimates of religious demography for 2015 across Uttar Pradesh
 [uprolls2016](https://github.com/raphael-susewind/india-religion-politics/tree/master/uprolls2016) | Booth-level estimates of religious demography for 2016 across Uttar Pradesh
 [uprolls2017](https://github.com/raphael-susewind/india-religion-politics/tree/master/uprolls2017) | Booth-level estimates of religious demography for 2017 across Uttar Pradesh
+[wbid](https://github.com/raphael-susewind/india-religion-politics/tree/master/wbid) | ID matching and integration table for West Bengal (see below)
+[wbgis](https://github.com/raphael-susewind/india-religion-politics/tree/master/wbgis) | GIS coordinates and other spatial characteristics of polling booths in West Bengal
+[wbrolls2014](https://github.com/raphael-susewind/india-religion-politics/tree/master/wbrolls2014) | Booth-level estimates of religious demography for 2014 across West Bengal
 
 
 If you wish to **recreate the whole database**, the easiest way would be to clone this repository in its entirety, and then run the equivalent of `cat combined-a.sql | sqlite3 combined.sqlite` and `cat combined-b.sql | sqlite3 combined.sqlite` on your system. This will automatically create a new combined.sqlite file by running all table.sql files in the correct order. You can then extract your data from one or multiple tables for further processing using standard SQL commands. 
