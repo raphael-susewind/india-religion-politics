@@ -12,3 +12,4 @@ pragma temp_store_directory = '.';
 .read mahaid/mahaid-b.sql
 .read orid/orid-b.sql
 .read rajid/rajid-b.sql
+.read wbid/wbid-b.sql
