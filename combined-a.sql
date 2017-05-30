@@ -21,6 +21,12 @@ pragma temp_store_directory = '.';
 .read upvidhansabha2017/upvidhansabha2017-d.sql
 .read upvidhansabha2017/upvidhansabha2017-e.sql
 .read upvidhansabha2017/upvidhansabha2017-f.sql
+.read upvidhansabha2017/upvidhansabha2017-g.sql
+.read upvidhansabha2017/upvidhansabha2017-h.sql
+.read upvidhansabha2017/upvidhansabha2017-i.sql
+.read upvidhansabha2017/upvidhansabha2017-j.sql
+.read upvidhansabha2017/upvidhansabha2017-k.sql
+.read upvidhansabha2017/upvidhansabha2017-l.sql
 .read uprolls2011/uprolls2011-a.sql
 .read uprolls2011/uprolls2011-b.sql
 .read uprolls2012/uprolls2012.sql

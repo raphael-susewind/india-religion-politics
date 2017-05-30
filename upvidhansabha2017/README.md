@@ -26,7 +26,7 @@ votes_*_percent_17 | votes_*_17 divided by turnout_17
 
 ## Raw data
 
-Originally, this data was crawled using download.pl on May 8, 2017 from http://ceouttarpradesh.nic.in/Form20.aspx and then processed through transform.pl for integration into the main database
+Originally, this data was crawled using download.pl on May 8, 2017 from http://ceouttarpradesh.nic.in/Form20.aspx and then processed through transform.pl for integration into the main database. I am grateful to Yusuf Neggers from Brown for helping in cleaning the mess up...
 
 ## License
 
