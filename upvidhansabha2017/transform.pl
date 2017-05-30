@@ -17,6 +17,8 @@ $dbh->do ("CREATE TABLE upvidhansabha2017 (id INTEGER PRIMARY KEY, ac_id_09 INTE
 # Parse XML and try to extract correct headers as well as content...
 #
 
+$dbh->begin_work;
+
 my %allparty;
 for ($ac=1;$ac<=403;$ac++) { 
     my $actual; my %party; 
@@ -672,7 +674,7 @@ for ($ac=1;$ac<=403;$ac++) {
 	$header->{6} = 'votes_md_17';	
 	$header->{7} = 'votes_ind1_17';
 	$header->{8} = 'votes_ind2_17';
-    } elsif ($ac==32) {
+     } elsif ($ac==32) {
         undef($header);
 	$header->{1} = 'booth_id_17';
 	$header->{16} = 'turnout_17';
@@ -2446,35 +2448,37 @@ for ($ac=1;$ac<=403;$ac++) {
     #
     # Actually insert results into table
     #
-    $dbh->begin_work;
     
     foreach my $key (keys(%{$actual})) {
 	if ($actual->{$key}->{'booth_id_17'} > 0) {	
-	next if $actual->{$key}->{'electors_17'} > 5000; # signals this is the total line rather than anything else
-	next if $actual->{$key}->{'electors_17'} < 100; # signals again that something fishy is going on...
+	  next if $actual->{$key}->{'electors_17'} > 5000; # signals this is the total line rather than anything else
+	  next if $actual->{$key}->{'electors_17'} < 100 and $actual->{$key}->{'electors_17'} > 1; # signals again that something fishy is going on...
 
-	my $insertheader; my $insertmarks; my @insertcontent;
-	foreach my $subkey (keys(%{$actual->{$key}})) {
-	    next if $actual->{$key}->{$subkey} !~ /^[0-9]+$/;
-	    my $party = $subkey;
-	    $party =~ s/-/_/gs;
-	    $insertheader.=$party.", "; 
-	    $insertmarks.="?, ";
-	    push (@insertcontent, $actual->{$key}->{$subkey});
-        }
-        push (@insertcontent,$ac);
-	$dbh->do("INSERT INTO upvidhansabha2017 (".$insertheader."ac_id_09) VALUES (".$insertmarks."?)",undef,@insertcontent);
+	  my $insertheader; my $insertmarks; my @insertcontent;
+ 	  foreach my $subkey (keys(%{$actual->{$key}})) {
+	     next if $actual->{$key}->{$subkey} !~ /^[0-9]+$/;
+	     my $party = $subkey;
+	     $party =~ s/-/_/gs;
+	     $insertheader.=$party.", "; 
+	     $insertmarks.="?, ";
+	     push (@insertcontent, $actual->{$key}->{$subkey});
+          }
+          push (@insertcontent,$ac);
+	  $dbh->do("INSERT INTO upvidhansabha2017 (".$insertheader."ac_id_09) VALUES (".$insertmarks."?)",undef,@insertcontent);
         }
     }
     
-    $dbh->commit;
 }
+
+$dbh->commit;
 
 $dbh->do ("CREATE INDEX ac_booth ON upvidhansabha2017 (ac_id_09,booth_id_17)");
 
 #
-# Calculate percentages
+# Calculate percentages and fix stuff
 #
+
+$dbh->do("UPDATE upvidhansabha2017 SET turnout_17 = male_votes_17 + female_votes_17 WHERE turnout_17 < male_votes_17");
 
 $dbh->begin_work;
 $dbh->do("UPDATE upvidhansabha2017 SET turnout_percent_17 = cast(turnout_17 as FLOAT)/electors_17");
@@ -2490,8 +2494,6 @@ $dbh->commit;
 #
 # Finally create sqlite dump 
 #
-
-
 
 system("sqlite3 temp.sqlite '.dump upvidhansabha2017' > upvidhansabha2017-a.sql");
 
@@ -2517,6 +2519,38 @@ system("echo 'COMMIT;' >> upvidhansabha2017-c.sql");
 system("rm xac");
 system("echo 'BEGIN TRANSACTION;' > upvidhansabha2017-d.sql");
 system("cat xad >> upvidhansabha2017-d.sql");
+system("echo 'COMMIT;' >> upvidhansabha2017-d.sql");
 system("rm xad");
-
+system("echo 'BEGIN TRANSACTION;' > upvidhansabha2017-e.sql");
+system("cat xae >> upvidhansabha2017-e.sql");
+system("echo 'COMMIT;' >> upvidhansabha2017-e.sql");
+system("rm xae");
+system("echo 'BEGIN TRANSACTION;' > upvidhansabha2017-f.sql");
+system("cat xaf >> upvidhansabha2017-f.sql");
+system("echo 'COMMIT;' >> upvidhansabha2017-f.sql");
+system("rm xaf");
+system("echo 'BEGIN TRANSACTION;' > upvidhansabha2017-g.sql");
+system("cat xag >> upvidhansabha2017-g.sql");
+system("echo 'COMMIT;' >> upvidhansabha2017-g.sql");
+system("rm xag");
+system("echo 'BEGIN TRANSACTION;' > upvidhansabha2017-h.sql");
+system("cat xah >> upvidhansabha2017-h.sql");
+system("echo 'COMMIT;' >> upvidhansabha2017-h.sql");
+system("rm xah");
+system("echo 'BEGIN TRANSACTION;' > upvidhansabha2017-i.sql");
+system("cat xai >> upvidhansabha2017-i.sql");
+system("echo 'COMMIT;' >> upvidhansabha2017-i.sql");
+system("rm xai");
+system("echo 'BEGIN TRANSACTION;' > upvidhansabha2017-j.sql");
+system("cat xaj >> upvidhansabha2017-j.sql");
+system("echo 'COMMIT;' >> upvidhansabha2017-j.sql");
+system("rm xaj");
+system("echo 'BEGIN TRANSACTION;' > upvidhansabha2017-k.sql");
+system("cat xak >> upvidhansabha2017-k.sql");
+system("echo 'COMMIT;' >> upvidhansabha2017-k.sql");
+system("rm xak");
+system("echo 'BEGIN TRANSACTION;' > upvidhansabha2017-l.sql");
+system("cat xal >> upvidhansabha2017-l.sql");
+system("echo 'COMMIT;' >> upvidhansabha2017-l.sql");
+system("rm xal");
 system("rm -f temp.sqlite");
