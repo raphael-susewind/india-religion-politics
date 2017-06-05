@@ -2473,6 +2473,29 @@ for ($ac=1;$ac<=403;$ac++) {
 $dbh->commit;
 
 $dbh->do ("CREATE INDEX ac_booth ON upvidhansabha2017 (ac_id_09,booth_id_17)");
+ 
+#
+# This cleans up multiple rows per booth ID issues...
+#
+
+my $sql = $dbh->selectrow_array("SELECT sql FROM sqlite_master WHERE tbl_name='upvidhansabha2017'");
+$sql=~s/^CREATE TABLE upvidhansabha2017 \(//gs;
+$sql=~s/\)$//gs;
+my @headers=split(/,/,$sql);
+
+my @concatsql;
+foreach my $header (@headers) {
+    $header =~ s/^\s+//gs;
+    my ($name,$type) = split(/\s+/,$header);
+    next if $name eq 'CREATE';
+    if ($type eq 'INTEGER') {push(@concatsql, "cast(max($name) as integer) '$name'")}
+    elsif ($type eq 'FLOAT') {push(@concatsql, "cast(max($name) as float) '$name'")}
+    else {push(@concatsql, "cast(group_concat(DISTINCT $name) as char) '$name'")}
+}
+
+$dbh-> do("CREATE TABLE temp AS SELECT ".join(", ",@concatsql)." FROM upvidhansabha2017 GROUP BY ac_id_09,booth_id_17");
+$dbh-> do("DROP TABLE upvidhansabha2017");
+$dbh-> do("ALTER TABLE temp RENAME TO upvidhansabha2017");
 
 #
 # Calculate percentages and fix stuff
@@ -2533,24 +2556,4 @@ system("echo 'BEGIN TRANSACTION;' > upvidhansabha2017-g.sql");
 system("cat xag >> upvidhansabha2017-g.sql");
 system("echo 'COMMIT;' >> upvidhansabha2017-g.sql");
 system("rm xag");
-system("echo 'BEGIN TRANSACTION;' > upvidhansabha2017-h.sql");
-system("cat xah >> upvidhansabha2017-h.sql");
-system("echo 'COMMIT;' >> upvidhansabha2017-h.sql");
-system("rm xah");
-system("echo 'BEGIN TRANSACTION;' > upvidhansabha2017-i.sql");
-system("cat xai >> upvidhansabha2017-i.sql");
-system("echo 'COMMIT;' >> upvidhansabha2017-i.sql");
-system("rm xai");
-system("echo 'BEGIN TRANSACTION;' > upvidhansabha2017-j.sql");
-system("cat xaj >> upvidhansabha2017-j.sql");
-system("echo 'COMMIT;' >> upvidhansabha2017-j.sql");
-system("rm xaj");
-system("echo 'BEGIN TRANSACTION;' > upvidhansabha2017-k.sql");
-system("cat xak >> upvidhansabha2017-k.sql");
-system("echo 'COMMIT;' >> upvidhansabha2017-k.sql");
-system("rm xak");
-system("echo 'BEGIN TRANSACTION;' > upvidhansabha2017-l.sql");
-system("cat xal >> upvidhansabha2017-l.sql");
-system("echo 'COMMIT;' >> upvidhansabha2017-l.sql");
-system("rm xal");
 system("rm -f temp.sqlite");
