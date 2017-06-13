@@ -25,6 +25,19 @@ female_percent_14 | Percentage of female electors among all electors
 age_*_avg_14 | Average age of electors estimated to be * (Hindu / Muslim / Christian / Sikh / Jain / Buddhist)
 age_*_stddev_14 | Standard deviation of the age distribution of electors  estimated to be * (Hindu / Muslim / Christian / Sikh / Jain / Buddhist)
 female_*_percent_14 | Percentage of female electors among electors estimated to be * (Hindu / Muslim / Christian / Sikh / Jain / Buddhist)
+missing_percent_pure_14 | Percentage of electors whose names could not be matched by the algorithm (one crude aggregate measure of reliability), discarding ngram matches
+hindu_percent_pure_14 | Estimated percentage of electors who are Hindu, discarding ngram matches
+muslim_percent_pure_14 | Estimated percentage of electors who are Muslim, discarding ngram matches
+christian_percent_pure_14 | Estimated percentage of electors who are Christian (be aware that accuracy of the algorithm has only been tested for Hindu and Muslim names, not Christian ones), discarding ngram matches
+sikh_percent_pure_14 | Estimated percentage of electors who are Sikh (be aware that accuracy of the algorithm has only been tested for Hindu and Muslim names, not Sikh ones), discarding ngram matches
+jain_percent_pure_14 | Estimated percentage of electors who are Jain (be aware that accuracy of the algorithm has only been tested for Hindu and Muslim names, not Jain ones), discarding ngram matches
+buddhist_percent_pure_14 | Estimated percentage of electors who are Buddhist (be aware that accuracy of the algorithm has only been tested for Hindu and Muslim names, not Buddhist ones), discarding ngram matches
+age_avg_pure_14 | Average age of all electors, discarding ngram matches
+age_stddev_pure_14 | Standard deviation of the age distribution of all electors, discarding ngram matches
+female_percent_pure_14 | Percentage of female electors among all electors, discarding ngram matches
+age_*_avg_pure_14 | Average age of electors estimated to be * (Hindu / Muslim / Christian / Sikh / Jain / Buddhist), discarding ngram matches
+age_*_stddev_pure_14 | Standard deviation of the age distribution of electors  estimated to be * (Hindu / Muslim / Christian / Sikh / Jain / Buddhist), discarding ngram matches
+female_*_percent_pure_14 | Percentage of female electors among electors estimated to be * (Hindu / Muslim / Christian / Sikh / Jain / Buddhist), discarding ngram matches
 
 ## Raw data
 
@@ -32,9 +45,11 @@ Originally, the electoral rolls were crawled in July 2014 from http://ceowestben
 
 Prof Atanu Biswas of the Indian Statistical Institute in Kolkata was kind enough to manually classify a sample of 1000 random names by religion (Muslim / non-Muslim). This allowed me to estimate the accuracy of my automated approach, and unfortunately it is much less accurate than with names from UP written in Devanagari (as reported  [here](https://github.com/raphael-susewind/name2community)). Specifically, the algorithm in this case (Bengali script and WB names) only achieves a sensitivity and specificity of 0.69 and 0.70, respectively, with positive predictive value of 0.44 and negative predictive value of 0.87 (see random-names.csv and random-names.pl).  In consequence, this table over-estimates Muslim demography by quite a bit, so tread carefully: relative comparisons between booths, ACs, etc should be meaningful, but absolute figures are wrong. You have been warned!
 
+In response to these accuracy concerns, I also added *_pure_14 variables. They discard the ngram matches before aggregating, resulting in more accurate estimates but also less coverage (ie the average missing_percent_pure_14 is three times the missing_percent_14). Its a tradeoff, basically but I'd suggest that if you are after absolute estimates you are probably slightly better off with the pure variables - if you are only after relative proportions, the standard estimates could be more meaningful - up to you...
+
 Raw data itself (electoral roll PDFs as well as the voter-by-voter name classifications derived from them) are not shared here, though, both to save space (it amounts to several GBs of binary dumps) and in light of privacy concerns (electoral rolls are public data, but I doubt that electors like to have their probable religion searchable by EPIC card number). 
 
-The subsequent processing chain is however preserved in the run-in-arc folder for reference. It ran on the [Oxford Advanced Research Computing cluster](https://www.arc.ox.ac.uk) and several hardcoded binary paths as well as the Torque scheduler commands are unique to this environment. After running createnamedb.pl once and putting all additional software in place, the chain was started using run.sh, which basically sparked 294 parallel processes (one for each assembly segment), in which roll PDFs were downloaded, relevant data extracted, names of electors matched to likely religion and ultimately booth-wise estimates of religious demography calculated, using ngram technology to further reduce missing_percent_14 (see scripts for details). 
+The subsequent processing chain is however preserved in the run-in-arc folder for reference. It ran on the [Oxford Advanced Research Computing cluster](https://www.arc.ox.ac.uk) and several hardcoded binary paths as well as the Torque scheduler commands are unique to this environment. After running createnamedb.pl once and putting all additional software in place, the chain was started using run.sh, which basically sparked 294 parallel processes (one for each assembly segment), in which roll PDFs were downloaded, relevant data extracted, names of electors matched to likely religion and ultimately booth-wise estimates of religious demography calculated, using ngram technology to further reduce missing_percent_14 (see scripts for details, and the *_pure_14 variables for aggregates without ngram matches). 
 
 The major problem was something else, though: Because the PDFs were corrupted, one could not simply extract non-latin text from them as was the case in earlier years - it came out garbled. Turns out the version of Crystal Reports used in 2014 resulted in wrong ToUnicode CMaps in the PDF - an unfixable problem. Ultimately, I thus settled on an OCR solution - see pdf2list.pl for the gory details (each electoral roll is dissected into tiny TIFFs, which are then fed through tesseract). 
 
