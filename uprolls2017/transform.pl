@@ -72,6 +72,15 @@ $dbh->sqlite_backup_to_file("temp.sqlite");
 
 system("sqlite3 temp.sqlite '.dump uprolls2017' > uprolls2017-a.sql");
 
+open (FILE, ">>uprolls2017-a.sql");
+
+print FILE ".header on\n";
+print FILE ".mode csv\n";
+print FILE ".once uprolls2017/uprolls2017.csv\n";
+print FILE "SELECT * FROM uprolls2017;\n";
+
+close (FILE);
+
 system("sqlite3 temp.sqlite '.dump upid' > uprolls2017-b.sql");
 
 open (FILE, "uprolls2017-b.sql");
