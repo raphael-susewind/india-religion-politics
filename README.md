@@ -16,6 +16,9 @@ table | description
 [delhiid](https://github.com/raphael-susewind/india-religion-politics/tree/master/delhiid) | ID matching and integration table for Delhi (see below)
 [delhigis](https://github.com/raphael-susewind/india-religion-politics/tree/master/delhigis) | GIS coordinates and other spatial characteristics of polling booths in Delhi
 [delhirolls2014](https://github.com/raphael-susewind/india-religion-politics/tree/master/delhirolls2014) | Booth-level estimates of religious demography for 2014 across Delhi
+[goaid](https://github.com/raphael-susewind/india-religion-politics/tree/master/goaid) | ID matching and integration table for Goa (see below)
+[goagis](https://github.com/raphael-susewind/india-religion-politics/tree/master/goagis) | GIS coordinates and other spatial characteristics of polling booths in Goa
+[goarolls2014](https://github.com/raphael-susewind/india-religion-politics/tree/master/goarolls2014) | Booth-level estimates of religious demography for 2014 across Goa
 [gujid](https://github.com/raphael-susewind/india-religion-politics/tree/master/gujid) | ID matching and integration table for Gujarat (see below)
 [gujgis](https://github.com/raphael-susewind/india-religion-politics/tree/master/gujgis) | GIS coordinates and other spatial characteristics of polling booths in Gujarat
 [gujloksabha2014](https://github.com/raphael-susewind/india-religion-politics/tree/master/gujloksabha2014) | Booth-level (form 20) results for the 2014 Lok Sabha election from Gujarat

@@ -74,3 +74,6 @@ pragma temp_store_directory = '.';
 .read wbrolls2014/wbrolls2014-a.sql
 .read wbrolls2014/wbrolls2014-b.sql
 .read wbgis/wbgis.sql
+.read goarolls2014/goarolls2014-a.sql
+.read goarolls2014/goarolls2014-b.sql
+.read goagis/goagis.sql
