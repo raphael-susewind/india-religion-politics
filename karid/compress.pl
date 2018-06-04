@@ -28,7 +28,7 @@ print FILE "BEGIN TRANSACTION;\n";
 $dbh = DBI->connect("DBI:SQLite:dbname=:memory:", "","", {sqlite_unicode=>1});
 $dbh->sqlite_backup_from_file('actopc.sqlite');
 
-for ($ac=1;$ac<=182;$ac++) {
+for ($ac=1;$ac<=224;$ac++) {
     my $ref = $dbh->selectcol_arrayref("SELECT ac_name FROM actopc WHERE ac = ?",undef,$ac);
     print FILE "UPDATE karid SET ac_name_14 = '".@$ref[0]."' WHERE ac_id_09 = $ac;\n";
     my $ref = $dbh->selectcol_arrayref("SELECT ac_reserved FROM actopc WHERE ac = ?",undef,$ac);
