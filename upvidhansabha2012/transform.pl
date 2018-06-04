@@ -493,6 +493,9 @@ foreach my $line (@tempcsv) {
     if ($turnout == 0) {$turnout = $male_votes + $female_votes}
     my $turnout_percent = 0; if ($electors > 0) {$turnout_percent=int($turnout/$electors*10000)/100;}
     my $female_votes_percent = 0; if ($turnout > 0) {$female_votes_percent=int($female_votes/$turnout*10000)/100;}
+
+    # Correction after Tanushree's indication that something is off...
+    shift (@fields);
     
     my @add=();
     foreach my $party (@fields) {
