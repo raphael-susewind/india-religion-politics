@@ -23,4 +23,14 @@ $dbh->sqlite_backup_to_file("temp.sqlite");
 
 system("sqlite3 temp.sqlite '.dump uprolls2012' > uprolls2012.sql");
 
+open (FILE, ">>uprolls2012.sql");
+
+print FILE ".header on\n";
+print FILE ".mode csv\n";
+print FILE ".once uprolls2012/uprolls2012.csv\n";
+print FILE "SELECT * FROM uprolls2012;\n";
+
+close (FILE);
+
+
 system("rm temp.sqlite booths.sqlite");
