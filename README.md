@@ -93,6 +93,8 @@ The dataset in its entirety is **licensed** under an [ODC Open Database license]
 
 > Susewind, R. (2016). Data on religion and politics in India. Published under an ODbL 1.0 license. Available from https://github.com/raphael-susewind/india-religion-politics.
 
+Last but not least, **raw data** behind this dataset (e.g. original files downloaded from ECI websites over the years) is generally not included here, both to save space (it runs into several TB by now) and for privacy concerns (even though all data was originally put in the public domain by the ECI, some of it might be considered sensitive in aggregate). I do archive all relevant original downloads in a restricted access [Zenodo collection](https://zenodo.org/communities/india-religion-politics-raw) though and will make it available to legitimate academic users upon request.
+
 So I invite all to download and use this dataset for more localized quantitative analyses of political, religious and demographic dynamics in India in the spirit of Open Data sharing. Please let me know if you find the dataset useful and alert me to errors and mistakes. I provide this dataset without any guarantee - see [troubleshooting notes](https://github.com/raphael-susewind/india-religion-politics/blob/master/TROUBLESHOOTING.md) for **known general problems** with this data, alongside the various table READMEs.
 
 Raphael Susewind, mail@raphael-susewind.de, GPG key [10AEE42F](https://keybase.io/raphaelsusewind)
