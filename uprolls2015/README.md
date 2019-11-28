@@ -33,7 +33,8 @@ revision_percent_modified_15 | Percentage of electors modified in this booth's r
 
 Originally, the electoral rolls were crawled in August 2016 from http://ceouttarpradesh.nic.in/_RollPDF.aspx using run-in-osc/downloadpdf.pl; the "last updated on" entry on the rolls' cover sheet reads "1/1/2014", but the PDFs included later additions for 2015 and 2016 roll revisions (each dated on 1st January for that particular year).
 
-Raw data itself (electoral roll PDFs as well as the voter-by-voter name classifications derived from them) are not shared here, though, both to save space (it amounts to several GBs of binary dumps) and in light of privacy concerns (electoral rolls are public data, but I doubt that electors like to have their probable religion searchable by EPIC card number). 
+Raw data itself (electoral roll PDFs as well as the voter-by-voter name classifications derived from them) are not shared here, though, both to save space (it amounts to several GBs of binary dumps) and in light of privacy concerns (electoral rolls are public data, but I doubt that electors like to have their probable religion searchable by EPIC card number). I do archive all relevant original downloads in a restricted access [Zenodo collection](https://zenodo.org/communities/india-religion-politics-raw) though and will make it available to legitimate academic users upon request.
+
 
 The subsequent processing chain is however preserved in the run-in-arc folder of the [uprolls2016](https://github.com/raphael-susewind/india-religion-politics/blob/master/uprolls2016) table (from where it originally ran, processing 2015 and 2016 in one go).
 
