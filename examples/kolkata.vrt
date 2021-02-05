@@ -1,0 +1,11 @@
+<OGRVRTDataSource>
+<OGRVRTLayer name="kolkata">
+  <SrcDataSource>kolkata.csv</SrcDataSource>
+  <GeometryType>wkbPoint</GeometryType>
+  <LayerSRS>+proj=latlong +datum=WGS84</LayerSRS>
+  <GeometryField encoding="PointFromColumns" x="Longitude" y="Latitude"/>
+  <Field name="muslim_percent" type="Real" width=3 precision=2/>
+  <Field name="missing_percent" type="Real" width=3 precision=2/>
+  <Field name="station_name" type="String" width=20/>
+</OGRVRTLayer>
+</OGRVRTDataSource>
