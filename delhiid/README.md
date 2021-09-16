@@ -2,7 +2,9 @@
 
 ## delhiid
 
-This table contains the ID matching and integration table for Delhi. Each row is the equivalent of a booth. Since the databse only contains data from one year for Delhi so far, this is rather straightforward - no actual cross-year matching is necessary.
+This table contains the ID matching and integration table for Delhi. Each row is the equivalent of a booth. 
+
+Fully integrated entries would have a booth_id_14 and booth_id_21 for the same booth - this means I am convinced anything with these ID codes relates to the same actual entity.  But it might also be that an entry has only one or two associated IDs, because I could not safely say how it integrates over time (or because it disappeared / was first instituted at some point). This implies that you will be facing missing values when integrating across various  years and related ID codes - its a complicated issue to get your head around, but that's how it is...
 
 ## Variables
 
@@ -24,14 +26,18 @@ ward_14 | Ward into which this booth falls as listed on the cover sheet of the e
 town_14 | Main town into which this booth falls as listed on the cover sheet of the electoral rolls of 2014
 parts_14 | 'Parts' (usually streets) covered by this booth as listed on the cover sheet of the electoral rolls of 2014
 pincode_14 | Pincode of this booth as listed on the cover sheet of the electoral rolls of 2014
+booth_id_21 | ID code of the polling booth, as assigned by the Election Commission in 2021
 
 ## Processing
 
-The original entries for this table stem mostly from the various processing scripts of other tables. They are then compressed using compress.pl on an otherwise complete dataset SQLite file (this is the reason why combined.sql is split into combined-a.sql and combined-b.sql - so that compress.pl can be run in between if necessary). In other words: whenever any changes or additions happen to the dataset that concerns ID matching and integration, this script has to be re-run, and its output gujid.sql incorporated into the table. If you are just downloading the whole dataset, though, this comes with the current version of gujid.sql, which is automatically run at the right place by subsequently running combined-a.sql and combined-b.sql. So you should be fine...
+The original entries for this table stem mostly from the various processing scripts of other tables. They are then compressed using compress.pl on an otherwise complete dataset SQLite file (this is the reason why combined.sql is split into combined-a.sql and combined-b.sql - so that compress.pl can be run in between if necessary). In other words: whenever any changes or additions happen to the dataset that concerns ID matching and integration, this script has to be re-run, and its output delhiid.sql incorporated into the table. If you are just downloading the whole dataset, though, this comes with the current version of delhiid.sql, which is automatically run at the right place by subsequently running combined-a.sql and combined-b.sql. So you should be fine.
 
 One thing was added directly in here, though:
 
 * actopc.pl was used to map assembly segments to parliamentary constituencies, derived from http://eci.nic.in/eci_main/archiveofge2009/Stats/VOLIII/VolIII_DetailsOfAssemblySegmentsOfPC.pdf (original download on May 14, 2014) - this gave us pc_id_09, pc_name_09 and pc_reserved_09
+
+To find out which polling booth in 2014 equals which in 2021 (and in future), I looked up where the vast majority of voters listed in any given booth in 2014 were listed in 2021, and assumed these two booths to be referring to the same physical entity (this integration is actually done by the scripts in the [delhirolls2021](https://github.com/raphael-susewind/india-religion-politics/tree/master/delhirolls2021) table).  
+
 
 ## License
 

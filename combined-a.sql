@@ -49,6 +49,8 @@ pragma temp_store_directory = '.';
 .read andhragis/andhragis.sql
 .read delhirolls2014/delhirolls2014-a.sql
 .read delhirolls2014/delhirolls2014-b.sql
+.read delhirolls2021/delhirolls2021-a.sql
+.read delhirolls2021/delhirolls2021-b.sql
 .read delhigis/delhigis.sql
 .read harrolls2014/harrolls2014-a.sql
 .read harrolls2014/harrolls2014-b.sql
