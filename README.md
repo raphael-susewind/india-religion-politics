@@ -16,6 +16,7 @@ table | description
 [delhiid](https://github.com/raphael-susewind/india-religion-politics/tree/master/delhiid) | ID matching and integration table for Delhi (see below)
 [delhigis](https://github.com/raphael-susewind/india-religion-politics/tree/master/delhigis) | GIS coordinates and other spatial characteristics of polling booths in Delhi
 [delhirolls2014](https://github.com/raphael-susewind/india-religion-politics/tree/master/delhirolls2014) | Booth-level estimates of religious demography for 2014 across Delhi
+[delhirolls2021](https://github.com/raphael-susewind/india-religion-politics/tree/master/delhirolls2014) | Booth-level estimates of religious demography for 2021 across Delhi
 [goaid](https://github.com/raphael-susewind/india-religion-politics/tree/master/goaid) | ID matching and integration table for Goa (see below)
 [goagis](https://github.com/raphael-susewind/india-religion-politics/tree/master/goagis) | GIS coordinates and other spatial characteristics of polling booths in Goa
 [goarolls2014](https://github.com/raphael-susewind/india-religion-politics/tree/master/goarolls2014) | Booth-level estimates of religious demography for 2014 across Goa
