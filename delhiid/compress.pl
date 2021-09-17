@@ -68,13 +68,6 @@ $sql=~s/^CREATE TABLE delhiid \(//gs;
 $sql=~s/\)$//gs;
 my @headers=split(/,/,$sql);
 
-# CAREFUL: THIS NEEDS TO BE IN THE RIGHT SEQUENCE! (ie the sequence that is used in this script)
-push (@headers, 'pc_id_09 INTEGER');
-push (@headers, 'pc_name_09 CHAR');
-push (@headers, 'pc_reserved_09 CHAR');
-push (@headers, 'ac_name_14 CHAR');
-push (@headers, 'ac_reserved_14 CHAR');
-
 my @concatsql;
 foreach my $header (@headers) {
     $header =~ s/^\s+//gs;
