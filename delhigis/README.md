@@ -12,6 +12,7 @@ ac_id_09 | ID code of the assembly segment assigned by the Election Commission (
 booth_id_14 | ID code of the polling booth assigned by the Election Commission for 2014 booths (together with ac_id_09, this should suffice for matching with other tables)
 booth_name_14 | Name of the polling booth assigned by the Election Commission for 2014 booths
 district_name_14 | Name of the district into which this polling booth is supposed to fall in 2014 (could be used for cleaning the data)
+booth_id_21 | ID code of the polling booth assigned by the Election Commission for 2021 booths (together with ac_id_09, this should suffice for matching with other tables)
 latitude | Geographical latitude
 longitude | Geographical longitude
 modis | Urban area or not? Derived from MODIS polygon (see below)
@@ -24,6 +25,8 @@ The 2014 data was originally scraped using the Firefox MozRepl plugin in conjunc
 All three sets of point data were then dumped into CSVs, transformed into ESRI shapefiles using `ogr2ogr booths-locality.shp booths-locality.vrt` and matched manually against the MODIS polygon from [Naturalearth](http://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-urban-area/) using QGIS. The result was then exported back into booths-locality-modis.sqlite.
 
 The final table was put together using `cat transform.sql | sqlite3`.
+
+The 2021 data was scraped from an API used within https://electoralsearch.in using download2021.pl and is included into the main database using delhigis2021.sql; note that the 2021 booth IDs are NOT identical with 2014 booth IDs.
 
 ## License
 
