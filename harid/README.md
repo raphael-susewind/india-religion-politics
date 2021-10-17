@@ -26,6 +26,7 @@ ward_14 | Ward number (if urban) or Basti number (if rural) into which this boot
 village_14 | Village / main town (if urban) into which this booth falls as listed on the cover sheet of the electoral rolls of 2014
 parts_14 | 'Parts' (usually streets) covered by this booth as listed on the cover sheet of the electoral rolls of 2014
 pincode_14 | Pincode of this booth as listed on the cover sheet of the electoral rolls of 2014
+booth_id_21 | ID code of the polling booth, as assigned by the Election Commission in 2021
 
 
 ## Processing
@@ -35,6 +36,8 @@ The original entries for this table stem mostly from the various processing scri
 One thing was added directly in here, though:
 
 * actopc.pl was used to map assembly segments to parliamentary constituencies, derived from http://eci.nic.in/eci_main/archiveofge2009/Stats/VOLIII/VolIII_DetailsOfAssemblySegmentsOfPC.pdf (original download on May 14, 2014) - this gave us pc_id_09, pc_name_09 and pc_reserved_09
+
+To find out which polling booth in 2014 equals which in 2021 (and in future), I looked up where the vast majority of voters listed in any given booth in 2014 were listed in 2021, and assumed these two booths to be referring to the same physical entity (this integration is actually done by the scripts in the [harrolls2021](https://github.com/raphael-susewind/india-religion-politics/tree/master/harrolls2021) table).  
 
 ## License
 
