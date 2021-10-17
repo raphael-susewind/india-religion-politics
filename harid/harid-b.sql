@@ -455,6 +455,14 @@ UPDATE harid SET pc_id_09 = 10 WHERE ac_id_09 = 90;
 UPDATE harid SET pc_name_09 = 'Faridabad' WHERE ac_id_09 = 90;
 UPDATE harid SET pc_reserved_09 = '' WHERE ac_id_09 = 90;
 COMMIT;
+CREATE TABLE temp AS SELECT cast(max(ac_id_09) as integer) 'ac_id_09', cast(max(booth_id_14) as integer) 'booth_id_14', cast(group_concat(DISTINCT booth_name_14) as char) 'booth_name_14', cast(group_concat(DISTINCT address_14) as char) 'address_14', cast(group_concat(DISTINCT parts_14) as char) 'parts_14', cast(group_concat(DISTINCT village_14) as char) 'village_14', cast(max(ward_14) as integer) 'ward_14', cast(group_concat(DISTINCT revenue_14) as char) 'revenue_14', cast(group_concat(DISTINCT court_14) as char) 'court_14', cast(group_concat(DISTINCT thana_14) as char) 'thana_14', cast(group_concat(DISTINCT tehsil_14) as char) 'tehsil_14', cast(group_concat(DISTINCT district_14) as char) 'district_14', cast(max(pincode_14) as integer) 'pincode_14', cast(max(pc_id_09) as integer) 'pc_id_09', cast(group_concat(DISTINCT pc_name_09) as char) 'pc_name_09', cast(group_concat(DISTINCT pc_reserved_09) as char) 'pc_reserved_09', cast(group_concat(DISTINCT ac_name_14) as char) 'ac_name_14', cast(group_concat(DISTINCT ac_reserved_14) as char) 'ac_reserved_14', cast(max(booth_id_21) as integer) 'booth_id_21' FROM harid WHERE booth_id_14 IS NOT NULL GROUP BY ac_id_09,booth_id_14;
+INSERT INTO temp SELECT * FROM harid WHERE booth_id_14 IS NULL;
+DROP TABLE harid;
+ALTER TABLE temp RENAME TO harid;
+CREATE TABLE temp AS SELECT cast(max(ac_id_09) as integer) 'ac_id_09', cast(max(booth_id_14) as integer) 'booth_id_14', cast(group_concat(DISTINCT booth_name_14) as char) 'booth_name_14', cast(group_concat(DISTINCT address_14) as char) 'address_14', cast(group_concat(DISTINCT parts_14) as char) 'parts_14', cast(group_concat(DISTINCT village_14) as char) 'village_14', cast(max(ward_14) as integer) 'ward_14', cast(group_concat(DISTINCT revenue_14) as char) 'revenue_14', cast(group_concat(DISTINCT court_14) as char) 'court_14', cast(group_concat(DISTINCT thana_14) as char) 'thana_14', cast(group_concat(DISTINCT tehsil_14) as char) 'tehsil_14', cast(group_concat(DISTINCT district_14) as char) 'district_14', cast(max(pincode_14) as integer) 'pincode_14', cast(max(pc_id_09) as integer) 'pc_id_09', cast(group_concat(DISTINCT pc_name_09) as char) 'pc_name_09', cast(group_concat(DISTINCT pc_reserved_09) as char) 'pc_reserved_09', cast(group_concat(DISTINCT ac_name_14) as char) 'ac_name_14', cast(group_concat(DISTINCT ac_reserved_14) as char) 'ac_reserved_14', cast(max(booth_id_21) as integer) 'booth_id_21' FROM harid WHERE booth_id_21 IS NOT NULL GROUP BY ac_id_09,booth_id_21;
+INSERT INTO temp SELECT * FROM harid WHERE booth_id_21 IS NULL;
+DROP TABLE harid;
+ALTER TABLE temp RENAME TO harid;
 .mode csv
 .headers on
 .once harid/harid.csv

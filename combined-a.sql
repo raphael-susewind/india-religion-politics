@@ -32,6 +32,8 @@ pragma temp_store_directory = '.';
 .read uprolls2016/uprolls2016.sql
 .read uprolls2017/uprolls2017-a.sql
 .read uprolls2017/uprolls2017-b.sql
+.read uprolls2021/uprolls2021-a.sql
+.read uprolls2021/uprolls2021-b.sql
 .read upcandidates2007/upcandidates2007.sql
 .read upcandidates2009/upcandidates2009.sql
 .read upcandidates2012/upcandidates2012.sql
