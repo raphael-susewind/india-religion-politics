@@ -15,6 +15,7 @@ ac_id_09 | ID code of the assembly segment that booth falls in, as assigned by t
 ac_name_14 | Name of that assembly segment, as assigned by the Election Commission in 2014
 ac_reserved_14 | Reservation status of that assembly segment, as assigned by the Election Commission in 2014
 booth_id_14 | ID code of the polling booth, as assigned by the Election Commission in 2014
+booth_id_21 | ID code of the polling booth, as assigned by the Election Commission in 2021
 
 
 ## Processing
@@ -24,6 +25,8 @@ The original entries for this table stem mostly from the various processing scri
 One thing was added directly in here, though:
 
 * actopc.pl was used to map assembly segments to parliamentary constituencies, derived from http://eci.nic.in/eci_main/archiveofge2009/Stats/VOLIII/VolIII_DetailsOfAssemblySegmentsOfPC.pdf (original download on May 14, 2014) - this gave us pc_id_09, pc_name_09 and pc_reserved_09
+
+To find out which polling booth in 2014 equals which in 2021 (and in future), I looked up where the vast majority of voters listed in any given booth in 2014 were listed in 2021, and assumed these two booths to be referring to the same physical entity (this integration is actually done by the scripts in the [wbrolls2021](https://github.com/raphael-susewind/india-religion-politics/tree/master/wbrolls2021) table).  
 
 ## License
 
