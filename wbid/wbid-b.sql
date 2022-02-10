@@ -1,3 +1,11 @@
+CREATE TABLE temp AS SELECT cast(max(ac_id_09) as integer) 'ac_id_09', cast(max(booth_id_14) as integer) 'booth_id_14', cast(max(booth_id_21) as integer) 'booth_id_21' FROM wbid WHERE booth_id_14 IS NOT NULL GROUP BY ac_id_09,booth_id_14;
+INSERT INTO temp SELECT * FROM wbid WHERE booth_id_14 IS NULL;
+DROP TABLE wbid;
+ALTER TABLE temp RENAME TO wbid;
+CREATE TABLE temp AS SELECT cast(max(ac_id_09) as integer) 'ac_id_09', cast(max(booth_id_14) as integer) 'booth_id_14', cast(max(booth_id_21) as integer) 'booth_id_21' FROM wbid WHERE booth_id_21 IS NOT NULL GROUP BY ac_id_09,booth_id_21;
+INSERT INTO temp SELECT * FROM wbid WHERE booth_id_21 IS NULL;
+DROP TABLE wbid;
+ALTER TABLE temp RENAME TO wbid;
 ALTER TABLE wbid ADD COLUMN pc_id_09 INTEGER;
 ALTER TABLE wbid ADD COLUMN pc_name_09 CHAR;
 ALTER TABLE wbid ADD COLUMN pc_reserved_09 CHAR;
