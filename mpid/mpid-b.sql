@@ -1155,8 +1155,4 @@ UPDATE mpid SET pc_id_09 = 23 WHERE ac_id_09 = 230;
 UPDATE mpid SET pc_name_09 = 'Mandsour' WHERE ac_id_09 = 230;
 UPDATE mpid SET pc_reserved_09 = '' WHERE ac_id_09 = 230;
 COMMIT;
-.mode csv
-.headers on
-.once mpid/mpid.csv
-SELECT * FROM mpid;
 VACUUM;

@@ -1,12 +1,6 @@
 ALTER TABLE upgis ADD COLUMN booth_id_21 INTEGER;
 PRAGMA foreign_keys=OFF;
 BEGIN TRANSACTION;
-CREATE TABLE upgis(
-  ac_id_09 INT,
-  booth_id_21 INT,
-  latitude REAL,
-  longitude REAL
-);
 INSERT INTO upgis (ac_id_09, booth_id_21, latitude, longitude) VALUES(1,1,NULL,NULL);
 INSERT INTO upgis (ac_id_09, booth_id_21, latitude, longitude) VALUES(1,2,NULL,NULL);
 INSERT INTO upgis (ac_id_09, booth_id_21, latitude, longitude) VALUES(1,3,NULL,NULL);

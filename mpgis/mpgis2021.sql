@@ -1,12 +1,6 @@
 ALTER TABLE mpgis ADD COLUMN booth_id_21 INTEGER;
 PRAGMA foreign_keys=OFF;
 BEGIN TRANSACTION;
-CREATE TABLE mpgis(
-  ac_id_09 INT,
-  booth_id_21 INT,
-  latitude REAL,
-  longitude REAL
-);
 INSERT INTO mpgis (ac_id_09, booth_id_21, latitude, longitude) VALUES(1,1,25.913053999999998921,76.846149999999994405);
 INSERT INTO mpgis (ac_id_09, booth_id_21, latitude, longitude) VALUES(1,2,25.970752430000000998,76.81404985999999724);
 INSERT INTO mpgis (ac_id_09, booth_id_21, latitude, longitude) VALUES(1,3,25.941128719999998254,76.856503299999999966);

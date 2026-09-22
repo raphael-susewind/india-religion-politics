@@ -705,8 +705,4 @@ UPDATE kerid SET pc_id_09 = 20 WHERE ac_id_09 = 140;
 UPDATE kerid SET pc_name_09 = 'Thiruvananthapuram' WHERE ac_id_09 = 140;
 UPDATE kerid SET pc_reserved_09 = '' WHERE ac_id_09 = 140;
 COMMIT;
-.mode csv
-.headers on
-.once kerid/kerid.csv
-SELECT * FROM kerid;
 VACUUM;

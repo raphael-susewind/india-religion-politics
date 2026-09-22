@@ -1,12 +1,6 @@
 ALTER TABLE rajgis ADD COLUMN booth_id_21 INTEGER;
 PRAGMA foreign_keys=OFF;
 BEGIN TRANSACTION;
-CREATE TABLE rajgis(
-  ac_id_09 INT,
-  booth_id_21 INT,
-  latitude REAL,
-  longitude REAL
-);
 INSERT INTO rajgis (ac_id_09, booth_id_21, latitude, longitude) VALUES(1,1,30.025400000000001198,73.701130000000006246);
 INSERT INTO rajgis (ac_id_09, booth_id_21, latitude, longitude) VALUES(1,2,30.001449999999998397,73.726969999999994341);
 INSERT INTO rajgis (ac_id_09, booth_id_21, latitude, longitude) VALUES(1,3,30.020219999999998351,73.718019999999995659);

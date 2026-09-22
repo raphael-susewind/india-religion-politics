@@ -596,8 +596,4 @@ UPDATE goaid SET ac_reserved_14 = '' WHERE ac_id_09 = 293;
 UPDATE goaid SET ac_name_14 = '' WHERE ac_id_09 = 294;
 UPDATE goaid SET ac_reserved_14 = '' WHERE ac_id_09 = 294;
 COMMIT;
-.mode csv
-.headers on
-.once goaid/goaid.csv
-SELECT * FROM goaid;
 VACUUM;

@@ -1,12 +1,6 @@
 ALTER TABLE goagis ADD COLUMN booth_id_21 INTEGER;
 PRAGMA foreign_keys=OFF;
 BEGIN TRANSACTION;
-CREATE TABLE goagis(
-  ac_id_09 INT,
-  booth_id_21 INT,
-  latitude REAL,
-  longitude REAL
-);
 INSERT INTO goagis (ac_id_09, booth_id_21, latitude, longitude) VALUES(1,1,15.722894000000000147,73.689869999999999096);
 INSERT INTO goagis (ac_id_09, booth_id_21, latitude, longitude) VALUES(1,2,15.716913999999999162,73.69226000000000454);
 INSERT INTO goagis (ac_id_09, booth_id_21, latitude, longitude) VALUES(1,3,15.716913999999999162,73.69226000000000454);

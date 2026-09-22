@@ -913,8 +913,4 @@ UPDATE gujid SET pc_id_09 = 26 WHERE ac_id_09 = 182;
 UPDATE gujid SET pc_name_09 = 'Valsad' WHERE ac_id_09 = 182;
 UPDATE gujid SET pc_reserved_09 = 'ST' WHERE ac_id_09 = 182;
 COMMIT;
-.mode csv
-.headers on
-.once gujid/gujid.csv
-SELECT * FROM gujid;
 VACUUM;

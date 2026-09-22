@@ -1,12 +1,6 @@
 ALTER TABLE kargis ADD COLUMN booth_id_21 INTEGER;
 PRAGMA foreign_keys=OFF;
 BEGIN TRANSACTION;
-CREATE TABLE kargis(
-  ac_id_09 INT,
-  booth_id_21 INT,
-  latitude REAL,
-  longitude REAL
-);
 INSERT INTO kargis (ac_id_09, booth_id_21, latitude, longitude) VALUES(1,1,NULL,NULL);
 INSERT INTO kargis (ac_id_09, booth_id_21, latitude, longitude) VALUES(1,2,NULL,NULL);
 INSERT INTO kargis (ac_id_09, booth_id_21, latitude, longitude) VALUES(1,3,NULL,NULL);

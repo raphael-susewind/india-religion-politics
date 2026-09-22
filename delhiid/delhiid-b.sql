@@ -363,8 +363,4 @@ CREATE TABLE temp AS SELECT cast(max(ac_id_09) as integer) 'ac_id_09', cast(max(
 INSERT INTO temp SELECT * FROM delhiid WHERE booth_id_21 IS NULL;
 DROP TABLE delhiid;
 ALTER TABLE temp RENAME TO delhiid;
-.mode csv
-.headers on
-.once delhiid/delhiid.csv
-SELECT * FROM delhiid;
 VACUUM;

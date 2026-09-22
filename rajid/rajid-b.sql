@@ -1005,8 +1005,4 @@ UPDATE rajid SET pc_id_09 = 25 WHERE ac_id_09 = 200;
 UPDATE rajid SET pc_name_09 = 'Jhalawar Baran' WHERE ac_id_09 = 200;
 UPDATE rajid SET pc_reserved_09 = '' WHERE ac_id_09 = 200;
 COMMIT;
-.mode csv
-.headers on
-.once rajid/rajid.csv
-SELECT * FROM rajid;
 VACUUM;

@@ -1483,8 +1483,4 @@ UPDATE wbid SET pc_id_09 = 42 WHERE ac_id_09 = 294;
 UPDATE wbid SET pc_name_09 = 'Birbhum' WHERE ac_id_09 = 294;
 UPDATE wbid SET pc_reserved_09 = '' WHERE ac_id_09 = 294;
 COMMIT;
-.mode csv
-.headers on
-.once wbid/wbid.csv
-SELECT * FROM wbid;
 VACUUM;

@@ -1,12 +1,6 @@
 ALTER TABLE kergis ADD COLUMN booth_id_21 INTEGER;
 PRAGMA foreign_keys=OFF;
 BEGIN TRANSACTION;
-CREATE TABLE kergis(
-  ac_id_09 INT,
-  booth_id_21 INT,
-  latitude REAL,
-  longitude REAL
-);
 INSERT INTO kergis (ac_id_09, booth_id_21, latitude, longitude) VALUES(1,1,12.751696470000000616,74.883924960000001645);
 INSERT INTO kergis (ac_id_09, booth_id_21, latitude, longitude) VALUES(1,2,12.751696810000000325,74.883917850000003115);
 INSERT INTO kergis (ac_id_09, booth_id_21, latitude, longitude) VALUES(1,3,12.750878939999999772,74.883878949999996164);

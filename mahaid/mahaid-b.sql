@@ -1445,8 +1445,4 @@ UPDATE mahaid SET pc_id_09 = 44 WHERE ac_id_09 = 288;
 UPDATE mahaid SET pc_name_09 = 'Sangli' WHERE ac_id_09 = 288;
 UPDATE mahaid SET pc_reserved_09 = '' WHERE ac_id_09 = 288;
 COMMIT;
-.mode csv
-.headers on
-.once mahaid/mahaid.csv
-SELECT * FROM mahaid;
 VACUUM;

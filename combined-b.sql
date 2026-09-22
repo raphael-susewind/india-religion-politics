@@ -1,3 +1,4 @@
+.bail on
 pragma temp_store = 1;
 pragma temp_store_directory = '.';
 .read upid/upid-a.sql

@@ -1,12 +1,6 @@
 ALTER TABLE hargis ADD COLUMN booth_id_21 INTEGER;
 PRAGMA foreign_keys=OFF;
 BEGIN TRANSACTION;
-CREATE TABLE hargis(
-  ac_id_09 INT,
-  booth_id_21 INT,
-  latitude REAL,
-  longitude REAL
-);
 INSERT INTO hargis (ac_id_09, booth_id_21, latitude, longitude) VALUES(1,1,30.887748229999999693,76.793874459999997839);
 INSERT INTO hargis (ac_id_09, booth_id_21, latitude, longitude) VALUES(1,2,30.91766450000000077,76.81133561999999415);
 INSERT INTO hargis (ac_id_09, booth_id_21, latitude, longitude) VALUES(1,3,30.897702500000001179,76.782114199999995209);

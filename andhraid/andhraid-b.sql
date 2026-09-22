@@ -1475,8 +1475,4 @@ UPDATE andhraid SET pc_id_09 = 42 WHERE ac_id_09 = 294;
 UPDATE andhraid SET pc_name_09 = 'Chittoor' WHERE ac_id_09 = 294;
 UPDATE andhraid SET pc_reserved_09 = 'SC' WHERE ac_id_09 = 294;
 COMMIT;
-.mode csv
-.headers on
-.once andhraid/andhraid.csv
-SELECT * FROM andhraid;
 VACUUM;

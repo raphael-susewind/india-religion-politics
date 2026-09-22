@@ -1,12 +1,6 @@
 ALTER TABLE delhigis ADD COLUMN booth_id_21 INTEGER;
 PRAGMA foreign_keys=OFF;
 BEGIN TRANSACTION;
-CREATE TABLE delhigis(
-  ac_id_09 INT,
-  booth_id_21 INT,
-  latitude REAL,
-  longitude REAL
-);
 INSERT INTO delhigis (ac_id_09, booth_id_21, latitude, longitude) VALUES(1,1,77.068179000000000657,28.85197900000000004);
 INSERT INTO delhigis (ac_id_09, booth_id_21, latitude, longitude) VALUES(1,2,77.068179000000000657,28.85197900000000004);
 INSERT INTO delhigis (ac_id_09, booth_id_21, latitude, longitude) VALUES(1,3,77.074641999999997212,28.850266000000001297);

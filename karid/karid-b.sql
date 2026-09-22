@@ -1125,8 +1125,4 @@ UPDATE karid SET pc_id_09 = 22 WHERE ac_id_09 = 224;
 UPDATE karid SET pc_name_09 = 'Chamarajanagar' WHERE ac_id_09 = 224;
 UPDATE karid SET pc_reserved_09 = 'SC' WHERE ac_id_09 = 224;
 COMMIT;
-.mode csv
-.headers on
-.once karid/karid.csv
-SELECT * FROM karid;
 VACUUM;

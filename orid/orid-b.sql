@@ -740,8 +740,4 @@ UPDATE orid SET pc_id_09 = 12 WHERE ac_id_09 = 147;
 UPDATE orid SET pc_name_09 = 'Nabarangpur' WHERE ac_id_09 = 147;
 UPDATE orid SET pc_reserved_09 = 'ST' WHERE ac_id_09 = 147;
 COMMIT;
-.mode csv
-.headers on
-.once orid/orid.csv
-SELECT * FROM orid;
 VACUUM;

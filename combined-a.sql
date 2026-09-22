@@ -1,3 +1,4 @@
+.bail on
 pragma temp_store = 1;
 pragma temp_store_directory = '.';
 .read upvidhansabha2007/upvidhansabha2007-a.sql
@@ -32,8 +33,6 @@ pragma temp_store_directory = '.';
 .read uprolls2016/uprolls2016.sql
 .read uprolls2017/uprolls2017-a.sql
 .read uprolls2017/uprolls2017-b.sql
-.read uprolls2021/uprolls2021-a.sql
-.read uprolls2021/uprolls2021-b.sql
 .read upcandidates2007/upcandidates2007.sql
 .read upcandidates2009/upcandidates2009.sql
 .read upcandidates2012/upcandidates2012.sql
@@ -60,6 +59,8 @@ pragma temp_store_directory = '.';
 .read delhigis/delhigis2021.sql
 .read harrolls2014/harrolls2014-a.sql
 .read harrolls2014/harrolls2014-b.sql
+.read harrolls2021/harrolls2021-a.sql
+.read harrolls2021/harrolls2021-b.sql
 .read hargis/hargis.sql
 .read hargis/hargis2021.sql
 .read karrolls2014/karrolls2014-a.sql
@@ -88,6 +89,8 @@ pragma temp_store_directory = '.';
 .read rajgis/rajgis2021.sql
 .read wbrolls2014/wbrolls2014-a.sql
 .read wbrolls2014/wbrolls2014-b.sql
+.read wbrolls2021/wbrolls2021-a.sql
+.read wbrolls2021/wbrolls2021-b.sql
 .read wbgis/wbgis.sql
 .read goarolls2014/goarolls2014-a.sql
 .read goarolls2014/goarolls2014-b.sql

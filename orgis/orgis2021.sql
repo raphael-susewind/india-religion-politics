@@ -1,12 +1,6 @@
 ALTER TABLE orgis ADD COLUMN booth_id_21 INTEGER;
 PRAGMA foreign_keys=OFF;
 BEGIN TRANSACTION;
-CREATE TABLE orgis(
-  ac_id_09 INT,
-  booth_id_21 INT,
-  latitude REAL,
-  longitude REAL
-);
 INSERT INTO orgis (ac_id_09, booth_id_21, latitude, longitude) VALUES(1,1,21.14469000000000065,82.648560000000003359);
 INSERT INTO orgis (ac_id_09, booth_id_21, latitude, longitude) VALUES(1,2,21.152499999999999857,82.683689999999998576);
 INSERT INTO orgis (ac_id_09, booth_id_21, latitude, longitude) VALUES(1,3,21.160329999999998307,82.724080000000000719);

@@ -1,12 +1,6 @@
 ALTER TABLE gujgis ADD COLUMN booth_id_21 INTEGER;
 PRAGMA foreign_keys=OFF;
 BEGIN TRANSACTION;
-CREATE TABLE gujgis(
-  ac_id_09 INT,
-  booth_id_21 INT,
-  latitude REAL,
-  longitude REAL
-);
 INSERT INTO gujgis (ac_id_09, booth_id_21, latitude, longitude) VALUES(1,1,23.708669499999999175,68.640717100000003371);
 INSERT INTO gujgis (ac_id_09, booth_id_21, latitude, longitude) VALUES(1,2,23.708845300000000121,68.640637400000002799);
 INSERT INTO gujgis (ac_id_09, booth_id_21, latitude, longitude) VALUES(1,3,23.7127574999999986,68.66143499999999733);
