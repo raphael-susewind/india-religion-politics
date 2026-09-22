@@ -1,0 +1,5 @@
+algorithm_label,manual_label,count
+Muslim,Muslim,177
+Muslim,Non-Muslim,225
+Non-Muslim,Muslim,78
+Non-Muslim,Non-Muslim,520
