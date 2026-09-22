@@ -2,6 +2,8 @@
 
 ## gujcandidates2014
 
+**Caution - experimental classification.** The likely religion and its certainty in this table come from an experimental algorithm that guesses religion from a person's name. The labels are known to be wrong in a measurable share of cases: for example, some candidates in seats reserved for Scheduled Castes carry labels that are legally impossible there, and some candidates of a party that fielded no Muslim candidates are labelled Muslim. A wrong label attached to a named person can be misleading. The labels are left here to preserve the history of this work, but they should not be relied upon - neither for individual candidates nor in aggregate. The table also keeps only one candidate per party per constituency, so most independent candidates are missing.
+
 This table contains a list of candidates and their likely religion for the 2014 Lok Sabha election from Gujarat, guessed with the [name2community](https://github.com/raphael-susewind/name2community) algorithm.
 
 ## Variables
