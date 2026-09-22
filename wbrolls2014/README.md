@@ -39,6 +39,18 @@ age_*_avg_pure_14 | Average age of electors estimated to be * (Hindu / Muslim / 
 age_*_stddev_pure_14 | Standard deviation of the age distribution of electors  estimated to be * (Hindu / Muslim / Christian / Sikh / Jain / Buddhist), discarding ngram matches
 female_*_percent_pure_14 | Percentage of female electors among electors estimated to be * (Hindu / Muslim / Christian / Sikh / Jain / Buddhist), discarding ngram matches
 
+## Small-cell suppression (version 1.1, 22 September 2026)
+
+To protect individual electors, statistics resting on fewer than 10 electors were removed (set to NULL, blank in the CSV) in version 1.1. The rule is:
+
+- in booths with fewer than 10 electors, every value except the ids and the number of electors;
+- a community's share wherever it implies fewer than 10 electors of that community (estimated conservatively), together with that community's age and sex figures;
+- where hiding one value would still let it be worked out from the others (for example as 100 minus the remaining shares), one further value in the same booth.
+
+A blank therefore means "fewer than 10, or hidden to protect another value"; it never means zero. Shares of exactly zero were left in place. In this table, 65,667 of 70,615 booth rows lost at least one value.
+
+Known problems with this table are listed in [KNOWN-ISSUES.md](../KNOWN-ISSUES.md).
+
 ## Raw data
 
 Originally, the electoral rolls were crawled in July 2014 from http://ceowestbengal.nic.in/DistrictList.aspx using run-in-arc/downloadpdf.pl; the "last updated on" entry on the rolls' cover sheet reads "1/1/2014".

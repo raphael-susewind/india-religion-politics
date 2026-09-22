@@ -29,6 +29,18 @@ revision_percent_new_16 | Percentage of electors added to this booth's rolls in 
 revision_percent_deleted_16 | Percentage of electors deleted from this booth's rolls in 2016, against the baseline of 2015
 revision_percent_modified_16 | Percentage of electors modified in this booth's rolls in 2016, against the baseline of 2015
 
+## Small-cell suppression (version 1.1, 22 September 2026)
+
+To protect individual electors, statistics resting on fewer than 10 electors were removed (set to NULL, blank in the CSV) in version 1.1. The rule is:
+
+- in booths with fewer than 10 electors, every value except the ids and the number of electors;
+- a community's share wherever it implies fewer than 10 electors of that community (estimated conservatively), together with that community's age and sex figures;
+- where hiding one value would still let it be worked out from the others (for example as 100 minus the remaining shares), one further value in the same booth.
+
+A blank therefore means "fewer than 10, or hidden to protect another value"; it never means zero. Shares of exactly zero were left in place. In this table, 82,850 of 138,721 booth rows lost at least one value.
+
+Known problems with this table are listed in [KNOWN-ISSUES.md](../KNOWN-ISSUES.md).
+
 ## Raw data
 
 Originally, the electoral rolls were crawled in August 2016 from http://ceouttarpradesh.nic.in/_RollPDF.aspx using run-in-osc/downloadpdf.pl; the "last updated on" entry on the rolls' cover sheet reads "1/1/2014", but the PDFs included later additions for 2015 and 2016 roll revisions (each dated on 1st January for that particular year).
