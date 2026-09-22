@@ -1,5 +1,7 @@
 # Data on religion and politics in India 
 
+**Note (September 2026):** this file was written in 2016 and is kept for the record. Parts of it are out of date or wrong. In particular, the name-matching estimates are not the safest variables to compare across years (the methods changed from year to year), and the Muslim/non-Muslim distinction does not work well in all North Indian states (it overestimates Muslim shares in Rajasthan and Madhya Pradesh, among others). The GIS cleaning it describes is not performed by any script in this repository. See [KNOWN-ISSUES.md](KNOWN-ISSUES.md).
+
 ## General troubleshooting notes
 
 There are numerous potential problems with a dataset of this magnitude and I provide all data without any guarantee. I urge you to a) look at raw data closely and b) run your own plausibility checks before using this data. Also, if you use this dataset and discover errors or implausible values, please let me know! Let me highlight four main areas of (potential) trouble:

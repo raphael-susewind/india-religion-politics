@@ -1,8 +1,25 @@
 # Data on religion and politics in India
 
-This repository provides highly localized statistics on religion and politics in India under an open license. I aim to cover Uttar Pradesh as comprehensively as possible, and the rest of India during general elections (see [roadmap](https://github.com/raphael-susewind/india-religion-politics/tree/master/ROADMAP.md)) and/or if other people contribute. A (potentially incomplete) list of academic usecases for this data is on [Google Scholar](https://scholar.google.com/scholar?oi=bibs&hl=de&cites=11938760322875868825); there is also a separate folder with [examples](https://github.com/raphael-susewind/india-religion-politics/tree/master/examples) to replicate. 
+**This repository is retired and no longer maintained (September 2026). Please read this before using any of it.**
 
-Fortunately, recent transparency initiatives by the Election Commission of India in general and the Chief Electoral Officer of UP in particular now allow researchers to shift the central unit of quantitative political analyses from the constituency level to that of polling booths, stations, and villages (earlier, such data had to be interpolated or estimated). Often, this data is not very user-friendly, though (think garbled, scanned PDFs). The purpose of this repository is to curate this data in a more accessible format and to share the scraping and cleanup code for reference. This official data is then supplemented with estimates of religious demography based on the religious connotations of electors' names in the voter lists (see below).
+In September 2026 I audited this repository systematically, with the help of Claude Code, an AI coding assistant. The audit found a wide range of problems, some of them serious. The documented build did not produce the documented database. Several estimates of religious demography are wrong, or not comparable across years and states. Age and sex figures are corrupt in many tables. Several election-results tables contain parsing errors. All of this is documented, table by table, in [KNOWN-ISSUES.md](KNOWN-ISSUES.md). Most of it has not been corrected, and it will not be: I am retiring the repository.
+
+My own published analyses drew on separately archived replication data or were checked at the time; the example scripts in examples/ reproduce them only approximately and inherit the issues documented here. Others who used this data may have been affected, and should check KNOWN-ISSUES.md against the tables and variables they used.
+
+I still receive regular requests for this data, and I welcome them. But it needs to be seen as a historical record of work done between 2013 and 2022, with the flaws documented here - not as a maintained dataset.
+
+Version 1.1 (22 September 2026) makes these changes and no others:
+
+- personal data that should not have been public (a sample of electors' names in wbrolls2014) was removed and purged from the history of the repository;
+- statistics resting on fewer than 10 electors were suppressed in all tables of religious demography (see each table's README);
+- the candidate tables now carry a clear caveat that their religious classification is experimental and should not be relied upon;
+- the build no longer deletes tables or overwrites files in your copy, and loads the Haryana and West Bengal 2021 tables it used to skip;
+- a syntax error in examples/epa2017.sql was fixed;
+- the known issues were documented, and the roadmap and invitations to contribute were removed.
+
+This repository provides highly localized statistics on religion and politics in India under an open license. It covers Uttar Pradesh in most detail (2007-2017), and other states for the 2014 general election and, for Delhi, Haryana and West Bengal, 2021. A (potentially incomplete) list of academic usecases for this data is on [Google Scholar](https://scholar.google.com/scholar?oi=bibs&hl=de&cites=11938760322875868825); there is also a separate folder with [examples](https://github.com/raphael-susewind/india-religion-politics/tree/master/examples) to replicate. 
+
+When this work began, transparency initiatives by the Election Commission of India in general and the Chief Electoral Officer of UP in particular allowed researchers to shift the central unit of quantitative political analyses from the constituency level to that of polling booths, stations, and villages. Often, this data is not very user-friendly, though (think garbled, scanned PDFs). The purpose of this repository is to curate this data in a more accessible format and to share the scraping and cleanup code for reference. This official data is then supplemented with estimates of religious demography based on the religious connotations of electors' names in the voter lists (see below).
  
 From 2013 to 2015, the whole dataset was located on my [personal website](https://www.raphael-susewind.de), and the [blog there](https://www.raphael-susewind.de/blog/category/quantitativemethods) continues to provide bits and pieces of advice on how to use it, as do my various [publications](https://writing.raphael-susewind.de). This created unnecessary hurdles for collaboration, though, and created its unique challenges in terms of long-term availability. After pondering various options, I decided to move to GitHub entirely. Technically, the final dataset comes as a **SQLite database** with a number of relational tables:
 
@@ -23,11 +40,12 @@ table | description
 [gujid](https://github.com/raphael-susewind/india-religion-politics/tree/master/gujid) | ID matching and integration table for Gujarat (see below)
 [gujgis](https://github.com/raphael-susewind/india-religion-politics/tree/master/gujgis) | GIS coordinates and other spatial characteristics of polling booths in Gujarat
 [gujloksabha2014](https://github.com/raphael-susewind/india-religion-politics/tree/master/gujloksabha2014) | Booth-level (form 20) results for the 2014 Lok Sabha election from Gujarat
-[gujcandidates2014](https://github.com/raphael-susewind/india-religion-politics/tree/master/gujcandidates2014) | Candidates and their likely religion for the 2014 Lok Sabha election from Gujarat
+[gujcandidates2014](https://github.com/raphael-susewind/india-religion-politics/tree/master/gujcandidates2014) | Candidates and their likely religion for the 2014 Lok Sabha election from Gujarat (experimental classification - do not rely on it, see caveat)
 [gujrolls2014](https://github.com/raphael-susewind/india-religion-politics/tree/master/gujrolls2014) | Booth-level estimates of religious demography for 2014 across Gujarat
 [harid](https://github.com/raphael-susewind/india-religion-politics/tree/master/harid) | ID matching and integration table for Haryana (see below)
 [hargis](https://github.com/raphael-susewind/india-religion-politics/tree/master/hargis) | GIS coordinates and other spatial characteristics of polling booths in Haryana
 [harrolls2014](https://github.com/raphael-susewind/india-religion-politics/tree/master/harrolls2014) | Booth-level estimates of religious demography for 2014 across Haryana
+[harrolls2021](https://github.com/raphael-susewind/india-religion-politics/tree/master/harrolls2021) | Booth-level estimates of religious demography for 2021 across Haryana
 [karid](https://github.com/raphael-susewind/india-religion-politics/tree/master/karid) | ID matching and integration table for Karnataka (see below)
 [kargis](https://github.com/raphael-susewind/india-religion-politics/tree/master/kargis) | GIS coordinates and other spatial characteristics of polling booths in Karnataka
 [karrolls2014](https://github.com/raphael-susewind/india-religion-politics/tree/master/karrolls2014) | Booth-level estimates of religious demography for 2014 across Karnataka
@@ -53,11 +71,11 @@ table | description
 [upvidhansabha2012](https://github.com/raphael-susewind/india-religion-politics/tree/master/upvidhansabha2012) | Booth-level (form 20) results for the 2012 Vidhan Sabha election in Uttar Pradesh
 [uploksabha2014](https://github.com/raphael-susewind/india-religion-politics/tree/master/uploksabha2014) | Booth-level (form 20) results for the 2014 Lok Sabha election from Uttar Pradesh
 [upvidhansabha2017](https://github.com/raphael-susewind/india-religion-politics/tree/master/upvidhansabha2017) | Booth-level (form 20) results for the 2017 Vidhan Sabha election in Uttar Pradesh
-[upcandidates2007](https://github.com/raphael-susewind/india-religion-politics/tree/master/upcandidates2007) | Candidates and their likely religion for the 2007 Vidhan Sabha election in Uttar Pradesh
-[upcandidates2009](https://github.com/raphael-susewind/india-religion-politics/tree/master/upcandidates2009) | Candidates and their likely religion for the 2009 Lok Sabha election from Uttar Pradesh
-[upcandidates2012](https://github.com/raphael-susewind/india-religion-politics/tree/master/upcandidates2012) | Candidates and their likely religion for the 2012 Vidhan Sabha election in Uttar Pradesh
-[upcandidates2014](https://github.com/raphael-susewind/india-religion-politics/tree/master/upcandidates2014) | Candidates and their likely religion for the 2014 Lok Sabha election from Uttar Pradesh
-[upcandidates2017](https://github.com/raphael-susewind/india-religion-politics/tree/master/upcandidates2017) | Candidates and their likely religion for the 2017 Vidhan Sabha election in Uttar Pradesh
+[upcandidates2007](https://github.com/raphael-susewind/india-religion-politics/tree/master/upcandidates2007) | Candidates and their likely religion for the 2007 Vidhan Sabha election in Uttar Pradesh (experimental classification - do not rely on it, see caveat)
+[upcandidates2009](https://github.com/raphael-susewind/india-religion-politics/tree/master/upcandidates2009) | Candidates and their likely religion for the 2009 Lok Sabha election from Uttar Pradesh (experimental classification - do not rely on it, see caveat)
+[upcandidates2012](https://github.com/raphael-susewind/india-religion-politics/tree/master/upcandidates2012) | Candidates and their likely religion for the 2012 Vidhan Sabha election in Uttar Pradesh (experimental classification - do not rely on it, see caveat)
+[upcandidates2014](https://github.com/raphael-susewind/india-religion-politics/tree/master/upcandidates2014) | Candidates and their likely religion for the 2014 Lok Sabha election from Uttar Pradesh (experimental classification - do not rely on it, see caveat)
+[upcandidates2017](https://github.com/raphael-susewind/india-religion-politics/tree/master/upcandidates2017) | Candidates and their likely religion for the 2017 Vidhan Sabha election in Uttar Pradesh (experimental classification - do not rely on it, see caveat)
 [uprolls2011](https://github.com/raphael-susewind/india-religion-politics/tree/master/uprolls2011) | Booth-level estimates of religious demography for 2011 across Uttar Pradesh
 [uprolls2012](https://github.com/raphael-susewind/india-religion-politics/tree/master/uprolls2012) | Booth-level estimates of religious demography for 2012 across Uttar Pradesh
 [uprolls2013](https://github.com/raphael-susewind/india-religion-politics/tree/master/uprolls2013) | Booth-level estimates of religious demography for 2013 across Uttar Pradesh
@@ -68,11 +86,12 @@ table | description
 [wbid](https://github.com/raphael-susewind/india-religion-politics/tree/master/wbid) | ID matching and integration table for West Bengal (see below)
 [wbgis](https://github.com/raphael-susewind/india-religion-politics/tree/master/wbgis) | GIS coordinates and other spatial characteristics of polling booths in West Bengal
 [wbrolls2014](https://github.com/raphael-susewind/india-religion-politics/tree/master/wbrolls2014) | Booth-level estimates of religious demography for 2014 across West Bengal
+[wbrolls2021](https://github.com/raphael-susewind/india-religion-politics/tree/master/wbrolls2021) | Booth-level estimates of religious demography for 2021 across West Bengal
 
 
-If you wish to **recreate the whole database**, the easiest way would be to clone this repository in its entirety, and then run the equivalent of `cat combined-a.sql | sqlite3 combined.sqlite` and `cat combined-b.sql | sqlite3 combined.sqlite` on your system. This will automatically create a new combined.sqlite file by running all table.sql files in the correct order. You can then extract your data from one or multiple tables for further processing using standard SQL commands. 
+If you wish to **recreate the whole database**, clone this repository in its entirety and, in its top folder, run `sqlite3 combined.sqlite < combined-a.sql` followed by `sqlite3 combined.sqlite < combined-b.sql`. Always start from a new, empty combined.sqlite: running the build twice into the same file duplicates rows. The build takes about 20 minutes and produces a database of about 1.4 GB. It stops at the first error rather than continuing with an incomplete database. The CSV dumps in each folder are not rewritten by the build; if you want fresh ones, run `sqlite3 combined.sqlite < export.sql`, which writes them to a separate export/ folder.
 
-If you wish to **add or correct stuff** in the dataset, you can either send me an informal email (see below) or, if sufficiently technically minded, create a pull request against this repository. If making corrections or merely adding more variables to an existing table, please update the respective README.md with an explanation, update table.sql with the necessary SQL code, and create a new table.csv dump (code for which should already be included in the table.sql). If adding entirely new tables, please follow this **folder structure** that applies to all tables:
+This repository no longer accepts corrections or contributions, and pull requests will not be merged. For the record, every table follows the same **folder structure**:
 
 * table - a directory containing the scraping and cleanup code used to generate this table from raw data. Note that the raw data itself can often not be redistributed for legal reasons and may not be available at its earstwhile URL anymore - a chief reason to curate this repository. If you want access to original raw data in order to check the scripts, drop me an email and we can arrange something.
 * table/README.md - a description of each variable in this table alongside notes on raw data sources, notes on accuracy, and, if relevant, additional license information.
@@ -94,8 +113,10 @@ The dataset in its entirety is **licensed** under an [ODC Open Database license]
 
 > Susewind, R. (2016). Data on religion and politics in India. Published under an ODbL 1.0 license. Available from https://github.com/raphael-susewind/india-religion-politics.
 
+Note that the licence files in the individual folders differ from this summary: the tables of religious demography (the *rolls* folders) carry a CC-BY-NC-SA 4.0 licence, the other tables the ODC Database Contents License, and some code files carry GPL or AGPL notices (see KNOWN-ISSUES.md).
+
 Last but not least, **raw data** behind this dataset (e.g. original files downloaded from ECI websites over the years) is generally not included here, both to save space (it runs into several TB by now) and for privacy concerns (even though all data was originally put in the public domain by the ECI, some of it might be considered sensitive in aggregate). I do archive all relevant original downloads in a restricted access [Zenodo collection](https://zenodo.org/communities/india-religion-politics-raw) though and will make it available to legitimate academic users upon request.
 
-So I invite all to download and use this dataset for more localized quantitative analyses of political, religious and demographic dynamics in India in the spirit of Open Data sharing. Please let me know if you find the dataset useful and alert me to errors and mistakes. I provide this dataset without any guarantee - see [troubleshooting notes](https://github.com/raphael-susewind/india-religion-politics/blob/master/TROUBLESHOOTING.md) for **known general problems** with this data, alongside the various table READMEs.
+I provide this dataset without any guarantee. Before using it, please read [KNOWN-ISSUES.md](KNOWN-ISSUES.md) and, for the general problems of this kind of data, [TROUBLESHOOTING.md](TROUBLESHOOTING.md).
 
 Raphael Susewind, mail@raphael-susewind.de, GPG key [10AEE42F](https://keybase.io/raphaelsusewind)
